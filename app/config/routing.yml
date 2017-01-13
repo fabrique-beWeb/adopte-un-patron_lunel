@@ -1,0 +1,6 @@
+view:
+    resource: "@ViewBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+
