@@ -4,9 +4,21 @@ security:
 
     # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
+        gestionCandidat:
+            entity:
+                class: UserBundle:Candidat
+                property: email
+                
+        
+        
+        
         in_memory:
             memory: ~
+    
+    encoders:
+        UserBundle\Entity\Candidat: plaintext
 
+    
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
@@ -14,7 +26,15 @@ security:
             security: false
 
         main:
-            anonymous: ~
+            pattern: ^/
+            anonymous: true
+            provider: gestionCandidat
+            
+            form_login:
+                login_path: login
+                check_path: loginCheck
+
+                
             # activate different ways to authenticate
 
             # http_basic: ~

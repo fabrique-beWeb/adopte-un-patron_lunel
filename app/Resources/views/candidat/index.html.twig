@@ -1,0 +1,76 @@
+{% extends 'template.html.twig' %}
+
+{% block body %}
+        <?php 
+    $today = date("m.d.y"); 
+    echo $today;
+    ?>
+    
+    <h1>Candidats list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Datenaissance</th>
+                <th>Age</th>
+                <th>Telephone</th>
+                <th>Adress</th>
+                <th>Codepostal</th>
+                <th>Email</th>
+                <th>Mdp</th>
+                <th>Visite</th>
+                <th>Favori</th>
+                <th>Matchs</th>
+                <th>Description</th>
+                <th>Dateinscription</th>
+                <th>Image</th>
+                <th>Posterecherche</th>
+                <th>Rencontrerecruteur</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for candidat in candidats %}
+            <tr>
+                <td><a href="{{ path('candidat_show', { 'id': candidat.id }) }}">{{ candidat.id }}</a></td>
+                <td>{{ candidat.nom }}</td>
+                <td>{{ candidat.prenom }}</td>
+                <td>{% if candidat.dateNaissance %}{{ candidat.dateNaissance|date('d/m/Y') }}{% endif %}</td>
+                <td>{{ candidat.age }}</td>
+                <td>{{ candidat.telephone }}</td>
+                <td>{{ candidat.adress }}</td>
+                <td>{{ candidat.codePostal }}</td>
+                <td>{{ candidat.email }}</td>
+                <td>{{ candidat.mdp }}</td>
+                <td>{{ candidat.visite }}</td>
+                <td>{{ candidat.favori }}</td>
+                <td>{{ candidat.matchs }}</td>
+                <td>{{ candidat.description }}</td>
+                <td>{{ candidat.dateInscription}}</td>
+                <td>{{ candidat.image }}</td>
+                <td>{% if candidat.posteRecherche %}{{ candidat.posteRecherche|join(', ') }}{% endif %}</td>
+                <td>{% if candidat.rencontreRecruteur %}{{ candidat.rencontreRecruteur|join(', ') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('candidat_show', { 'id': candidat.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('candidat_edit', { 'id': candidat.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('candidat_new') }}">Create a new candidat</a>
+        </li>
+    </ul>
+{% endblock %}

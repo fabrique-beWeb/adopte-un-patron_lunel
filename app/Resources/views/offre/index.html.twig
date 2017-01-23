@@ -1,0 +1,63 @@
+{% extends 'template.html.twig' %}
+
+{% block body %}
+    <h1>Offres list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Nomentreprise</th>
+                <th>Nomskill</th>
+                <th>Poste</th>
+                <th>Typecontrat</th>
+                <th>Salaire</th>
+                <th>Duree</th>
+                <th>Experiencerequis</th>
+                <th>Lieu</th>
+                <th>Responsabilites</th>
+                <th>Pourquoinous</th>
+                <th>Noustrouver</th>
+                <th>Userid</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for offre in offres %}
+            <tr>
+                <td><a href="{{ path('offre_show', { 'id': offre.id }) }}">{{ offre.id }}</a></td>
+                <td>{{ offre.titre }}</td>
+                <td>{{ offre.nomEntreprise }}</td>
+                <td>{% if offre.nomSkill %}{{ offre.nomSkill|join(', ') }}{% endif %}</td>
+                <td>{{ offre.poste }}</td>
+                <td>{{ offre.typeContrat }}</td>
+                <td>{{ offre.salaire }}</td>
+                <td>{{ offre.duree }}</td>
+                <td>{{ offre.experienceRequis }}</td>
+                <td>{{ offre.lieu }}</td>
+                <td>{{ offre.responsabilites }}</td>
+                <td>{{ offre.pourquoiNous }}</td>
+                <td>{{ offre.nousTrouver }}</td>
+                <td>{{ offre.userId }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('offre_show', { 'id': offre.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('offre_edit', { 'id': offre.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('offre_new') }}">Create a new offre</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "template.html.twig" %}
+{% block title %}
+    {{ parent ()}}
+    - index [recrutor]
+{% endblock %}
+{% block body %}
+
+    <h1>Offre edit</h1>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input type="submit" value="Edit" />
+    {{ form_end(edit_form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('offre_index') }}">Back to the list</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+    
+{#START- colonne LEFT -#}
+    <h2>[username]</h2>
+    {#==[profil_picture]==#}
+    <p>Depuis le [date]</p>
+    <ul>
+        <li>[visit_count]</li>
+        <li>[favorite]</li>
+        <li>[matchs]</li>
+    </ul>
+{#END- colonne LEFT -#}
+    
+{#START- colonne RIGHT- 1 -#}
+    <h3>Informations de l'entreprise</h3>
+        <ul>
+        <li>[nom]</li>
+        <li>[phone]</li>
+        <li>[adress]</li>
+        <li>[postal_code]</li>
+        <li>[description]</li>
+    </ul>
+    <a href="#">Valider</a>
+{#END- colonne RIGHT- 1 -#}
+    
+{#START- colonne RIGHT- 2 -#}
+    <h3>Creer votre annonce</h3>
+
+    <p>[intitulé_poste] [choose_type_contrat] [choose_poste] [choose_lieux] [min_money_max_money]</p>
+    <p>Compétences</p>
+    {#INCLUDE - choose_skill- #}
+    <a href="#">Valider</a>
+{#END- colonne RIGHT- 2 -#}
+    
+{#START- colonne RIGHT- 3 -#}
+    <h3>Détail du poste</h3>
+    <a href="#">Valider</a>
+{#END- colonne RIGHT- 3 -#}
+
+    <p>[chat_box]</p>
+{% endblock %}
