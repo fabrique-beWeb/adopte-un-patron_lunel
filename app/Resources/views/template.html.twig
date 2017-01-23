@@ -10,7 +10,8 @@
     </head>
     <body>
         {% include ':default:navbar.html.twig' %}
-        {% block body %}{% endblock %}
+        {% block body %}
+        {% endblock %}
         {% block javascripts %}
             <script src="{{ asset('../vendor/twbs/bootstrap/js/tests/vendor/jquery.min.js') }}"></script>
             <script src="{{ asset('../vendor/twbs/bootstrap/dist/js/bootstrap.min.js') }}"></script>
