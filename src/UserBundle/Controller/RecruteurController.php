@@ -45,6 +45,7 @@ class RecruteurController extends Controller
         $recruteur = new Recruteur();
         $form = $this->createForm('UserBundle\Form\RecruteurType', $recruteur);
         $form->handleRequest($request);
+        $recruteur->setRole(array("ROLE_RECRUTEUR"));
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();

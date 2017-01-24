@@ -6,7 +6,6 @@
     <table>
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Titre</th>
                 <th>Nomentreprise</th>
                 <th>Nomskill</th>
@@ -19,28 +18,25 @@
                 <th>Responsabilites</th>
                 <th>Pourquoinous</th>
                 <th>Noustrouver</th>
-                <th>Userid</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for offre in offres %}
-            <tr>
-                <td><a href="{{ path('offre_show', { 'id': offre.id }) }}">{{ offre.id }}</a></td>
-                <td>{{ offre.titre }}</td>
-                <td>{{ offre.nomEntreprise }}</td>
-                <td>{% if offre.nomSkill %}{{ offre.nomSkill|join(', ') }}{% endif %}</td>
-                <td>{{ offre.poste }}</td>
-                <td>{{ offre.typeContrat }}</td>
-                <td>{{ offre.salaire }}</td>
-                <td>{{ offre.duree }}</td>
-                <td>{{ offre.experienceRequis }}</td>
-                <td>{{ offre.lieu }}</td>
-                <td>{{ offre.responsabilites }}</td>
-                <td>{{ offre.pourquoiNous }}</td>
-                <td>{{ offre.nousTrouver }}</td>
-                <td>{{ offre.userId }}</td>
-                <td>
+            <div>
+                <h2>{{ offre.titre }}</h2>
+                <h3>{{ offre.nomEntreprise }}</h3>
+                <p>{% if offre.nomSkill %}{{ offre.nomSkill|join(', ') }}{% endif %}</p>
+                <p>{{ offre.poste }}</p>
+                <p>{{ offre.typeContrat }}</p>
+                <p>{{ offre.salaire }}</p>
+                <p>{{ offre.duree }}</p>
+                <p>{{ offre.experienceRequis }}</p>
+                <p>{{ offre.lieu }}</p>
+                <p>{{ offre.responsabilites }}</p>
+                <p>{{ offre.pourquoiNous }}</p>
+                <p>{{ offre.nousTrouver }}</p>
+                <p>
                     <ul>
                         <li>
                             <a href="{{ path('offre_show', { 'id': offre.id }) }}">show</a>
@@ -49,8 +45,8 @@
                             <a href="{{ path('offre_edit', { 'id': offre.id }) }}">edit</a>
                         </li>
                     </ul>
-                </td>
-            </tr>
+                </p>
+            </div>
         {% endfor %}
         </tbody>
     </table>
