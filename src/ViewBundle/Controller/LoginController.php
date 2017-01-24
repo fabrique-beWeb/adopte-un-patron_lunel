@@ -26,6 +26,13 @@ class LoginController extends Controller {
     public function LoginCheck() {
         throw new Exception('Verifie le security');
     }
-
+    
+    /**
+    * @Route("/logOut",name="logOut")
+    * @throws Exception
+    */
+    public function logOut() {
+        throw new Exception('Verifiez votre fichier security');
+    }
 
 }
