@@ -4,10 +4,13 @@
         <a class="navbar-brand" href="{{ path('home') }}">Adopte un patron</a>
         </div>
         <ul class="nav navbar-nav">
-            <li><a href="{{ path('offre_index') }}">Nos offres</a></li>
-            <li><a href="#">Comment ça marche</a></li>
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Nos offres</a></li>            
         </ul>
         <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Mes matchs</a></li>
+            <li><a href="#">Mes favoris</a></li>
+            <li><a href="#">Mon profils</a></li>
             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Inscription </a></li>
             <li><a href="{{ path('login') }}"><span class="glyphicon glyphicon-log-in"></span> Connexion </a></li>
             <li><a href= "{{ path ("logOut") }}">Deconnexion</a></li>
