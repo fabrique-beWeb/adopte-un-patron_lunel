@@ -8,9 +8,12 @@
             <li><a href="#">Comment ça marche</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <li><a href= "{{ path ("logOut") }}">Deconnexion</a></li>
+            {% else %}
             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Inscription </a></li>
             <li><a href="{{ path('login') }}"><span class="glyphicon glyphicon-log-in"></span> Connexion </a></li>
-            <li><a href= "{{ path ("logOut") }}">Deconnexion</a></li>
+            {% endif %}
         </ul>
     </div>
 </nav>
