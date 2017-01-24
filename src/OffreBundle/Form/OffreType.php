@@ -4,7 +4,7 @@ namespace OffreBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\MoneyType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -14,6 +14,10 @@ class OffreType extends AbstractType {
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options) {
+        
+        //trouver l'id recruteur courant
+
+        
         $builder->add('titre')
                 ->add('nomEntreprise')
                 ->add('nomSkill')
@@ -38,7 +42,7 @@ class OffreType extends AbstractType {
                 ->add('responsabilites')
                 ->add('pourquoiNous')
                 ->add('nousTrouver')
-                ->add('userId'/* , HiddenType::class */)
+                ->add('userId')
         ;
     }
 
