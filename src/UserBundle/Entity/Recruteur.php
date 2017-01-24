@@ -3,6 +3,9 @@
 namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Serializable;
+use Symfony\Component\Security\Core\User\UserInterface;
+use UserBundle\Repository\RecruteurRepository;
 
 /**
  * Recruteur
@@ -10,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="recruteur")
  * @ORM\Entity(repositoryClass="UserBundle\Repository\RecruteurRepository")
  */
-class Recruteur
+class Recruteur implements UserInterface, Serializable
 {
     /**
      * @var int
@@ -434,5 +437,42 @@ class Recruteur
     {
         return $this->souhaitCandidat;
     }
+
+    public function eraseCredentials() {
+        
+    }
+
+    public function getPassword(): string {
+        return $this->mdp;
+    }
+
+    public function getRoles() {
+        return array();
+    }
+
+    public function getSalt() {
+        
+    }
+
+    public function getUsername(): string {
+        return $this->email;
+    }
+
+    public function serialize(): string {
+        return serialize(array(
+            $this->id,
+            $this->email,
+            $this->mdp
+        ));
+    }
+
+    public function unserialize($serialized) {
+        list(
+        $this->id,
+        $this->email,
+        $this->mdp
+        ) = unserialize($serialized);
+    }
+
 }
 

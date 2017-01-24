@@ -8,8 +8,16 @@ security:
             entity:
                 class: UserBundle:Candidat
                 property: email
+         
+        gestionRecruteur:
+            entity:
+                class: UserBundle:Recruteur
+                property: email
                 
-        
+        checkCandidatRecruteur:
+            chain:
+                providers: [ gestionCandidat, gestionRecruteur ]
+
         
         
         in_memory:
@@ -17,6 +25,7 @@ security:
     
     encoders:
         UserBundle\Entity\Candidat: plaintext
+        UserBundle\Entity\Recruteur: plaintext
 
     
     firewalls:
@@ -28,11 +37,13 @@ security:
         main:
             pattern: ^/
             anonymous: true
-            provider: gestionCandidat
+            provider: checkCandidatRecruteur
             
             form_login:
                 login_path: login
                 check_path: loginCheck
+                
+
 
                 
             # activate different ways to authenticate
