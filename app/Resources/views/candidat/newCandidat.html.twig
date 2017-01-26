@@ -17,10 +17,12 @@
         {{ form_row(form.image) }}
         <input type="submit" value="Create" />
     {{ form_end(form) }}
+    
+    <a href="{{ path('recruteur_new')}}"> Vous etes recruteur ? </a>
 
-    <ul>
+{#    <ul>
         <li>
             <a href="{{ path('candidat_index') }}">Back to the list</a>
         </li>
-    </ul>
+    </ul>#}
 {% endblock %}

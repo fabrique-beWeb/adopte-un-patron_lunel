@@ -51,7 +51,7 @@ class OffreController extends Controller
             return $this->redirectToRoute('offre_show', array('id' => $offre->getId()));
         }
 
-        return $this->render('offre/new.html.twig', array(
+        return $this->render('offre/newOffres.html.twig', array(
             'offre' => $offre,
             'form' => $form->createView(),
         ));

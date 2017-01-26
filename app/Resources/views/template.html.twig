@@ -5,12 +5,19 @@
         <title>{% block title %}Adopte un boss {% endblock %}</title>
         {% block stylesheets %}
             <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.css')}}"/>
+            <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/fortawesome/font-awesome/css/font-awesome.min.css')}}"/>
+            <link rel="stylesheet" type="text/css" href="{{ asset('./css/navbar.css')}}" />
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
         {% block nav %}
-            {% include ':default:navbar.html.twig' %}
+            {% if is_granted('ROLE_RECRUTEUR') %}
+                {% include ':default:navbarRecruteur.html.twig' %}
+            {% else %}
+                {% include ':default:navbar.html.twig' %}
+            {% endif%}
+            
         {% endblock %}
         
         {% block body %}

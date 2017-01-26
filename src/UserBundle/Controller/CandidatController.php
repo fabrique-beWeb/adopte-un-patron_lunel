@@ -19,7 +19,7 @@ class CandidatController extends Controller
     /**
      * Lists all candidat entities.
      *
-     * @Route("/", name="candidat_index")
+     * @Route("candidat/", name="candidat_index")
      * @Method("GET")
      */
     public function indexAction()
@@ -36,7 +36,7 @@ class CandidatController extends Controller
     /**
      * Creates a new candidat entity.
      *
-     * @Route("/new", name="candidat_new")
+     * @Route("inscripttionCandidat/new", name="candidat_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
@@ -54,7 +54,7 @@ class CandidatController extends Controller
             return $this->redirectToRoute('candidat_show', array('id' => $candidat->getId()));
         }
 
-        return $this->render('candidat/new.html.twig', array(
+        return $this->render('candidat/newCandidat.html.twig', array(
             'candidat' => $candidat,
             'form' => $form->createView(),
         ));
@@ -63,7 +63,7 @@ class CandidatController extends Controller
     /**
      * Finds and displays a candidat entity.
      *
-     * @Route("/{id}", name="candidat_show")
+     * @Route("candidat/{id}", name="candidat_show")
      * @Method("GET")
      */
     public function showAction(Candidat $candidat)
@@ -79,7 +79,7 @@ class CandidatController extends Controller
     /**
      * Displays a form to edit an existing candidat entity.
      *
-     * @Route("/{id}/edit", name="candidat_edit")
+     * @Route("candidat/{id}/edit", name="candidat_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Candidat $candidat)
@@ -104,7 +104,7 @@ class CandidatController extends Controller
     /**
      * Deletes a candidat entity.
      *
-     * @Route("/{id}", name="candidat_delete")
+     * @Route("candidat/{id}", name="candidat_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Candidat $candidat)
