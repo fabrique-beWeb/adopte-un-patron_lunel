@@ -473,6 +473,9 @@ class Recruteur implements UserInterface, Serializable
         $this->mdp
         ) = unserialize($serialized);
     }
+    public function __toString() {
+        return $this->entreprise;
+    }
 
 }
 

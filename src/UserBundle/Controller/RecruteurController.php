@@ -70,6 +70,18 @@ class RecruteurController extends Controller {
                     'offres' => $offres,
         ));
     }
+    
+    /**
+     * @Route("/index", name="indexRecruteur")
+     */
+    public function indexRecruteur() {
+        $em = $this->getDoctrine()->getManager();
+
+        $offres = $em->getRepository('OffreBundle:Offre')->findByUserId($this->getUser());
+        return $this->render('recruteur/indexRecruteur.html.twig', array(
+                    'offres' => $offres,
+        ));
+    }
 
     /**
      * Finds and displays a recruteur entity.

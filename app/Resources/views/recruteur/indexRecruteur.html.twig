@@ -1,12 +1,10 @@
-{% extends "template.html.twig" %}
+{% extends 'template.html.twig' %}
 {% block title %}
     {{ parent ()}}
-    - index [recrutor]
+    - {id}
 {% endblock %}
-{% block body %}
-
-    <h1>Offrzerteze edit</h1>
-    <h1>Offres list</h1>
+{% block body %}    
+        <h1>Vos Offres</h1>
 
     <table>
         <thead>
@@ -29,7 +27,8 @@
             </tr>
         </thead>
         <tbody>
-        {% for offre in offres %}
+        
+            {% for offre in offres %}
             <tr>
                 <td><a href="{{ path('offre_show', { 'id': offre.id }) }}">{{ offre.id }}</a></td>
                 <td>{{ offre.titre }}</td>
@@ -57,7 +56,7 @@
                 </td>
             </tr>
         {% endfor %}
-        </tbody>
+                    </tbody>
     </table>
 
     <ul>
