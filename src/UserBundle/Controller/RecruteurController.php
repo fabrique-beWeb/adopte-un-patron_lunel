@@ -5,27 +5,31 @@ namespace UserBundle\Controller;
 use UserBundle\Entity\Recruteur;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Recruteur controller.
+ *
+ * @Route("recruteur")
+ */
+class RecruteurController extends Controller {
 
-class RecruteurController extends Controller
-{
     /**
      * Lists all recruteur entities.
      *
      * @Route("recruteur/", name="recruteur_index")
      * @Method("GET")
      */
-    public function indexAction()
-    {
+    public function indexAction() {
         $em = $this->getDoctrine()->getManager();
 
         $recruteurs = $em->getRepository('UserBundle:Recruteur')->findAll();
         $offres = $em->getRepository('OffreBundle:Offre')->findAll();
 
         return $this->render('recruteur/index.html.twig', array(
-            'recruteurs' => $recruteurs,
-            'offres' => $offres,
+                    'recruteurs' => $recruteurs,
+                    'offres' => $offres,
         ));
     }
 
@@ -35,8 +39,7 @@ class RecruteurController extends Controller
      * @Route("InscriptionRecruteur/new", name="recruteur_new")
      * @Method({"GET", "POST"})
      */
-    public function newAction(Request $request)
-    {
+    public function newAction(Request $request) {
         $recruteur = new Recruteur();
         $form = $this->createForm('UserBundle\Form\RecruteurType', $recruteur);
         $form->handleRequest($request);
@@ -50,9 +53,34 @@ class RecruteurController extends Controller
             return $this->redirectToRoute('recruteur_show', array('id' => $recruteur->getId()));
         }
 
+
         return $this->render('recruteur/newRecruteur.html.twig', array(
-            'recruteur' => $recruteur,
-            'form' => $form->createView(),
+                    'recruteur' => $recruteur,
+                    'form' => $form->createView(),
+        ));
+    }
+
+    /**
+     * @Route("/gestion", name="gestionRecruteur")
+     */
+    public function gestionRecruteur() {
+        $em = $this->getDoctrine()->getManager();
+
+        $offres = $em->getRepository('OffreBundle:Offre')->findAll();
+        return $this->render('recruteur/gestion_recrutor.html.twig', array(
+                    'offres' => $offres,
+        ));
+    }
+    
+    /**
+     * @Route("/index", name="indexRecruteur")
+     */
+    public function indexRecruteur() {
+        $em = $this->getDoctrine()->getManager();
+
+        $offres = $em->getRepository('OffreBundle:Offre')->findByUserId($this->getUser());
+        return $this->render('recruteur/indexRecruteur.html.twig', array(
+                    'offres' => $offres,
         ));
     }
 
@@ -62,13 +90,14 @@ class RecruteurController extends Controller
      * @Route("recruteur/{id}", name="recruteur_show")
      * @Method("GET")
      */
-    public function showAction(Recruteur $recruteur)
-    {
+    public function showAction(Recruteur $recruteur) {
+        
+        
         $deleteForm = $this->createDeleteForm($recruteur);
 
         return $this->render('recruteur/show.html.twig', array(
-            'recruteur' => $recruteur,
-            'delete_form' => $deleteForm->createView(),
+                    'recruteur' => $recruteur,
+                    'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -78,8 +107,7 @@ class RecruteurController extends Controller
      * @Route("recruteur/{id}/edit", name="recruteur_edit")
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, Recruteur $recruteur)
-    {
+    public function editAction(Request $request, Recruteur $recruteur) {
         $deleteForm = $this->createDeleteForm($recruteur);
         $editForm = $this->createForm('UserBundle\Form\RecruteurType', $recruteur);
         $editForm->handleRequest($request);
@@ -91,9 +119,9 @@ class RecruteurController extends Controller
         }
 
         return $this->render('recruteur/edit.html.twig', array(
-            'recruteur' => $recruteur,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+                    'recruteur' => $recruteur,
+                    'edit_form' => $editForm->createView(),
+                    'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -103,8 +131,7 @@ class RecruteurController extends Controller
      * @Route("recruteur/{id}", name="recruteur_delete")
      * @Method("DELETE")
      */
-    public function deleteAction(Request $request, Recruteur $recruteur)
-    {
+    public function deleteAction(Request $request, Recruteur $recruteur) {
         $form = $this->createDeleteForm($recruteur);
         $form->handleRequest($request);
 
@@ -124,12 +151,12 @@ class RecruteurController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Recruteur $recruteur)
-    {
+    private function createDeleteForm(Recruteur $recruteur) {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('recruteur_delete', array('id' => $recruteur->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
+                        ->setAction($this->generateUrl('recruteur_delete', array('id' => $recruteur->getId())))
+                        ->setMethod('DELETE')
+                        ->getForm()
         ;
     }
+
 }
