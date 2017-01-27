@@ -65,16 +65,20 @@
     </table>
 
     <ul>
+        {% if is_granted('ROLE_RECRUTEUR') %}
+            <li>
+                <a href="{{ path('indexRecruteur') }}">Mes Offres</a>                
+            </li>
+        {% endif %}
         <li>
-            <a href="{{ path('offre_index') }}">Back to the list</a>
+            <a href="{{ path('offre_index') }}">Nos offres</a>
         </li>
-        <li>
-            <a href="{{ path('offre_edit', { 'id': offre.id }) }}">Edit</a>
+        <li>           
         </li>
-        <li>
+{#        <li>
             {{ form_start(delete_form) }}
                 <input type="submit" value="Delete">
             {{ form_end(delete_form) }}
-        </li>
+        </li>#}
     </ul>
 {% endblock %}
