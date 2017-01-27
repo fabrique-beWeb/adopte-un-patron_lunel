@@ -1,0 +1,29 @@
+.navbar {
+  border-radius: 0;
+  border: 0; }
+
+ul {
+  list-style: none;
+  padding: 0; }
+
+/* 
+    Created on : 13 janv. 2017, 11:54:48
+    Author     : jeanchristian-petetin
+*/
+.fond {
+  background-color: #ebffff;
+  height: 1000px; }
+
+.offre {
+  background-color: #94c11e;
+  margin-bottom: 2%; }
+
+/* mise en forme des offres */
+.head {
+  display: flex;
+  justify-content: space-between; }
+
+.decal {
+  margin-right: 10px; }
+
+/*# sourceMappingURL=mainOffres.css.map */

@@ -18,7 +18,7 @@ class RecruteurController extends Controller {
     /**
      * Lists all recruteur entities.
      *
-     * @Route("/", name="recruteur_index")
+     * @Route("recruteur/", name="recruteur_index")
      * @Method("GET")
      */
     public function indexAction() {
@@ -36,7 +36,7 @@ class RecruteurController extends Controller {
     /**
      * Creates a new recruteur entity.
      *
-     * @Route("/new", name="recruteur_new")
+     * @Route("InscriptionRecruteur/new", name="recruteur_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request) {
@@ -53,7 +53,8 @@ class RecruteurController extends Controller {
             return $this->redirectToRoute('recruteur_show', array('id' => $recruteur->getId()));
         }
 
-        return $this->render('recruteur/new.html.twig', array(
+
+        return $this->render('recruteur/newRecruteur.html.twig', array(
                     'recruteur' => $recruteur,
                     'form' => $form->createView(),
         ));
@@ -88,7 +89,7 @@ class RecruteurController extends Controller {
     /**
      * Finds and displays a recruteur entity.
      *
-     * @Route("/{id}", name="recruteur_show")
+     * @Route("recruteur/{id}", name="recruteur_show")
      * @Method("GET")
      */
     public function showAction(Recruteur $recruteur) {
@@ -105,7 +106,7 @@ class RecruteurController extends Controller {
     /**
      * Displays a form to edit an existing recruteur entity.
      *
-     * @Route("/{id}/edit", name="recruteur_edit")
+     * @Route("recruteur/{id}/edit", name="recruteur_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Recruteur $recruteur) {
@@ -129,7 +130,7 @@ class RecruteurController extends Controller {
     /**
      * Deletes a recruteur entity.
      *
-     * @Route("/{id}", name="recruteur_delete")
+     * @Route("recruteur/{id}", name="recruteur_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Recruteur $recruteur) {
