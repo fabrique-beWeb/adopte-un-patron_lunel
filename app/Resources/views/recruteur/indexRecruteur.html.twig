@@ -3,8 +3,63 @@
     {{ parent ()}}
     - {id}
 {% endblock %}
-{% block body %} 
-    <h1>Bonjour {id}</h1>
+{% block body %}    
+    <h1>Votre Profil</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Entreprise</th>
+                <th>Email</th>
+                <th>Mdp</th>
+                <th>CodePostal</th>
+                <th>Description</th>
+                <th>Logo</th>
+                <th>Visite</th>
+                <th>Favori</th>
+                <th>Matchs</th>
+                <th>Favori</th>
+                <th>Matchs</th>
+                <th>Role</th>
+                <th>SouhaitCandidat</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            {% for recruteur in recruteurs %}
+            <tr>
+{#                <td><a href="{{ path('recruteur_show', { 'id': recruteur.id }) }}">{{ recruteur.id }}</a></td>#}
+                <td>{{ recruteur.nom }}</td>
+                <td>{{ recruteur.prenom }}</td>
+                <td>{{ recruteur.entreprise }}</td>
+                <td>{{ recruteur.email }}</td>
+                <td>{{ recruteur.mdp }}</td>
+                <td>{{ recruteur.codePostal }}</td>
+                <td>{{ recruteur.description }}</td>
+                <td>{{ recruteur.logo }}</td>
+                <td>{{ recruteur.visite }}</td>
+                <td>{{ recruteur.favori }}</td>
+                <td>{{ recruteur.matchs }}</td>
+                <td>{% if recruteur.role %}{{ recruteur.role|join(', ') }}{% endif %}</td>
+                <td>{% if recruteur.souhaitCandidat %}{{ recruteur.souhaitCandidat|join(', ') }}{% endif %}</td>
+                <td>
+                    <ul>
+{#                        <li>
+                            <a href="{{ path('recruteur_show', { 'id': recruteur.id }) }}">show</a>
+                        </li>#}
+                        <li>
+                            <a href="{{ path('recruteur_edit', { 'id': recruteur.id }) }}">Gestion</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+                    </tbody>
+    </table>
+    <h1>Vos Offres</h1>
 
     <table>
         <thead>

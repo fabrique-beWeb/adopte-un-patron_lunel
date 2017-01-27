@@ -6,7 +6,6 @@
     <table>
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Nom</th>
                 <th>Prenom</th>
                 <th>Entreprise</th>
@@ -15,13 +14,6 @@
                 <th>CodePostal</th>
                 <th>Description</th>
                 <th>Logo</th>
-                <th>Visite</th>
-                <th>Favori</th>
-                <th>Matchs</th>
-                <th>Favori</th>
-                <th>Matchs</th>
-                <th>Role</th>
-                <th>SouhaitCandidat</th>
             </tr>
         </thead>
         <tbody>
@@ -37,10 +29,6 @@
                 <td>{{ recruteur.description }}</td>
                 <td>{{ recruteur.logo }}</td>
                 <td>{{ recruteur.visite }}</td>
-                <td>{{ recruteur.favori }}</td>
-                <td>{{ recruteur.matchs }}</td>
-                <td>{% if recruteur.role %}{{ recruteur.role|join(', ') }}{% endif %}</td>
-                <td>{% if recruteur.souhaitCandidat %}{{ recruteur.souhaitCandidat|join(', ') }}{% endif %}</td>
                 <td>
                     <ul>
                         <li>

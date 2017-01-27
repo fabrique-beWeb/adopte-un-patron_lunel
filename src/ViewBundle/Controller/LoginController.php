@@ -18,7 +18,16 @@ use Symfony\Component\Config\Definition\Exception\Exception;
  * @author romain-ruperez
  */
 class LoginController extends Controller {
+    
+    /**
+     * @Route("/login", name="login")
+     */
+    public function getLogin()
+    {
+        return $this->render('default/login.html.twig');
+    }
 
+    
     /**
      * @Route ("/loginCheck", name="loginCheck")
      * @throws Exception
