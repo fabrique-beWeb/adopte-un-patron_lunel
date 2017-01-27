@@ -1,0 +1,32 @@
+{% extends "template.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/connexion.css')}}"/>
+{% endblock %}
+{% block body %}
+    {{ parent() }}
+    <body class="couleurfond">
+            <header>
+    <li><a href="{{path('accueil')}}">AdoptUnBoss</a></li>
+    
+ <p>vous n'avez pas de compte ?</p>
+ 
+ <p><a href="inscriptionCandidat">Je m'inscrit</a><p>
+</header>
+
+ 
+ <h1> Connexion </h1>
+    
+ <p> Email </p>
+ 
+ <p> Mot de passe </p>
+ 
+ <p> se souvenir de moi </p>
+ 
+  <p><a href="connexion"> Connexion </a></p>
+  <footer>
+   <p><a href="accueil"> Mot de passe oublier ? </a></p>
+  </footer>
+            </body>
+ {% endblock %}

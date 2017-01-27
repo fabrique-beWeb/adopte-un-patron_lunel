@@ -1,11 +1,78 @@
 {% extends "template.html.twig" %}
 
-{% block title %}
+{% block stylesheets %}
     {{ parent() }}
-    - accueil
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/accueil.css')}}"/>
 {% endblock %}
-
 {% block body %}
-    <h1> Accueil </h1>
-{% endblock %}
+<body class="couleurfond">
+    <header>
+            <div class="container-fluid espacement">
+            <div class="row">
+            <h3 class="police">Ce site est vraiment génial et developpé par des ingénieur de la nasa pour que tu trouves du taff !</h3>
+            </div>
+            </div>
+            <div class="container-fluid">
+            <div class="row">
+            <button type="button" class="btn btn-info col-md-offset-1 col-md-1 colorbouttton">je m'inscris</button>
+            </div>
+            </div>
+        </header>
     
+           <h3 class="text-position police séparation">Comment ça marche ?</h3> 
+           <div class="container-fluid espacement">
+                <div class="row">
+                <div class="col-md-12 ">
+                    <div class="col-md-4 text-position policebot ">Un matching 100% IT</div>
+                    <div class="col-md-4 text-position policebot ">NO SPAM</div>
+                    <div class="col-md-4 text-position policebot ">Dites que vous êtes intéréssé</div>   
+                </div>
+                </div>
+           </div>
+           <div class="container-fluid espacement">
+                <div class="row">
+                <div class="col-md-12 ">
+                    <div class="col-md-4 text-position policebot ">Inscrivez-vous et recevez les offres qui matchent sur les compétences, le salaire, l'expérience et le type de société.</div>
+                    <div class="col-md-4 text-position policebot ">Vous êtes libre d’accepter ou de refuser de lever votre anonymat suite à une demande recruteur.</div>
+                    <div class="col-md-4 text-position policebot ">Vous avez aussi l'opportunité de vous déclarer intéressé par un matching auprès d'un recruteur en un clic !</div>   
+                </div>
+                </div>
+           </div>
+          
+            {#<h3 class="text-position">Evènements</h3>
+
+            <div> 
+                <h4>Prochain Event</h4>
+                <p>blablabla sur le prochain event blabla</p>
+            </div>
+
+            <div> 
+                <h4>Carac. event</h4>
+                <p>blablablablablablablablalblnzlab</p>
+               
+                <h4>Carac. event</h4>
+                <p>blablablablablablablablalblnzlab</p>
+            </div>#}
+
+            <footer>
+                <div class="container-fluid espacement">
+                <div class="row">
+                <p class="col-md-3 text-position policebot séparation">logo.</p>
+                <p class="col-md-3 text-position policebot séparation">logo.</p>
+                <p class="col-md-3 text-position policebot séparation">logo.</p>
+                <p class="col-md-3 text-position policebot séparation">logo.</p>
+                </div>
+                </div>
+                <div class="container-fluid espacement">
+                <button type="button" class="btn btn-default btn-sm text-position col-md-offset-5 col-md-2 text-position colorbouttton">Les entreprises qui recrutent</button>
+                </div>
+    <div class="container-fluid espacement">
+        <div class="row">
+      <button type="button" class="btn btn-default btn-sm text-position col-md-offset-5 col-md-2 text-position colorbouttton">Contact</button>
+        </div>
+    </div>
+    <p class="text-position" >Mentions légales | AdoptUnBoss 2017 ©</p>
+     </footer>
+            </body>
+            {% endblock %}
+   
