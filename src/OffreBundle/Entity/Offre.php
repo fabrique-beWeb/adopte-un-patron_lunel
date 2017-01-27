@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="offre")
  * @ORM\Entity(repositoryClass="OffreBundle\Repository\OffreRepository")
  */
-class Offre
-{
+class Offre {
+
     /**
      * @var int
      *
@@ -107,8 +107,8 @@ class Offre
 
     /**
      * @var int
-     *
-     * @ORM\Column(name="userId", type="integer")
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\Recruteur")
+     * @ORM\JoinColumn(name="fk_user", referencedColumnName="id")
      */
     private $userId;
 
@@ -118,8 +118,7 @@ class Offre
      *
      * @return int
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -130,8 +129,7 @@ class Offre
      *
      * @return Offre
      */
-    public function setTitre($titre)
-    {
+    public function setTitre($titre) {
         $this->titre = $titre;
 
         return $this;
@@ -142,8 +140,7 @@ class Offre
      *
      * @return string
      */
-    public function getTitre()
-    {
+    public function getTitre() {
         return $this->titre;
     }
 
@@ -154,8 +151,7 @@ class Offre
      *
      * @return Offre
      */
-    public function setNomEntreprise($nomEntreprise)
-    {
+    public function setNomEntreprise($nomEntreprise) {
         $this->nomEntreprise = $nomEntreprise;
 
         return $this;
@@ -166,8 +162,7 @@ class Offre
      *
      * @return string
      */
-    public function getNomEntreprise()
-    {
+    public function getNomEntreprise() {
         return $this->nomEntreprise;
     }
 
@@ -178,8 +173,7 @@ class Offre
      *
      * @return Offre
      */
-    public function setNomSkill($nomSkill)
-    {
+    public function setNomSkill($nomSkill) {
         $this->nomSkill = $nomSkill;
 
         return $this;
@@ -190,8 +184,7 @@ class Offre
      *
      * @return array
      */
-    public function getNomSkill()
-    {
+    public function getNomSkill() {
         return $this->nomSkill;
     }
 
@@ -202,8 +195,7 @@ class Offre
      *
      * @return Offre
      */
-    public function setPoste($poste)
-    {
+    public function setPoste($poste) {
         $this->poste = $poste;
 
         return $this;
@@ -214,8 +206,7 @@ class Offre
      *
      * @return string
      */
-    public function getPoste()
-    {
+    public function getPoste() {
         return $this->poste;
     }
 
@@ -226,8 +217,7 @@ class Offre
      *
      * @return Offre
      */
-    public function setTypeContrat($typeContrat)
-    {
+    public function setTypeContrat($typeContrat) {
         $this->typeContrat = $typeContrat;
 
         return $this;
@@ -238,8 +228,7 @@ class Offre
      *
      * @return string
      */
-    public function getTypeContrat()
-    {
+    public function getTypeContrat() {
         return $this->typeContrat;
     }
 
@@ -250,8 +239,7 @@ class Offre
      *
      * @return Offre
      */
-    public function setSalaire($salaire)
-    {
+    public function setSalaire($salaire) {
         $this->salaire = $salaire;
 
         return $this;
@@ -262,8 +250,7 @@ class Offre
      *
      * @return int
      */
-    public function getSalaire()
-    {
+    public function getSalaire() {
         return $this->salaire;
     }
 
@@ -274,8 +261,7 @@ class Offre
      *
      * @return Offre
      */
-    public function setDuree($duree)
-    {
+    public function setDuree($duree) {
         $this->duree = $duree;
 
         return $this;
@@ -286,8 +272,7 @@ class Offre
      *
      * @return string
      */
-    public function getDuree()
-    {
+    public function getDuree() {
         return $this->duree;
     }
 
@@ -298,8 +283,7 @@ class Offre
      *
      * @return Offre
      */
-    public function setExperienceRequis($experienceRequis)
-    {
+    public function setExperienceRequis($experienceRequis) {
         $this->experienceRequis = $experienceRequis;
 
         return $this;
@@ -310,8 +294,7 @@ class Offre
      *
      * @return string
      */
-    public function getExperienceRequis()
-    {
+    public function getExperienceRequis() {
         return $this->experienceRequis;
     }
 
@@ -322,8 +305,7 @@ class Offre
      *
      * @return Offre
      */
-    public function setLieu($lieu)
-    {
+    public function setLieu($lieu) {
         $this->lieu = $lieu;
 
         return $this;
@@ -334,8 +316,7 @@ class Offre
      *
      * @return string
      */
-    public function getLieu()
-    {
+    public function getLieu() {
         return $this->lieu;
     }
 
@@ -346,8 +327,7 @@ class Offre
      *
      * @return Offre
      */
-    public function setResponsabilites($responsabilites)
-    {
+    public function setResponsabilites($responsabilites) {
         $this->responsabilites = $responsabilites;
 
         return $this;
@@ -358,8 +338,7 @@ class Offre
      *
      * @return string
      */
-    public function getResponsabilites()
-    {
+    public function getResponsabilites() {
         return $this->responsabilites;
     }
 
@@ -370,8 +349,7 @@ class Offre
      *
      * @return Offre
      */
-    public function setPourquoiNous($pourquoiNous)
-    {
+    public function setPourquoiNous($pourquoiNous) {
         $this->pourquoiNous = $pourquoiNous;
 
         return $this;
@@ -382,8 +360,7 @@ class Offre
      *
      * @return string
      */
-    public function getPourquoiNous()
-    {
+    public function getPourquoiNous() {
         return $this->pourquoiNous;
     }
 
@@ -394,8 +371,7 @@ class Offre
      *
      * @return Offre
      */
-    public function setNousTrouver($nousTrouver)
-    {
+    public function setNousTrouver($nousTrouver) {
         $this->nousTrouver = $nousTrouver;
 
         return $this;
@@ -406,8 +382,7 @@ class Offre
      *
      * @return string
      */
-    public function getNousTrouver()
-    {
+    public function getNousTrouver() {
         return $this->nousTrouver;
     }
 
@@ -418,8 +393,7 @@ class Offre
      *
      * @return Offre
      */
-    public function setUserId($userId)
-    {
+    public function setUserId($userId) {
         $this->userId = $userId;
 
         return $this;
@@ -430,9 +404,8 @@ class Offre
      *
      * @return int
      */
-    public function getUserId()
-    {
+    public function getUserId() {
         return $this->userId;
     }
-}
 
+}

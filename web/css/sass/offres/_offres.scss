@@ -1,0 +1,24 @@
+.fond{
+    background-color: $couleurprincipale;
+    height: 1000px;
+}
+
+.offre{
+    background-color: $couleursecondaire;
+    margin-bottom: 2%;
+}
+
+/* mise en forme des offres */
+.head{
+    display: flex;
+    justify-content: space-between;
+    
+    h2{
+        
+    }
+}
+
+.decal{
+    margin-right: 10px;
+}
+

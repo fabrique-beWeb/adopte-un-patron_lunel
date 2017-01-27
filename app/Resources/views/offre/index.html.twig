@@ -1,59 +1,49 @@
 {% extends 'template.html.twig' %}
 
-{% block body %}
-    <h1>Offres list</h1>
+{% block stylesheets %}
+    {{ parent() }}
+        <link rel="stylesheet" type="text/css" href="{{ asset('./css/mainOffres.css')}}" />
+{% endblock%}
 
-    <table>
-        <thead>
-            <tr>
-                <th>Titre</th>
-                <th>Nomentreprise</th>
-                <th>Nomskill</th>
-                <th>Poste</th>
-                <th>Typecontrat</th>
-                <th>Salaire</th>
-                <th>Duree</th>
-                <th>Experiencerequis</th>
-                <th>Lieu</th>
-                <th>Responsabilites</th>
-                <th>Pourquoinous</th>
-                <th>Noustrouver</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+{% block body %}
+    <h1>Nos offres</h1>
+
+    <div class=" fond col-md-offset-1 col-md-10">    
         {% for offre in offres %}
-            <div>
-                <h2>{{ offre.titre }}</h2>
-                <h3>{{ offre.nomEntreprise }}</h3>
-                <p>{% if offre.nomSkill %}{{ offre.nomSkill|join(', ') }}{% endif %}</p>
-                <p>{{ offre.poste }}</p>
-                <p>{{ offre.typeContrat }}</p>
-                <p>{{ offre.salaire }}</p>
-                <p>{{ offre.duree }}</p>
-                <p>{{ offre.experienceRequis }}</p>
-                <p>{{ offre.lieu }}</p>
-                <p>{{ offre.responsabilites }}</p>
-                <p>{{ offre.pourquoiNous }}</p>
-                <p>{{ offre.nousTrouver }}</p>
-                <p>
+            <div class="offre col-md-offset-1 col-md-10">
+                <div class="head">
+                    <h2>{{ offre.titre }}</h2>
+                    <h3>{{ offre.nomEntreprise }}</h3>
+                </div>
+                <div>
+                    <span>{% if offre.nomSkill %}{{ offre.nomSkill|join(', ') }}{% endif %}</span>
+                    <span class="decal"><span class="fa fa-tag" aria-hidden="true"></span>{{ offre.poste }}</span>
+                    <span class="decal"><span class="fa fa-handshake-o" aria-hidden="true"></span>{{ offre.typeContrat }}</span>
+                    <span class="decal"><span class="fa fa-money" aria-hidden="true"></span>{{ offre.salaire }}€</span>
+                    <span class="decal"><span class="fa fa-calendar-o" aria-hidden="true"></span>{{ offre.duree }}</span>
+                    <span class="decal"><span class="fa fa-wrench" aria-hidden="true"></span>{{ offre.experienceRequis }}</span>
+                    <span class="decal"><span class="fa fa-map-marker" aria-hidden="true"></span>{{ offre.lieu }}</span>
+                    <span class="decal"><span class="fa fa-key" aria-hidden="true"></span>{{ offre.responsabilites }}</span>
+                    <span class="decal"><span class="fa fa-question" aria-hidden="true"></span>{{ offre.pourquoiNous }}</span>
+                    <span class="decal"><span class="fa fa-map-pin" aria-hidden="true"></span>{{ offre.nousTrouver }}</span>
+                </div>
+                <span>
                     <ul>
                         <li>
-                            <a href="{{ path('offre_show', { 'id': offre.id }) }}">show</a>
+                            <a href="{{ path('offre_show', { 'id': offre.id }) }}">Details</a>
                         </li>
-                        <li>
+                        {#<li>
                             <a href="{{ path('offre_edit', { 'id': offre.id }) }}">edit</a>
-                        </li>
+                        </li>#}
                     </ul>
-                </p>
+                </span>
             </div>
         {% endfor %}
-        </tbody>
-    </table>
+    </div>
 
-    <ul>
+{#    <ul>
         <li>
             <a href="{{ path('offre_new') }}">Create a new offre</a>
         </li>
-    </ul>
+    </ul>#}
 {% endblock %}
