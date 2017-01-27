@@ -47,6 +47,7 @@ class RecruteurController extends Controller {
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $recruteur->setDateInscription(date("d/m/Y"));            
             $em->persist($recruteur);
             $em->flush($recruteur);
 
