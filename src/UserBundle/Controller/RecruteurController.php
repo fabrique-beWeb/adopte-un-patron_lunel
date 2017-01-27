@@ -70,7 +70,7 @@ class RecruteurController extends Controller {
                     'offres' => $offres,
         ));
     }
-    
+
     /**
      * @Route("/index", name="indexRecruteur")
      */
@@ -78,8 +78,10 @@ class RecruteurController extends Controller {
         $em = $this->getDoctrine()->getManager();
 
         $offres = $em->getRepository('OffreBundle:Offre')->findByUserId($this->getUser());
+        $recruteurs = $em->getRepository('UserBundle:Recruteur')->findById($this->getUser());
         return $this->render('recruteur/indexRecruteur.html.twig', array(
                     'offres' => $offres,
+                    'recruteurs' => $recruteurs,
         ));
     }
 
@@ -90,8 +92,8 @@ class RecruteurController extends Controller {
      * @Method("GET")
      */
     public function showAction(Recruteur $recruteur) {
-        
-        
+
+
         $deleteForm = $this->createDeleteForm($recruteur);
 
         return $this->render('recruteur/show.html.twig', array(

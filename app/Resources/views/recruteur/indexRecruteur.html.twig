@@ -3,65 +3,120 @@
     {{ parent ()}}
     - {id}
 {% endblock %}
-{% block body %}    
-        <h1>Vos Offres</h1>
+{% block body %} 
+    <h1>Bonjour {id}</h1>
 
     <table>
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Titre</th>
-                <th>Nomentreprise</th>
-                <th>Nomskill</th>
-                <th>Poste</th>
-                <th>Typecontrat</th>
-                <th>Salaire</th>
-                <th>Duree</th>
-                <th>Experiencerequis</th>
-                <th>Lieu</th>
-                <th>Responsabilites</th>
-                <th>Pourquoinous</th>
-                <th>Noustrouver</th>
-                <th>Userid</th>
-                <th>Actions</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Entreprise</th>
+                <th>Email</th>
+                <th>Mdp</th>
+                <th>CodePostal</th>
+                <th>Description</th>
+                <th>Logo</th>
+                <th>Visite</th>
+                <th>Favori</th>
+                <th>Matchs</th>
+                <th>Favori</th>
+                <th>Matchs</th>
+                <th>Role</th>
+                <th>SouhaitCandidat</th>
             </tr>
         </thead>
         <tbody>
-        
-            {% for offre in offres %}
-            <tr>
-                <td><a href="{{ path('offre_show', { 'id': offre.id }) }}">{{ offre.id }}</a></td>
-                <td>{{ offre.titre }}</td>
-                <td>{{ offre.nomEntreprise }}</td>
-                <td>{% if offre.nomSkill %}{{ offre.nomSkill|join(', ') }}{% endif %}</td>
-                <td>{{ offre.poste }}</td>
-                <td>{{ offre.typeContrat }}</td>
-                <td>{{ offre.salaire }}</td>
-                <td>{{ offre.duree }}</td>
-                <td>{{ offre.experienceRequis }}</td>
-                <td>{{ offre.lieu }}</td>
-                <td>{{ offre.responsabilites }}</td>
-                <td>{{ offre.pourquoiNous }}</td>
-                <td>{{ offre.nousTrouver }}</td>
-                <td>{{ offre.userId }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('offre_show', { 'id': offre.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('offre_edit', { 'id': offre.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-                    </tbody>
-    </table>
+            {% for recruteur in recruteurs %}
+                <tr>
+                    <td><a href="{{ path('recruteur_show', { 'id': recruteur.id }) }}">{{ recruteur.id }}</a></td>
+                    <td>{{ recruteur.nom }}</td>
+                    <td>{{ recruteur.prenom }}</td>
+                    <td>{{ recruteur.entreprise }}</td>
+                    <td>{{ recruteur.email }}</td>
+                    <td>{{ recruteur.mdp }}</td>
+                    <td>{{ recruteur.codePostal }}</td>
+                    <td>{{ recruteur.description }}</td>
+                    <td>{{ recruteur.logo }}</td>
+                    <td>{{ recruteur.visite }}</td>
+                    <td>{{ recruteur.favori }}</td>
+                    <td>{{ recruteur.matchs }}</td>
+                    <td>{% if recruteur.role %}{{ recruteur.role|join(', ') }}{% endif %}</td>
+                    <td>{% if recruteur.souhaitCandidat %}{{ recruteur.souhaitCandidat|join(', ') }}{% endif %}</td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('recruteur_show', { 'id': recruteur.id }) }}">show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('recruteur_edit', { 'id': recruteur.id }) }}">edit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr> 
+            {% endfor %}
+        </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('offre_new') }}">Create a new offre</a>
-        </li>
-    </ul>
-{% endblock %}
+
+        <h1>Vos Offres</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Titre</th>
+                    <th>Nomentreprise</th>
+                    <th>Nomskill</th>
+                    <th>Poste</th>
+                    <th>Typecontrat</th>
+                    <th>Salaire</th>
+                    <th>Duree</th>
+                    <th>Experiencerequis</th>
+                    <th>Lieu</th>
+                    <th>Responsabilites</th>
+                    <th>Pourquoinous</th>
+                    <th>Noustrouver</th>
+                    <th>Userid</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for offre in offres %}
+                    <tr>
+                        <td><a href="{{ path('offre_show', { 'id': offre.id }) }}">{{ offre.id }}</a></td>
+                        <td>{{ offre.titre }}</td>
+                        <td>{{ offre.nomEntreprise }}</td>
+                        <td>{% if offre.nomSkill %}{{ offre.nomSkill|join(', ') }}{% endif %}</td>
+                        <td>{{ offre.poste }}</td>
+                        <td>{{ offre.typeContrat }}</td>
+                        <td>{{ offre.salaire }}</td>
+                        <td>{{ offre.duree }}</td>
+                        <td>{{ offre.experienceRequis }}</td>
+                        <td>{{ offre.lieu }}</td>
+                        <td>{{ offre.responsabilites }}</td>
+                        <td>{{ offre.pourquoiNous }}</td>
+                        <td>{{ offre.nousTrouver }}</td>
+                        <td>{{ offre.userId }}</td>
+                        <td>
+                            <ul>
+                                <li>
+                                    <a href="{{ path('offre_show', { 'id': offre.id }) }}">show</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('offre_edit', { 'id': offre.id }) }}">edit</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <ul>
+            <li>
+                <a href="{{ path('offre_new') }}">Create a new offre</a>
+            </li>
+        </ul>
+    {% endblock %}
