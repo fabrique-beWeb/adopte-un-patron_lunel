@@ -114,6 +114,13 @@ class Recruteur implements UserInterface, Serializable
      * @ORM\Column(name="souhaitCandidat", type="array", nullable=true)
      */
     private $souhaitCandidat;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="$dateInscription", type="string")
+     */
+    private $dateInscription;
 
 
     /**
@@ -427,6 +434,29 @@ class Recruteur implements UserInterface, Serializable
 
         return $this;
     }
+    
+        /**
+     * Set dateInscription
+     *
+     * @param string $dateInscription
+     *
+     * @return Recruteur
+     */
+    public function setDateInscription($dateInscription) {
+        $this->dateInscription = $dateInscription;
+
+        return $this;
+    }
+
+    /**
+     * Get dateInscription
+     *
+     * @return string
+     */
+    public function getDateInscription() {
+        return $this->dateInscription;
+    }
+
 
     /**
      * Get souhaitCandidat
