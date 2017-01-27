@@ -12,7 +12,7 @@ use UserBundle\Entity\Candidat;
 /**
  * Candidat controller.
  *
- * @Route("candidat")
+ * @Route("candidat/")
  */
 class CandidatController extends Controller
 {
@@ -44,6 +44,7 @@ class CandidatController extends Controller
         $candidat = new Candidat();
         $form = $this->createForm('UserBundle\Form\CandidatType', $candidat);
         $form->handleRequest($request);
+        $candidat->setRole(array("ROLE_CANDIDAT"));
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();

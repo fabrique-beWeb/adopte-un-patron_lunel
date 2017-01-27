@@ -143,6 +143,13 @@ class Candidat implements UserInterface, Serializable {
      * @ORM\Column(name="rencontreRecruteur", type="array", nullable=true)
      */
     private $rencontreRecruteur;
+    
+        /**
+     * @var array
+     *
+     * @ORM\Column(name="role", type="array")
+     */
+    private $role;
 
     /**
      * Get id
@@ -525,6 +532,30 @@ class Candidat implements UserInterface, Serializable {
      */
     public function getRencontreRecruteur() {
         return $this->rencontreRecruteur;
+    }
+    
+    /**
+     * Set role
+     *
+     * @param array $role
+     *
+     * @return Candidat
+     */
+    public function setRole($role)
+    {
+        $this->role = $role;
+
+        return $this;
+    }
+
+    /**
+     * Get role
+     *
+     * @return array
+     */
+    public function getRole()
+    {
+        return $this->role;
     }
 
     public function eraseCredentials() {
