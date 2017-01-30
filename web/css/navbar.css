@@ -1,6 +1,8 @@
 .navbar {
   border-radius: 0;
-  border: 0; }
+  border: 0;
+  margin-bottom: 0;
+  border-bottom: 2px solid #ebffff; }
 
 ul {
   list-style: none;
