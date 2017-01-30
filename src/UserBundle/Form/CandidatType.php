@@ -5,6 +5,7 @@ namespace UserBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -42,7 +43,7 @@ class CandidatType extends AbstractType {
 //                ->add('matchs')
                 ->add('description')
 //                ->add('dateInscription')
-                ->add('image')
+                ->add('image',FileType::class,array('data_class' => null))
 //                ->add('posteRecherche')
 //                ->add('rencontreRecruteur')
         ;

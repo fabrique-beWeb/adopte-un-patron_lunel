@@ -5,8 +5,10 @@ namespace UserBundle\Entity;
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Serializable;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Security\Core\User\UserInterface;
-use UserBundle\Repository\CandidatRepository;
+use Symfony\Component\Validator\Constraints\File;
+
 
 /**
  * Candidat
@@ -124,9 +126,10 @@ class Candidat implements UserInterface, Serializable {
     private $dateInscription;
 
     /**
-     * @var string
+     * @var UploadedFile
      *
-     * @ORM\Column(name="image", type="string", length=512, nullable=true)
+     * @ORM\Column(name="image", type="string", length=512)
+     * @File(mimeTypes={"image/jpg","image/jpeg","image/png"})
      */
     private $image;
 
