@@ -56,7 +56,7 @@ class CandidatController extends Controller
     /**
      * Finds and displays a candidat entity.
      *
-     * @Route("candidat/{id}", name="candidat_show")
+     * @Route("candidat/index/{id}", name="candidat_show")
      * @Method("GET")
      */
     public function showAction(Candidat $candidat)
@@ -72,7 +72,7 @@ class CandidatController extends Controller
     /**
      * Displays a form to edit an existing candidat entity.
      *
-     * @Route("candidat/edit/{id}", name="candidat_edit")
+     * @Route("candidat/gestion/{id}", name="candidat_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Candidat $candidat)
