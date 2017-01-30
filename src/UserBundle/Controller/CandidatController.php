@@ -40,6 +40,9 @@ class CandidatController extends Controller
         $candidat->setRole(array("ROLE_CANDIDAT"));
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $image = md5(uniqid()) . "." . $candidat->getImage()->guessExtension();
+            $candidat->getImage()->move('../web/uploads', $image);
+            $candidat->setImage($image);
             $em = $this->getDoctrine()->getManager();
             $candidat->setDateInscription(date("d/m/Y"));
             $em->persist($candidat);

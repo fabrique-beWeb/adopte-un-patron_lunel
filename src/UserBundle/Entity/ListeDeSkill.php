@@ -23,9 +23,8 @@ class ListeDeSkill
 
     /**
      * @var array
-     * 
-     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\Candidat")
-     * @ORM\JoinColumn(name="fk_nomSkill", referencedColumnName="nomSkill")
+     * @ORM\Column(name="skill", type="string")
+     *
      */
     private $skills;
 

@@ -4,9 +4,15 @@ namespace UserBundle\Entity;
 
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\JoinColumn;
+use Doctrine\ORM\Mapping\JoinTable;
+use Doctrine\ORM\Mapping\ManyToMany;
+use OffreBundle\Entity\Offre;
 use Serializable;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Security\Core\User\UserInterface;
-use UserBundle\Repository\CandidatRepository;
+use Symfony\Component\Validator\Constraints\File;
+
 
 /**
  * Candidat
@@ -124,9 +130,10 @@ class Candidat implements UserInterface, Serializable {
     private $dateInscription;
 
     /**
-     * @var string
+     * @var UploadedFile
      *
-     * @ORM\Column(name="image", type="string", length=512, nullable=true)
+     * @ORM\Column(name="image", type="string", length=512)
+     * @File(mimeTypes={"image/jpg","image/jpeg","image/png"})
      */
     private $image;
 
@@ -154,7 +161,11 @@ class Candidat implements UserInterface, Serializable {
     /**
      * @var array
      *
-     * @ORM\Column(name="nomSkill", type="array")
+     * @ManyToMany(targetEntity="ListeDeSkill")
+     * @JoinTable(name="SkillCandidat",
+     *      joinColumns={@ORM\JoinColumn(name="CandidatId", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="SkillId", referencedColumnName="id")}
+     *      )
      */
     private $nomSkill;
 
