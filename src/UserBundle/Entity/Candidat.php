@@ -150,6 +150,14 @@ class Candidat implements UserInterface, Serializable {
      * @ORM\Column(name="role", type="array")
      */
     private $role;
+    
+    /**
+     * @var array
+     *
+     * @ORM\Column(name="nomSkill", type="array")
+     */
+    private $nomSkill;
+
 
     /**
      * Get id
@@ -556,6 +564,28 @@ class Candidat implements UserInterface, Serializable {
     public function getRole()
     {
         return $this->role;
+    }
+    
+        /**
+     * Set nomSkill
+     *
+     * @param array $nomSkill
+     *
+     * @return Offre
+     */
+    public function setNomSkill($nomSkill) {
+        $this->nomSkill = $nomSkill;
+
+        return $this;
+    }
+
+    /**
+     * Get nomSkill
+     *
+     * @return array
+     */
+    public function getNomSkill() {
+        return $this->nomSkill;
     }
 
     public function eraseCredentials() {
