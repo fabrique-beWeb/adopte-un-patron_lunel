@@ -1,6 +1,8 @@
 .navbar {
   border-radius: 0;
-  border: 0; }
+  border: 0;
+  margin-bottom: 0;
+  border-bottom: 2px solid #ebffff; }
 
 ul {
   list-style: none;
@@ -10,11 +12,23 @@ ul {
     Created on : 13 janv. 2017, 11:54:48
     Author     : jeanchristian-petetin
 */
+h1, h2, a {
+  color: #ebffff; }
+
+.noPadding {
+  padding: 0; }
+
 .fond {
-  background-color: #ebffff;
-  height: 1000px; }
+  background-color: #185e99;
+  height: 1000px;
+  padding: 0; }
+  .fond h1 {
+    background-color: #94c11e;
+    text-align: center;
+    margin: 0 0 50px 0; }
 
 .offre {
+  border-bottom: 2px solid #ebffff;
   background-color: #94c11e;
   margin-bottom: 2%; }
 
@@ -25,5 +39,21 @@ ul {
 
 .decal {
   margin-right: 10px; }
+
+/* partie Offre details */
+.contour {
+  padding: 10px; }
+
+.textRight {
+  text-align: right; }
+
+table, tr, th, td {
+  border: 1px solid black; }
+  table th, tr th, th th, td th {
+    background-color: #ebffff;
+    padding: 5px; }
+  table td, tr td, th td, td td {
+    color: #ebffff;
+    padding: 5px; }
 
 /*# sourceMappingURL=mainOffres.css.map */

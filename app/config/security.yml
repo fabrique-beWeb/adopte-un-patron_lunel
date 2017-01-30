@@ -42,7 +42,7 @@ security:
             form_login:
                 login_path: login
                 check_path: loginCheck
-                default_target_path: /recruteur/index
+                default_target_path: /
             
             logout:
                 path: logOut
