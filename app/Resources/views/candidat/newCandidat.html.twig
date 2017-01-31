@@ -9,7 +9,7 @@
     <div class="container-fluid inscritext">
     <div class="row">
     <div class="couleurfond col-md-12">
-    <h1 class="police séparation2">Candidat creation</h1>
+    <h1 class="police séparation2 text-position">Candidat creation</h1>
 
     
 
@@ -22,13 +22,12 @@
          {{ form_row(form.adress) }}</div>
         <div class="col-md-6">{{ form_row(form.codePostal) }}
         {{ form_row(form.email) }}</div>
-       <div class="col-md-6 "> {{ form_row(form.mdp) }}
-        {{ form_row(form.description) }}
-            {{ form_row(form.image) }}</div>
-        <input class="wtfbutton colorbouttton" type="submit" value="Create" />
-    {{ form_end(form) }}
-    
-    <a class="verp colorcreate"href="{{ path('recruteur_new')}}"> Vous etes recruteur ? </a>
+       <div class="col-md-6 "> {{ form_row(form.mdp) }}</div>
+        <div class="col-md-6 ">{{ form_row(form.description) }}</div>
+        <div class="col-md-6 ">{{ form_row(form.image) }}</div>
+        {{ form_end(form) }}
+    <input class="pull-right wtfbutton colorbouttton" type="submit" value="Create" />
+    <a class="col-md-6 colorcreate"href="{{ path('recruteur_new')}}"> Vous etes recruteur ? </a>
     </div>
     </div>
     </div>

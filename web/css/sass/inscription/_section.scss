@@ -1,10 +1,9 @@
-body {
-    margin-bottom: 50px;
-}
+
 .police {
     font-size: 50px;
     color: $couleurprincipale;
 }
+
 
 .séparation {
     border-top: solid 2px $couleursecondaire ;
@@ -14,20 +13,13 @@ body {
     font-size: 17px;
     color: $couleurcomplementaire;
 }
-.espacement{
 
-    margin-bottom: 40px;  padding-left: 20px;
-}
-
-.couleurfond {
-    background-color: $couleurcomplementaire;
-}
 
 .couleurmid {
     background-color: $couleursecondaire;
 }
 .colorcreate{
-    font-size: 17px;
+    font-size: 23px;
     color: $couleursecondaire;
 }
 
@@ -71,6 +63,8 @@ input{
     padding: 12px;
 }
 
-.verp{
-    bottom: 0px;
+.wtfimg{
+     font-size: 10px;
+    color: $couleurcomplementaire;
+    width: 10%;
 }

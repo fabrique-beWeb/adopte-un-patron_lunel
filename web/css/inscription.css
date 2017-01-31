@@ -2,8 +2,15 @@
 .colornav {
   background-color: #94c11e; }
 
+.couleurfond {
+  background-color: #185e99; }
+
 body {
   margin-bottom: 50px; }
+
+.espacement {
+  margin-bottom: 40px;
+  padding-left: 20px; }
 
 .police {
   font-size: 50px;
@@ -16,18 +23,11 @@ body {
   font-size: 17px;
   color: #185e99; }
 
-.espacement {
-  margin-bottom: 40px;
-  padding-left: 20px; }
-
-.couleurfond {
-  background-color: #185e99; }
-
 .couleurmid {
   background-color: #94c11e; }
 
 .colorcreate {
-  font-size: 17px;
+  font-size: 23px;
   color: #94c11e; }
 
 .inscritext {
@@ -58,13 +58,21 @@ label {
   width: 60%;
   padding: 12px; }
 
-.verp {
-  bottom: 0px; }
+.wtfimg {
+  font-size: 10px;
+  color: #185e99;
+  width: 10%; }
 
 .text-position {
   text-align: center; }
 
 .colorbouttton {
   background-color: #94c11e; }
+
+.position {
+  margin-bottom: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 50px; }
 
 /*# sourceMappingURL=inscription.css.map */
