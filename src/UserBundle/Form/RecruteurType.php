@@ -4,9 +4,9 @@ namespace UserBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
-use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -30,12 +30,13 @@ class RecruteurType extends AbstractType {
                 ))
                 ->add('codePostal')
                 ->add('description')
-                ->add('logo', UrlType::class);
+                ->add('logo',FileType::class,array('data_class' => null))
 //                ->add('visite')
 //                ->add('favori')
 //                ->add('matchs')
 //                ->add('role')
-//                ->add('souhaitCandidat')        
+//                ->add('souhaitCandidat')
+        ;
     }
 
     /**
