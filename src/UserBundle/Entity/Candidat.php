@@ -4,10 +4,8 @@ namespace UserBundle\Entity;
 
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\JoinTable;
-use Doctrine\ORM\Mapping\ManyToMany;
-use OffreBundle\Entity\Offre;
+use Doctrine\ORM\Mapping\OneToMany;
 use Serializable;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -161,7 +159,7 @@ class Candidat implements UserInterface, Serializable {
     /**
      * @var array
      *
-     * @ManyToMany(targetEntity="ListeDeSkill")
+     * @OneToMany(targetEntity="Skill", mappedBy="name")
      * @JoinTable(name="SkillCandidat",
      *      joinColumns={@ORM\JoinColumn(name="CandidatId", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="SkillId", referencedColumnName="id")}
@@ -582,7 +580,7 @@ class Candidat implements UserInterface, Serializable {
      *
      * @param array $nomSkill
      *
-     * @return Offre
+     * @return Candidat
      */
     public function setNomSkill($nomSkill) {
         $this->nomSkill = $nomSkill;

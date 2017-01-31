@@ -38,7 +38,7 @@ class CandidatController extends Controller
         $form = $this->createForm('UserBundle\Form\CandidatType', $candidat);
         $form->handleRequest($request);
         $candidat->setRole(array("ROLE_CANDIDAT"));
-
+        
         if ($form->isSubmitted() && $form->isValid()) {
             $image = md5(uniqid()) . "." . $candidat->getImage()->guessExtension();
             $candidat->getImage()->move('../web/uploads', $image);
