@@ -5,8 +5,13 @@
     - Login
 {% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+        <link rel="stylesheet" type="text/css" href="{{ asset('./css/log.css')}}" />
+{% endblock%}
+
 {% block body %}
-    <div class="container-fluid">
+    <div class=" border container-fluid">
         <form class="form-horizontal" action="{{ path('loginCheck')}}" method="post">           
             <div class="form-group">
                 <label class="control-label col-sm-2" for="mail">Mail:</label>

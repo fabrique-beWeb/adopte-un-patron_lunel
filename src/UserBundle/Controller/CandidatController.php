@@ -29,7 +29,7 @@ class CandidatController extends Controller
     /**
      * Page d'inscription des candidats.
      *
-     * @Route("inscripttion/candidat/new", name="candidat_new")
+     * @Route("inscription/candidat/new", name="candidat_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)

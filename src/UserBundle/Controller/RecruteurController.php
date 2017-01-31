@@ -45,12 +45,15 @@ class RecruteurController extends Controller {
         $recruteur->setRole(array("ROLE_RECRUTEUR"));
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $logo = md5(uniqid()) . "." . $recruteur->getLogo()->guessExtension();
+            $recruteur->getLogo()->move('../web/uploads', $logo);
+            $recruteur->setLogo($logo);
             $em = $this->getDoctrine()->getManager();
             $recruteur->setDateInscription(date("d/m/Y"));            
             $em->persist($recruteur);
             $em->flush($recruteur);
 
-            return $this->redirectToRoute('recruteur_show', array('id' => $recruteur->getId()));
+            return $this->redirectToRoute('home', array('id' => $recruteur->getId()));
         }
 
 
