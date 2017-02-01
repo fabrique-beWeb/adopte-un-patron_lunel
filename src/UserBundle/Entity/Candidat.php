@@ -3,9 +3,10 @@
 namespace UserBundle\Entity;
 
 use DateTime;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\ORM\Mapping\JoinTable;
-use Doctrine\ORM\Mapping\OneToMany;
+use Doctrine\ORM\Mapping\ManyToMany;
 use Serializable;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -19,6 +20,9 @@ use Symfony\Component\Validator\Constraints\File;
  * @ORM\Entity(repositoryClass="UserBundle\Repository\CandidatRepository")
  */
 class Candidat implements UserInterface, Serializable {
+    function __construct() {
+        $this->nomSkill = new ArrayCollection();
+        }
 
     /**
      * @var int
@@ -159,11 +163,7 @@ class Candidat implements UserInterface, Serializable {
     /**
      * @var array
      *
-     * @OneToMany(targetEntity="Skill", mappedBy="name")
-     * @JoinTable(name="SkillCandidat",
-     *      joinColumns={@ORM\JoinColumn(name="CandidatId", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="SkillId", referencedColumnName="id")}
-     *      )
+     * @ManyToMany(targetEntity="Skill", mappedBy="candidates")
      */
     private $nomSkill;
 
