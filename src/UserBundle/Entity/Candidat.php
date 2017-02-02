@@ -13,7 +13,7 @@ use Symfony\Component\Validator\Constraints\File;
 /**
  * Candidat
  *
- * @ORM\Table(name="candidat")
+ * @ORM\Table(name="adopteUnPatron_candidat")
  * @ORM\Entity(repositoryClass="UserBundle\Repository\CandidatRepository")
  */
 class Candidat implements UserInterface, Serializable {
