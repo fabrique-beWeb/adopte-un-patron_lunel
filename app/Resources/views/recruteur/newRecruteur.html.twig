@@ -13,21 +13,20 @@
 
     {{ form_start(form) }}
     
-    <div class="col-md-6">{{ form_row(form.nom) }}
+    <div class="col-md-6 policebot">{{ form_row(form.nom) }}
         {{ form_row(form.prenom) }}</div>
       <div class="col-md-6">{{ form_row(form.entreprise) }} 
       {{ form_row(form.email) }} </div>
        <div class="col-md-6">{{ form_row(form.mdp) }} 
-       {{ form_row(form.codePostal) }} </div>
+      {{ form_row(form.logo) }} </div>
        <div class="col-md-6">{{ form_row(form.description) }}
-       {{ form_row(form.logo) }}</div>
-       
+       {{ form_row(form.codePostal) }} </div>
+    
     {{ form_end(form) }}
-   
       </div>
+      <input class="pull-right wtfbutton colorbouttton "type="submit" value="Create"/>
     </div>
     </div>
-     <input class="wtfbutton colorbouttton "type="submit" value="Create" />
 {#    <ul>
         <li>
             <a href="{{ path('recruteur_index') }}">Back to the list</a>

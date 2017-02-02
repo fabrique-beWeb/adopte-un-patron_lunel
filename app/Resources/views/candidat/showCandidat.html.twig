@@ -1,11 +1,18 @@
 {% extends 'template.html.twig' %}
-
+{% block stylesheets %}
+   <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.css')}}"/>
+            <link rel="stylesheet" type="text/css" href="{{ asset('./css/navbar.css')}}" />
+            <link rel="stylesheet" type="text/css" href="{{ asset('./css/indexProfilCandidat.css')}}" />
+{% endblock %}
 {% block body %}
+ <div class="container-fluid inscritext">
+    <div class="row">
+    <div class="couleurfond col-md-12">
+    <h1 class="police text-position">Candidat</h1>
     
-    <h1>Candidat</h1>
-
-    <table>
-        <tbody>
+     <div class="panel panel-default">
+    <table class="col-md-offset-4 col-md-2 policebot">
+        <tbody> 
             <tr>
                 <th>Id</th>
                 <td>{{ candidat.id }}</td>
@@ -75,16 +82,16 @@
                 <td>{% if candidat.posteRecherche %}{{ candidat.posteRecherche|join(', ') }}{% endif %}</td>
             </tr>
             <tr>
-                <th>Rencontrerecruteur</th>
+                <th>Rencontre recruteur</th>
                 <td>{% if candidat.rencontreRecruteur %}{{ candidat.rencontreRecruteur|join(', ') }}{% endif %}</td>
             </tr>
         </tbody>
     </table>
-
+</div>
     <ul>
 
         <li>
-            <a href="{{ path('candidat_edit', { 'id': candidat.id }) }}">Edit</a>
+            <a type="button" class="btn btn-info col-md-offset-1 col-md-1 colorbouttton" href="{{ path('candidat_edit', { 'id': candidat.id }) }}">Edit</a>
         </li>
 {#        <li>
             {{ form_start(delete_form) }}
@@ -92,6 +99,7 @@
             {{ form_end(delete_form) }}
         </li>#}
     </ul>
-            
-            
+    </div>      
+      </div> 
+ </div> 
 {% endblock %}

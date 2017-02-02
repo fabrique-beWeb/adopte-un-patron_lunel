@@ -13,7 +13,7 @@ body {
   padding-left: 20px; }
 
 .police {
-  font-size: 50px;
+  font-size: 25px;
   color: #ebffff; }
 
 .séparation {
@@ -27,7 +27,7 @@ body {
   background-color: #94c11e; }
 
 .colorcreate {
-  font-size: 23px;
+  font-size: 25px;
   color: #94c11e; }
 
 .inscritext {
@@ -67,7 +67,8 @@ label {
   text-align: center; }
 
 .colorbouttton {
-  background-color: #94c11e; }
+  background-color: #94c11e;
+  border-radius: 0px; }
 
 .position {
   margin-bottom: 50px;
@@ -75,4 +76,4 @@ label {
   margin-right: 50px;
   margin-top: 50px; }
 
-/*# sourceMappingURL=inscription.css.map */
+/*# sourceMappingURL=connexion.css.map */
