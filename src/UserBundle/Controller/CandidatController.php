@@ -39,6 +39,7 @@ class CandidatController extends Controller
         $form = $this->createForm('UserBundle\Form\CandidatType', $candidat);
         $form->handleRequest($request);
         $candidat->setRole(array("ROLE_CANDIDAT"));
+        $nomSkill = $this->getDoctrine()->getRepository('UserBundle\Entity\Skill')->findAll();
         
         if ($form->isSubmitted() && $form->isValid()) {
             $image = md5(uniqid()) . "." . $candidat->getImage()->guessExtension();
@@ -59,6 +60,7 @@ class CandidatController extends Controller
         return $this->render('candidat/newCandidat.html.twig', array(
             'candidat' => $candidat,
             'form' => $form->createView(),
+            'nomSkill' => $nomSkill,
         ));
     }
 

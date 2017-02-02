@@ -1,40 +1,44 @@
 {% extends 'template.html.twig' %}
 {% block stylesheets %}
-            <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.css')}}"/>
-            <link rel="stylesheet" type="text/css" href="{{ asset('./css/navbar.css')}}" />
-            <link rel="stylesheet" type="text/css" href="{{ asset('./css/inscription.css')}}" />
-        {% endblock %}
-        {% form_theme form 'bootstrap_3_layout.html.twig' %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('./css/navbar.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('./css/inscription.css')}}" />
+{% endblock %}
+{#        {% form_theme form 'bootstrap_3_layout.html.twig' %}#}
 {% block body %}
     <div class="container-fluid inscritext">
-    <div class="row">
-    <div class="couleurfond col-md-12">
-    <h1 class="police séparation2 text-position">Candidat creation</h1>
+        <div class="row">
+            <div class="couleurfond col-md-12">
+                <h1 class="police séparation2 text-position">Candidat creation</h1>
 
-    
 
-    {{ form_start(form) }}
-    <div class="col-md-6">{{ form_row(form.nom) }}
-        {{ form_row(form.prenom) }}</div>
-        <div class="col-md-6"> {{ form_row(form.dateNaissance, {'years': "caca"}) }}
-        {{ form_row(form.age) }}</div>
-        <div class="col-md-6">{{ form_row(form.telephone) }}
-         {{ form_row(form.adress) }}</div>
-        <div class="col-md-6">{{ form_row(form.codePostal) }}
-        {{ form_row(form.email) }}</div>
-       <div class="col-md-6 "> {{ form_row(form.mdp) }}</div>
-        <div class="col-md-6 ">{{ form_row(form.description) }}</div>
-        <div class="col-md-6 ">{{ form_row(form.image) }}</div>
-            <input class="pull-right wtfbutton colorbouttton" type="submit" value="S'enregistrer" />
-        {{ form_end(form) }}
 
-    <a class="col-md-6 colorcreate"href="{{ path('recruteur_new')}}"> Vous etes recruteur ? </a>
+                {{ form_start(form) }}
+                <div class="col-md-6">{{ form_row(form.nom) }}
+                    {{ form_row(form.prenom) }}</div>
+                <div class="col-md-6"> {{ form_row(form.dateNaissance, {'years': "caca"}) }}
+                    {{ form_row(form.age) }}</div>
+                <div class="col-md-6">{{ form_row(form.telephone) }}
+                    {{ form_row(form.adress) }}</div>
+                <div class="col-md-6">{{ form_row(form.codePostal) }}
+                    {{ form_row(form.email) }}</div>
+                <div class="col-md-6 "> {{ form_row(form.mdp) }}</div>
+                <div class="col-md-6 ">{{ form_row(form.description) }}</div>
+                <div class="col-md-6 ">{{ form_row(form.image) }}</div>
+                {% for n in nomSkill %}<p><input type="checkbox"/>{{n.name}}</p>
+                    {{ form_row(form.nomSkill, {'placeholder': n.name}) }}
+                    
+                {% endfor %}
+                <input class="pull-right wtfbutton colorbouttton" type="submit" value="S'enregistrer" />
+                {{ form_end(form) }}
+
+                <a class="col-md-6 colorcreate"href="{{ path('recruteur_new')}}"> Vous etes recruteur ? </a>
+            </div>
+        </div>
     </div>
-    </div>
-    </div>
-{#    <ul>
-        <li>
-            <a href="{{ path('candidat_index') }}">Back to the list</a>
-        </li>
-    </ul>#}
+    {#    <ul>
+            <li>
+                <a href="{{ path('candidat_index') }}">Back to the list</a>
+            </li>
+        </ul>#}
 {% endblock %}

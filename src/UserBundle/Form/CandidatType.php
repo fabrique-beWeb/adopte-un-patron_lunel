@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -19,7 +20,6 @@ class CandidatType extends AbstractType {
     public function buildForm(FormBuilderInterface $builder, array $options) {
         //recuperation de lannée actuelle pour appliquer une range
         $annee = date("Y");
-        
         $annee2 = $annee - 16;
         $annee -= 100;
         $builder->add('nom')
