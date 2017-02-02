@@ -11,12 +11,12 @@
             <h1 >Nos offres</h1>
         </div>
         {% for offre in offres %}
-            <div class="offre col-md-offset-1 col-md-10">
+            <div class="offre col-xs-12 col-md-offset-1 col-md-10">
                 <div class="head">
                     <h2>{{ offre.titre }}</h2>
                     <h3>{{ offre.nomEntreprise }}</h3>
                 </div>
-                <div>
+                <div class="hideResponsive">
                     <span>{% if offre.nomSkill %}{{ offre.nomSkill|join(', ') }}{% endif %}</span>
                     <span class="decal"><span class="fa fa-tag" aria-hidden="true"></span>{{ offre.poste }}</span>
                     <span class="decal"><span class="fa fa-handshake-o" aria-hidden="true"></span>{{ offre.typeContrat }}</span>
