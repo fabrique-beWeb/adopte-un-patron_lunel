@@ -163,7 +163,10 @@ class Candidat implements UserInterface, Serializable {
     /**
      * @var array
      *
-     * @ManyToMany(targetEntity="Skill", mappedBy="candidates")
+     * @ManyToMany(targetEntity="Skill")
+     * @ORM\JoinTable(name="SkillCandidat",
+     *      joinColumns={@ORM\JoinColumn(name="candidat_id",referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="skill_id",referencedColumnName="id")})
      */
     private $nomSkill;
 

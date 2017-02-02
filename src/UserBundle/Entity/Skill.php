@@ -13,9 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Skill
 {
-    function __construct() {
-        $this->candidates = new ArrayCollection();
-        }
+
     /**
      * @var int
      *
@@ -32,22 +30,6 @@ class Skill
      */
     private $name;
 
-    /**     
-     *
-     * @var array 
-     * 
-     * @ORM\ManyToMany(targetEntity="Candidat", inversedBy="nomSkill")
-     * @ORM\JoinTable(name="SkillCandidat")
-     */
-    private $candidates;
-    
-    function getCandidates() {
-        return $this->candidates;
-    }
-
-    function setCandidates($candidates) {
-        $this->candidates = $candidates;
-    }
 
         /**
      * Get id

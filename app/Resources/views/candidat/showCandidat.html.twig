@@ -27,10 +27,10 @@
                 <td>{{ candidat.age }}</td>
             </tr>
             <tr>
-                <th>Skills :{{skills|length}}</th>
-              {#  {% for skill in skills %}
+                <th>Skills :</th>
+                {% for skill in candidat.nomSkill %}
                     <td>{{ skill.name }}</td>
-                {% endfor %}#}
+                {% endfor %}
             </tr>
         <tr>
             <th>Telephone</th>

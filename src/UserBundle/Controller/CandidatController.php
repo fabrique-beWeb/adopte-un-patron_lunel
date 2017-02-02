@@ -45,7 +45,7 @@ class CandidatController extends Controller
             $candidat->getImage()->move('../web/uploads', $image);
             $candidat->setImage($image);
             
-            $candidat->getNomSkill()->add($this->getDoctrine()->getRepository(Skill::class)->find(0));
+//            $candidat->getNomSkill()->add($this->getDoctrine()->getRepository(Skill::class)->find(0));
 //            $candidat->getNomSkill()->add($this->getDoctrine()->getManager()->find(\UserBundle\Entity\Skill::class, 1));
             
             $em = $this->getDoctrine()->getManager();
@@ -71,10 +71,9 @@ class CandidatController extends Controller
     public function showAction(Candidat $candidat)
     {
 //        $deleteForm = $this->createDeleteForm($candidat);
-
         return $this->render('candidat/showCandidat.html.twig', array(
-            'candidat' => $candidat,
-            'skills' => $candidat->getNomSkill()
+            'candidat' => $candidat
+//            'skills' => $candidat->getNomSkill()
 //            'delete_form' => $deleteForm->createView(),
         ));
     }

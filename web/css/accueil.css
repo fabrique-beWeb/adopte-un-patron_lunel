@@ -29,6 +29,7 @@ body {
   text-align: center; }
 
 .colorbouttton {
-  background-color: #94c11e; }
+  background-color: #94c11e;
+  border-radius: 0px; }
 
 /*# sourceMappingURL=accueil.css.map */
