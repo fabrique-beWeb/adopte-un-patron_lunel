@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Offre
  *
- * @ORM\Table(name="offre")
+ * @ORM\Table(name="adopteUnPatron_offre")
  * @ORM\Entity(repositoryClass="OffreBundle\Repository\OffreRepository")
  */
 class Offre {

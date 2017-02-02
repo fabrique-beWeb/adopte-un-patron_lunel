@@ -10,7 +10,7 @@ use UserBundle\Repository\RecruteurRepository;
 /**
  * Recruteur
  *
- * @ORM\Table(name="recruteur")
+ * @ORM\Table(name="adopteUnPatron_recruteur")
  * @ORM\Entity(repositoryClass="UserBundle\Repository\RecruteurRepository")
  */
 class Recruteur implements UserInterface, Serializable
