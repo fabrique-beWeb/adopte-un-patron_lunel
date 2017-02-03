@@ -42,7 +42,6 @@ class OffreType extends AbstractType {
                 ->add('responsabilites')
                 ->add('pourquoiNous')
                 ->add('nousTrouver')
-                ->add('userId', HiddenType::class)
         ;
     }
 

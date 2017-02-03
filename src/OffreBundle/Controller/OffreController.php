@@ -83,7 +83,6 @@ class OffreController extends Controller {
     public function editAction(Request $request, Offre $offre) {
         $editForm = $this->createForm('OffreBundle\Form\OffreType', $offre);
         $editForm->handleRequest($request);
-
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
