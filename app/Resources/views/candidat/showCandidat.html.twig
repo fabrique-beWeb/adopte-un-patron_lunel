@@ -16,7 +16,7 @@
     <div class="couleurfond col-md-12">
     <h1 class="police text-position">Candidat</h1>
     
-     <div class="panel panel-default">
+     
     <table class="col-md-offset-4 col-md-2 policebot">
         <tbody> 
             <tr>
@@ -100,8 +100,29 @@
     </tbody>
 </table>
 
+
 <ul>
 
+    </div>      
+      </div> 
+ </div>
+        <div class="container-fluid inscritext">
+    <div class="row">
+    <div class="couleurfond col-md-12">
+            <ul>
+
+        <li>
+            <a type="button" class="btn btn-info col-md-offset-8 col-md-1 colorbouttton " href="{{ path('candidat_edit', { 'id': candidat.id }) }}">Edit</a>
+        </li>
+{#        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>#}
+    </ul>
+  </div>      
+      </div> 
+ </div>
     <li>
         <a href="{{ path('candidat_edit', { 'id': candidat.id }) }}">Edit</a>
     </li>
@@ -111,6 +132,7 @@
                 {{ form_end(delete_form) }}
             </li>#}
 </ul>
+
 
 
 {% endblock %}
