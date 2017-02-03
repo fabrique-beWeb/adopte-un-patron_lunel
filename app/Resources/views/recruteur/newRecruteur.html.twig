@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('./css/inscription.css')}}" />
 {% endblock %}
 
-    {% form_theme form 'bootstrap_3_layout.html.twig' %}
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
 {% block body %}
     <div class="container-fluid inscritext">
         <div class="row">
@@ -18,26 +18,22 @@
                 <h1 class="police séparation2 text-position">Recruteur creation</h1>
 
                 {{ form_start(form) }}
-
-                <div class="col-md-6">{{ form_row(form.nom) }}
-                    {{ form_row(form.prenom) }}</div>
-                <div class="col-md-6">{{ form_row(form.entreprise) }} 
-                    {{ form_row(form.email) }} </div>
-                <div class="col-md-6">{{ form_row(form.mdp) }} 
-                    {{ form_row(form.codePostal) }} </div>
-                <div class="col-md-6">{{ form_row(form.description) }}
-                    {{ form_row(form.logo) }}</div>
+                    <div class="col-md-6">
+                        {{ form_row(form.nom) }}
+                        {{ form_row(form.prenom) }}
+                        {{ form_row(form.entreprise) }} 
+                        {{ form_row(form.email) }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form_row(form.mdp) }} 
+                        {{ form_row(form.codePostal) }}
+                        {{ form_row(form.description) }}
+                        {{ form_row(form.logo) }}
+                    </div>
+                    
+                    <input class="btn btn-info btn-sm col-md-2 noRadius colorbouttton pull-right col-xs-2" type="submit" value="S'enregistrer" />
+                {{ form_end(form) }}
             </div>
         </div>
     </div>
-    <input class="wtfbutton colorbouttton col-md-offset-8 col-md-2 col-xs-offset-8 col-xs-2"type="submit" value="S'enregistré" />
-    {{ form_end(form) }}
-
-
-
-    {#    <ul>
-            <li>
-                <a href="{{ path('recruteur_index') }}">Back to the list</a>
-            </li>
-        </ul>#}
 {% endblock %}
