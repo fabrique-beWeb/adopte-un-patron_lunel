@@ -11,21 +11,6 @@ use UserBundle\Entity\Skill;
 
 class CandidatController extends Controller
 {
-//    /**
-//     * Lists all candidat entities.
-//     *
-//     * @Route("candidat/", name="candidat_index")
-//     * @Method("GET")
-//     */
-//    public function indexAction()
-//    {
-//        $em = $this->getDoctrine()->getManager();
-//
-//        $candidat = $em->getRepository('UserBundle:Candidat')->findById($this->getUser());
-//        return $this->render('candidat/index.html.twig', array(
-//                    'candidat' => $candidat,
-//        ));
-//    }
 
     /**
      * Page d'inscription des candidats.
@@ -40,14 +25,12 @@ class CandidatController extends Controller
         $form->handleRequest($request);
         $candidat->setRole(array("ROLE_CANDIDAT"));
         
+        
         if ($form->isSubmitted() && $form->isValid()) {
             $image = md5(uniqid()) . "." . $candidat->getImage()->guessExtension();
             $candidat->getImage()->move('../web/uploads', $image);
             $candidat->setImage($image);
-            
-//            $candidat->getNomSkill()->add($this->getDoctrine()->getRepository(Skill::class)->find(0));
-//            $candidat->getNomSkill()->add($this->getDoctrine()->getManager()->find(\UserBundle\Entity\Skill::class, 1));
-            
+                        
             $em = $this->getDoctrine()->getManager();
             $candidat->setDateInscription(date("d/m/Y"));
             $em->persist($candidat);
@@ -70,11 +53,8 @@ class CandidatController extends Controller
      */
     public function showAction(Candidat $candidat)
     {
-//        $deleteForm = $this->createDeleteForm($candidat);
         return $this->render('candidat/showCandidat.html.twig', array(
             'candidat' => $candidat
-//            'skills' => $candidat->getNomSkill()
-//            'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -99,44 +79,6 @@ class CandidatController extends Controller
         return $this->render('candidat/editCandidat.html.twig', array(
             'candidat' => $candidat,
             'edit_form' => $editForm->createView(),
-//            'delete_form' => $deleteForm->createView(),
         ));
     }
-
-//    /**
-//     * Deletes a candidat entity.
-//     *
-//     * @Route("candidat/{id}", name="candidat_delete")
-//     * @Method("DELETE")
-//     */
-//    public function deleteAction(Request $request, Candidat $candidat)
-//    {
-//        $form = $this->createDeleteForm($candidat);
-//        $form->handleRequest($request);
-//
-//        if ($form->isSubmitted() && $form->isValid()) {
-//            $em = $this->getDoctrine()->getManager();
-//            $em->remove($candidat);
-//            $em->flush($candidat);
-//        }
-//
-//        return $this->redirectToRoute('candidat_index');
-//    }
-//
-//    /**
-//     * Creates a form to delete a candidat entity.
-//     *
-//     * @param Candidat $candidat The candidat entity
-//     *
-//     * @return Form The form
-//     */
-//    private function createDeleteForm(Candidat $candidat)
-//    {
-//        return $this->createFormBuilder()
-//            ->setAction($this->generateUrl('candidat_delete', array('id' => $candidat->getId())))
-//            ->setMethod('DELETE')
-//            ->getForm()
-//        ;
-//    }
-    
 }

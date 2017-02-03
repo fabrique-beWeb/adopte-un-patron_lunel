@@ -1,9 +1,9 @@
 {% extends 'template.html.twig' %}
+
 {% block stylesheets %}
-            <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.css')}}"/>
-            <link rel="stylesheet" type="text/css" href="{{ asset('./css/navbar.css')}}" />
-            <link rel="stylesheet" type="text/css" href="{{ asset('./css/gestionProfilCandidat.css')}}" />
-        {% endblock %}
+    {{ parent() }}
+        <link rel="stylesheet" type="text/css" href="{{ asset('./css/gestionProfilCandidat.css')}}" />
+{% endblock %}
  
 {% block body %}
         <div class="container-fluid inscritext">

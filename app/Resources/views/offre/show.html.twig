@@ -1,5 +1,10 @@
 {% extends 'template.html.twig' %}
 
+{% block title %}
+    {{ parent() }}
+    - offre detail
+{% endblock %}
+
 {% block stylesheets %}
     {{ parent() }}
         <link rel="stylesheet" type="text/css" href="{{ asset('./css/mainOffres.css')}}" />

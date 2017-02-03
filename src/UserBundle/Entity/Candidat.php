@@ -609,7 +609,7 @@ class Candidat implements UserInterface, Serializable {
     }
 
     public function getRoles() {
-        return array();
+        return $this->role;
     }
 
     public function getSalt() {

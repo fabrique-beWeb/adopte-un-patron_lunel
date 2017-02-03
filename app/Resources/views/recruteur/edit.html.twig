@@ -1,14 +1,20 @@
 {% extends 'template.html.twig' %}
+
+{% block title %}
+    {{ parent() }}
+    - gestion recruteur
+{% endblock %}
+
 {% block stylesheets %}
-            <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.css')}}"/>
-            <link rel="stylesheet" type="text/css" href="{{ asset('./css/navbar.css')}}" />
-            <link rel="stylesheet" type="text/css" href="{{ asset('./css/gestionProfilRecruteur.css')}}" />
-        {% endblock %}
+    {{ parent() }}
+        <link rel="stylesheet" type="text/css" href="{{ asset('./css/gestionProfilRecruteur.css')}}" />
+{% endblock %}
+
 {% block body %}
     <div class="container-fluid inscritext">
     <div class="row">
     <div class="couleurfond col-md-12">
-    <h1 class=" formtitre police text-position">Recruteur edit</h1>
+    <h1 class=" formtitre police text-position">modification profil</h1>
 
     {{ form_start(edit_form) }}
         <div class="col-md-6 policespecial">{{ form_row(edit_form.nom) }}

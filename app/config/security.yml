@@ -46,7 +46,7 @@ security:
             
             logout:
                 path: logOut
-                target: /        
+                target: /                
                 
 #    access_control:
 #        - { path: ^/recruteur , roles: ROLE_RECRUTEUR }
