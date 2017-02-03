@@ -48,9 +48,9 @@ security:
                 path: logOut
                 target: /        
                 
-#    access_control:
-#        - { path: ^/recruteur , roles: ROLE_RECRUTEUR }
-#        - { path: ^/candidat , roles: ROLE_CANDIDAT }
+    access_control:
+        - { path: ^/recruteur , roles: ROLE_RECRUTEUR }
+        - { path: ^/candidat , roles: ROLE_CANDIDAT }
 
                 
             # activate different ways to authenticate

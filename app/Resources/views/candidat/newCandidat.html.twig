@@ -22,13 +22,14 @@
                     {{ form_row(form.adress) }}</div>
                 <div class="col-md-6">{{ form_row(form.codePostal) }}
                     {{ form_row(form.email) }}</div>
+                <div class="col-md-6 ">{{ form_row(form.nomSkill) }}<p class="notice">Ctrl+clic pour en selectionner d'avantage</p></div>
                 <div class="col-md-6 "> {{ form_row(form.mdp) }}</div>
                 <div class="col-md-6 ">{{ form_row(form.description) }}</div>
                 <div class="col-md-6 ">{{ form_row(form.image) }}</div>
-                {% for n in nomSkill %}<p><input type="checkbox"/>{{n.name}}</p>
+{#                {% for n in nomSkill %}<p><input type="checkbox"/>{{n.name}}</p>
                     {{ form_row(form.nomSkill, {'placeholder': n.name}) }}
                     
-                {% endfor %}
+                {% endfor %}#}
                 <input class="pull-right wtfbutton colorbouttton" type="submit" value="S'enregistrer" />
                 {{ form_end(form) }}
 
