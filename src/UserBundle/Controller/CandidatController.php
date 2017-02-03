@@ -27,6 +27,7 @@ class CandidatController extends Controller
         $nomSkill = $this->getDoctrine()->getRepository('UserBundle\Entity\Skill')->findAll();
         
         
+        
         if ($form->isSubmitted() && $form->isValid()) {
             $image = md5(uniqid()) . "." . $candidat->getImage()->guessExtension();
             $candidat->getImage()->move('../web/uploads', $image);
