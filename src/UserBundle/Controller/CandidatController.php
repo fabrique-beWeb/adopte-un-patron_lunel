@@ -7,6 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use UserBundle\Entity\Candidat;
+use UserBundle\Entity\Skill;
 
 class CandidatController extends Controller
 {
@@ -37,11 +38,16 @@ class CandidatController extends Controller
         $candidat = new Candidat();
         $form = $this->createForm('UserBundle\Form\CandidatType', $candidat);
         $form->handleRequest($request);
-
+        $candidat->setRole(array("ROLE_CANDIDAT"));
+        
         if ($form->isSubmitted() && $form->isValid()) {
             $image = md5(uniqid()) . "." . $candidat->getImage()->guessExtension();
             $candidat->getImage()->move('../web/uploads', $image);
             $candidat->setImage($image);
+            
+//            $candidat->getNomSkill()->add($this->getDoctrine()->getRepository(Skill::class)->find(0));
+//            $candidat->getNomSkill()->add($this->getDoctrine()->getManager()->find(\UserBundle\Entity\Skill::class, 1));
+            
             $em = $this->getDoctrine()->getManager();
             $candidat->setDateInscription(date("d/m/Y"));
             $em->persist($candidat);
@@ -65,9 +71,9 @@ class CandidatController extends Controller
     public function showAction(Candidat $candidat)
     {
 //        $deleteForm = $this->createDeleteForm($candidat);
-
         return $this->render('candidat/showCandidat.html.twig', array(
-            'candidat' => $candidat,
+            'candidat' => $candidat
+//            'skills' => $candidat->getNomSkill()
 //            'delete_form' => $deleteForm->createView(),
         ));
     }

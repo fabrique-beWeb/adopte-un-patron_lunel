@@ -26,6 +26,7 @@ class CandidatType extends AbstractType {
                 ->add('prenom')
                 ->add('dateNaissance', DateType::class, array('years' => range($annee, $annee2)))
                 ->add('age')
+                ->add('nomSkill')
                 ->add('telephone')
                 ->add('adress')
                 ->add('codePostal')

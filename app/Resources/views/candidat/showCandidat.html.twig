@@ -10,7 +10,7 @@
     <div class="couleurfond col-md-12">
     <h1 class="police text-position">Candidat</h1>
     
-     <div class="panel panel-default">
+     
     <table class="col-md-offset-4 col-md-2 policebot">
         <tbody> 
             <tr>
@@ -34,64 +34,77 @@
                 <td>{{ candidat.age }}</td>
             </tr>
             <tr>
-                <th>Telephone</th>
-                <td>{{ candidat.telephone }}</td>
+                <th>Skills :</th>
+                {% for skill in candidat.nomSkill %}
+                    <td>{{ skill.name }}</td>
+                {% endfor %}
             </tr>
-            <tr>
-                <th>Adress</th>
-                <td>{{ candidat.adress }}</td>
-            </tr>
-            <tr>
-                <th>Codepostal</th>
-                <td>{{ candidat.codePostal }}</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td>{{ candidat.email }}</td>
-            </tr>
-            <tr>
-                <th>Mdp</th>
-                <td>{{ candidat.mdp }}</td>
-            </tr>
-            <tr>
-                <th>Visite</th>
-                <td>{{ candidat.visite }}</td>
-            </tr>
-            <tr>
-                <th>Favori</th>
-                <td>{{ candidat.favori }}</td>
-            </tr>
-            <tr>
-                <th>Matchs</th>
-                <td>{{ candidat.matchs }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ candidat.description }}</td>
-            </tr>
-            <tr>
-                <th>Dateinscription</th>
-                <td>{{ candidat.dateInscription }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td>{{ candidat.image }}</td>
-            </tr>
-            <tr>
-                <th>Posterecherche</th>
-                <td>{% if candidat.posteRecherche %}{{ candidat.posteRecherche|join(', ') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Rencontre recruteur</th>
-                <td>{% if candidat.rencontreRecruteur %}{{ candidat.rencontreRecruteur|join(', ') }}{% endif %}</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-    <ul>
+        <tr>
+            <th>Telephone</th>
+            <td>{{ candidat.telephone }}</td>
+        </tr>
+        <tr>
+            <th>Adress</th>
+            <td>{{ candidat.adress }}</td>
+        </tr>
+        <tr>
+            <th>Codepostal</th>
+            <td>{{ candidat.codePostal }}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{ candidat.email }}</td>
+        </tr>
+        <tr>
+            <th>Mdp</th>
+            <td>{{ candidat.mdp }}</td>
+        </tr>
+        <tr>
+            <th>Visite</th>
+            <td>{{ candidat.visite }}</td>
+        </tr>
+        <tr>
+            <th>Favori</th>
+            <td>{{ candidat.favori }}</td>
+        </tr>
+        <tr>
+            <th>Matchs</th>
+            <td>{{ candidat.matchs }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ candidat.description }}</td>
+        </tr>
+        <tr>
+            <th>Dateinscription</th>
+            <td>{{ candidat.dateInscription }}</td>
+        </tr>
+        <tr>
+            <th>Image</th>
+            <td>{{ candidat.image }}</td>
+        </tr>
+        <tr>
+            <th>Posterecherche</th>
+            <td>{% if candidat.posteRecherche %}{{ candidat.posteRecherche|join(', ') }}{% endif %}</td>
+        </tr>
+        <tr>
+            <th>Rencontrerecruteur</th>
+            <td>{% if candidat.rencontreRecruteur %}{{ candidat.rencontreRecruteur|join(', ') }}{% endif %}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+    </div>      
+      </div> 
+ </div>
+        <div class="container-fluid inscritext">
+    <div class="row">
+    <div class="couleurfond col-md-12">
+            <ul>
 
         <li>
-            <a type="button" class="btn btn-info col-md-offset-1 col-md-1 colorbouttton" href="{{ path('candidat_edit', { 'id': candidat.id }) }}">Edit</a>
+            <a type="button" class="btn btn-info col-md-offset-8 col-md-1 colorbouttton " href="{{ path('candidat_edit', { 'id': candidat.id }) }}">Edit</a>
         </li>
 {#        <li>
             {{ form_start(delete_form) }}
@@ -99,7 +112,7 @@
             {{ form_end(delete_form) }}
         </li>#}
     </ul>
-    </div>      
+  </div>      
       </div> 
- </div> 
+ </div>
 {% endblock %}

@@ -49,6 +49,7 @@ class RecruteurController extends Controller {
             $recruteur->getLogo()->move('../web/uploads', $logo);
             $recruteur->setLogo($logo);
             $em = $this->getDoctrine()->getManager();
+            $recruteur->setDateInscription(date("d/m/Y"));            
             $em->persist($recruteur);
             $em->flush($recruteur);
 

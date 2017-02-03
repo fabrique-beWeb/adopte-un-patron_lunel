@@ -51,8 +51,9 @@ label {
 }*/
 .wtfbutton {
   font-size: 17px;
-  color: #185e99;
-  width: 10%; }
+  width: 10%;
+  color: #fff;
+  border: none; }
 
 .inscritext {
   width: 60%;

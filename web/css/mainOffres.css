@@ -23,7 +23,6 @@ h1, h2, a {
 
 .fond {
   background-color: #185e99;
-  height: 1000px;
   padding: 0; }
   .fond h1 {
     background-color: #94c11e;
@@ -34,6 +33,14 @@ h1, h2, a {
   border-bottom: 2px solid #ebffff;
   background-color: #94c11e;
   margin-bottom: 2%; }
+  @media screen and (max-width: 768px) {
+    .offre {
+      border-top: 2px solid #ebffff;
+      margin-bottom: 5%; } }
+
+@media screen and (max-width: 768px) {
+  .hideResponsive {
+    display: none; } }
 
 /* mise en forme des offres */
 .head {
@@ -54,6 +61,7 @@ table, tr, th, td {
   border: 1px solid black; }
   table th, tr th, th th, td th {
     background-color: #ebffff;
+    color: #185e99;
     padding: 5px; }
   table td, tr td, th td, td td {
     color: #ebffff;
