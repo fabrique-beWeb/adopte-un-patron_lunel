@@ -49,18 +49,32 @@ class CandidatController extends Controller
         ));
     }
 
+//    /**
+//     * Finds and displays a candidat entity.
+//     *
+//     * @Route("candidat/index/{id}", name="candidat_show")
+//     * @Method("GET")
+//     */
+//    public function showAction(Candidat $candidat)
+//    {
+//        return $this->render('candidat/showCandidat.html.twig', array(
+//            'candidat' => $candidat
+//        ));
+//    }
+    
+    //Index Candidat
     /**
-     * Finds and displays a candidat entity.
-     *
-     * @Route("candidat/index/{id}", name="candidat_show")
-     * @Method("GET")
+     * @Route("candidat/index", name="indexCandidat")
      */
-    public function showAction(Candidat $candidat)
-    {
+    public function indexRecruteur() {
+        $em = $this->getDoctrine()->getManager();
+
+        $candidat = $em->getRepository('UserBundle:Candidat')->find($this->getUser()->getId());
         return $this->render('candidat/showCandidat.html.twig', array(
-            'candidat' => $candidat
+                    'candidat' => $candidat
         ));
     }
+
 
     /**
      * Displays a form to edit an existing candidat entity.

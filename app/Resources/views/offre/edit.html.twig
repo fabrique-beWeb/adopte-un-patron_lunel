@@ -7,25 +7,41 @@
 
 {% block stylesheets %}
     {{ parent() }}
-        
+    <link rel="stylesheet" type="text/css" href="{{ asset('./css/gestionProfilRecruteur.css')}}" />   
 {% endblock %}
 
 {% block body %}
-    <h1>Offre edit</h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="couleurfond col-md-12">
+                <h1 class="séparation text-position"> Edition offre </h1>
+                {{ form_start(edit_form) }}
+                <div class="col-md-6">
+                    {{ form_row(edit_form.titre) }}
+                    {{ form_row(edit_form.nomEntreprise) }}
+                    {{ form_row(edit_form.experienceRequis ) }}
+                    {{ form_row(edit_form.poste ) }}
+                    {{ form_row(edit_form.typeContrat) }}
+                </div>
 
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
+                <div class="col-md-6">
+                    {{ form_row(edit_form.salaire ) }}
+                    {{ form_row(edit_form.duree ) }}
+                    {{ form_row(edit_form.lieu) }}
+                    {{ form_row(edit_form.responsabilites) }}
+                    {{ form_row(edit_form.pourquoiNous) }}
+                    {{ form_row(edit_form.nousTrouver) }}
+                    {{ form_row(edit_form.userId) }}
+                </div>
+                <input type="submit" class="btn btn-info btn-sm col-md-1 noRadius colorbouttton pull-right" value="Editer" />
+                {{ form_end(edit_form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('offre_index') }}">Back to the list</a>
-        </li>
-{#        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>#}
-    </ul>
+                <ul>
+                    <li>
+                        <a class="btn btn-default btn-sm col-md-1 noRadius colorbouttton" href="{{ path('indexRecruteur') }}">Mes offres</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 {% endblock %}
