@@ -10,7 +10,7 @@ use UserBundle\Repository\RecruteurRepository;
 /**
  * Recruteur
  *
- * @ORM\Table(name="recruteur")
+ * @ORM\Table(name="adopteUnPatron_recruteur")
  * @ORM\Entity(repositoryClass="UserBundle\Repository\RecruteurRepository")
  */
 class Recruteur implements UserInterface, Serializable
@@ -114,6 +114,13 @@ class Recruteur implements UserInterface, Serializable
      * @ORM\Column(name="souhaitCandidat", type="array", nullable=true)
      */
     private $souhaitCandidat;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="$dateInscription", type="string")
+     */
+    private $dateInscription;
 
 
     /**
@@ -427,6 +434,29 @@ class Recruteur implements UserInterface, Serializable
 
         return $this;
     }
+    
+        /**
+     * Set dateInscription
+     *
+     * @param string $dateInscription
+     *
+     * @return Recruteur
+     */
+    public function setDateInscription($dateInscription) {
+        $this->dateInscription = $dateInscription;
+
+        return $this;
+    }
+
+    /**
+     * Get dateInscription
+     *
+     * @return string
+     */
+    public function getDateInscription() {
+        return $this->dateInscription;
+    }
+
 
     /**
      * Get souhaitCandidat
@@ -447,7 +477,7 @@ class Recruteur implements UserInterface, Serializable
     }
 
     public function getRoles() {
-        return array();
+        return $this->role;
     }
 
     public function getSalt() {
@@ -472,6 +502,9 @@ class Recruteur implements UserInterface, Serializable
         $this->email,
         $this->mdp
         ) = unserialize($serialized);
+    }
+    public function __toString() {
+        return $this->entreprise;
     }
 
 }

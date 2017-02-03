@@ -50,6 +50,10 @@
                 <td>{{ recruteur.matchs }}</td>
             </tr>
             <tr>
+                <th>DateInscription</th>
+                <td>{{ recruteur.dateInscription }}</td>
+            </tr>
+            <tr>
                 <th>Role</th>
                 <td>{% if recruteur.role %}{{ recruteur.role|join(', ') }}{% endif %}</td>
             </tr>
@@ -62,15 +66,15 @@
 
     <ul>
         <li>
-            <a href="{{ path('recruteur_index') }}">Back to the list</a>
+            <a href="{{ path('indexRecruteur') }}">Back to the list</a>
         </li>
         <li>
             <a href="{{ path('recruteur_edit', { 'id': recruteur.id }) }}">Edit</a>
         </li>
         <li>
-            {{ form_start(delete_form) }}
+{#            {{ form_start(delete_form) }}
                 <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
+            {{ form_end(delete_form) }}#}
         </li>
     </ul>
             

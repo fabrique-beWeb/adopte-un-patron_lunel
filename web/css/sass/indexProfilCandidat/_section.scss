@@ -1,0 +1,40 @@
+body {
+    margin-bottom: 50px;
+}
+.police {
+    font-size: 27px;
+    color: $couleurprincipale;
+     
+}
+
+.séparation {
+    border-bottom: solid 2px $couleursecondaire ;
+}
+
+.policebot {
+     font-size: 17px;
+    color: $couleurprincipale;   
+}
+
+.espacement{
+ 
+    margin-bottom: 40px;  
+}
+
+.couleurfond {
+    background-color: $couleurcomplementaire;
+}
+
+.couleurmid {
+    background-color: $couleursecondaire;
+}
+
+.bordure{
+    border-style: solid 1px $couleursecondaire;
+}
+
+.encadrement{
+      border-style: solid 1px $couleursecondaire;
+}
+
+

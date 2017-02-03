@@ -42,12 +42,15 @@ security:
             form_login:
                 login_path: login
                 check_path: loginCheck
+                default_target_path: /
             
             logout:
                 path: logOut
-                target: /
+                target: /        
                 
-
+#    access_control:
+#        - { path: ^/recruteur , roles: ROLE_RECRUTEUR }
+#        - { path: ^/candidat , roles: ROLE_CANDIDAT }
 
                 
             # activate different ways to authenticate

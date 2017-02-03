@@ -3,18 +3,26 @@
 namespace UserBundle\Entity;
 
 use DateTime;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\ManyToMany;
 use Serializable;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Security\Core\User\UserInterface;
-use UserBundle\Repository\CandidatRepository;
+use Symfony\Component\Validator\Constraints\File;
+
 
 /**
  * Candidat
  *
- * @ORM\Table(name="candidat")
+ * @ORM\Table(name="adopteUnPatron_candidat")
  * @ORM\Entity(repositoryClass="UserBundle\Repository\CandidatRepository")
  */
 class Candidat implements UserInterface, Serializable {
+    function __construct() {
+        $this->nomSkill = new ArrayCollection();
+        }
 
     /**
      * @var int
@@ -124,9 +132,10 @@ class Candidat implements UserInterface, Serializable {
     private $dateInscription;
 
     /**
-     * @var string
+     * @var UploadedFile
      *
-     * @ORM\Column(name="image", type="string", length=512, nullable=true)
+     * @ORM\Column(name="image", type="string", length=512)
+     * @File(mimeTypes={"image/jpg","image/jpeg","image/png"})
      */
     private $image;
 
@@ -143,6 +152,24 @@ class Candidat implements UserInterface, Serializable {
      * @ORM\Column(name="rencontreRecruteur", type="array", nullable=true)
      */
     private $rencontreRecruteur;
+    
+        /**
+     * @var array
+     *
+     * @ORM\Column(name="role", type="array")
+     */
+    private $role;
+    
+    /**
+     * @var array
+     *
+     * @ManyToMany(targetEntity="Skill")
+     * @ORM\JoinTable(name="SkillCandidat",
+     *      joinColumns={@ORM\JoinColumn(name="candidat_id",referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="skill_id",referencedColumnName="id")})
+     */
+    private $nomSkill;
+
 
     /**
      * Get id
@@ -525,6 +552,52 @@ class Candidat implements UserInterface, Serializable {
      */
     public function getRencontreRecruteur() {
         return $this->rencontreRecruteur;
+    }
+    
+    /**
+     * Set role
+     *
+     * @param array $role
+     *
+     * @return Candidat
+     */
+    public function setRole($role)
+    {
+        $this->role = $role;
+
+        return $this;
+    }
+
+    /**
+     * Get role
+     *
+     * @return array
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+    
+        /**
+     * Set nomSkill
+     *
+     * @param array $nomSkill
+     *
+     * @return Candidat
+     */
+    public function setNomSkill($nomSkill) {
+        $this->nomSkill = $nomSkill;
+
+        return $this;
+    }
+
+    /**
+     * Get nomSkill
+     *
+     * @return array
+     */
+    public function getNomSkill() {
+        return $this->nomSkill;
     }
 
     public function eraseCredentials() {

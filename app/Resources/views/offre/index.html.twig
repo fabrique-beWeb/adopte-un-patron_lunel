@@ -1,63 +1,50 @@
 {% extends 'template.html.twig' %}
 
-{% block body %}
-    <h1>Offres list</h1>
+{% block stylesheets %}
+    {{ parent() }}
+        <link rel="stylesheet" type="text/css" href="{{ asset('./css/mainOffres.css')}}" />
+{% endblock%}
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Titre</th>
-                <th>Nomentreprise</th>
-                <th>Nomskill</th>
-                <th>Poste</th>
-                <th>Typecontrat</th>
-                <th>Salaire</th>
-                <th>Duree</th>
-                <th>Experiencerequis</th>
-                <th>Lieu</th>
-                <th>Responsabilites</th>
-                <th>Pourquoinous</th>
-                <th>Noustrouver</th>
-                <th>Userid</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+{% block body %}
+    <div class=" fond col-md-12 "> 
+        <div class="noPadding col-md-12">
+            <h1 >Nos offres</h1>
+        </div>
         {% for offre in offres %}
-            <tr>
-                <td><a href="{{ path('offre_show', { 'id': offre.id }) }}">{{ offre.id }}</a></td>
-                <td>{{ offre.titre }}</td>
-                <td>{{ offre.nomEntreprise }}</td>
-                <td>{% if offre.nomSkill %}{{ offre.nomSkill|join(', ') }}{% endif %}</td>
-                <td>{{ offre.poste }}</td>
-                <td>{{ offre.typeContrat }}</td>
-                <td>{{ offre.salaire }}</td>
-                <td>{{ offre.duree }}</td>
-                <td>{{ offre.experienceRequis }}</td>
-                <td>{{ offre.lieu }}</td>
-                <td>{{ offre.responsabilites }}</td>
-                <td>{{ offre.pourquoiNous }}</td>
-                <td>{{ offre.nousTrouver }}</td>
-                <td>{{ offre.userId }}</td>
-                <td>
+            <div class="offre col-xs-12 col-md-offset-1 col-md-10">
+                <div class="head">
+                    <h2>{{ offre.titre }}</h2>
+                    <h3>{{ offre.nomEntreprise }}</h3>
+                </div>
+                <div class="hideResponsive">
+                    <span>{% if offre.nomSkill %}{{ offre.nomSkill|join(', ') }}{% endif %}</span>
+                    <span class="decal"><span class="fa fa-tag" aria-hidden="true"></span>{{ offre.poste }}</span>
+                    <span class="decal"><span class="fa fa-handshake-o" aria-hidden="true"></span>{{ offre.typeContrat }}</span>
+                    <span class="decal"><span class="fa fa-money" aria-hidden="true"></span>{{ offre.salaire }}€</span>
+                    <span class="decal"><span class="fa fa-calendar-o" aria-hidden="true"></span>{{ offre.duree }}</span>
+                    <span class="decal"><span class="fa fa-wrench" aria-hidden="true"></span>{{ offre.experienceRequis }}</span>
+                    <span class="decal"><span class="fa fa-map-marker" aria-hidden="true"></span>{{ offre.lieu }}</span>
+                    <span class="decal"><span class="fa fa-key" aria-hidden="true"></span>{{ offre.responsabilites }}</span>
+                    <span class="decal"><span class="fa fa-question" aria-hidden="true"></span>{{ offre.pourquoiNous }}</span>
+                    <span class="decal"><span class="fa fa-map-pin" aria-hidden="true"></span>{{ offre.nousTrouver }}</span>
+                </div>
+                <span>
                     <ul>
                         <li>
-                            <a href="{{ path('offre_show', { 'id': offre.id }) }}">show</a>
+                            <a href="{{ path('offre_show', { 'id': offre.id }) }}">Details</a>
                         </li>
-                        <li>
+                        {#<li>
                             <a href="{{ path('offre_edit', { 'id': offre.id }) }}">edit</a>
-                        </li>
+                        </li>#}
                     </ul>
-                </td>
-            </tr>
+                </span>
+            </div>
         {% endfor %}
-        </tbody>
-    </table>
+    </div>
 
-    <ul>
+{#    <ul>
         <li>
             <a href="{{ path('offre_new') }}">Create a new offre</a>
         </li>
-    </ul>
+    </ul>#}
 {% endblock %}

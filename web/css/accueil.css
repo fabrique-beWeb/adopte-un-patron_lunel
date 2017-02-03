@@ -1,0 +1,35 @@
+@charset "UTF-8";
+.colornav {
+  background-color: #94c11e; }
+
+body {
+  margin-bottom: 50px; }
+
+.police {
+  font-size: 27px;
+  color: #ebffff; }
+
+.séparation {
+  border-top: solid 2px #94c11e; }
+
+.policebot {
+  font-size: 17px;
+  color: #ebffff; }
+
+.espacement {
+  margin-bottom: 40px; }
+
+.couleurfond {
+  background-color: #185e99; }
+
+.couleurmid {
+  background-color: #94c11e; }
+
+.text-position {
+  text-align: center; }
+
+.colorbouttton {
+  background-color: #94c11e;
+  border-radius: 0px; }
+
+/*# sourceMappingURL=accueil.css.map */

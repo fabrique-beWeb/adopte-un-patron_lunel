@@ -1,0 +1,79 @@
+@charset "UTF-8";
+.colornav {
+  background-color: #94c11e; }
+
+.couleurfond {
+  background-color: #185e99; }
+
+body {
+  margin-bottom: 50px; }
+
+.espacement {
+  margin-bottom: 40px;
+  padding-left: 20px; }
+
+.police {
+  font-size: 50px;
+  color: #ebffff; }
+
+.séparation {
+  border-top: solid 2px #94c11e; }
+
+.policebot {
+  font-size: 17px;
+  color: #185e99; }
+
+.couleurmid {
+  background-color: #94c11e; }
+
+.colorcreate {
+  font-size: 23px;
+  color: #94c11e; }
+
+.inscritext {
+  text-align: left; }
+
+.séparation2 {
+  border-bottom: solid 2px #94c11e; }
+
+label {
+  display: block;
+  font-size: 20px;
+  color: #94c11e;
+  margin-bottom: 15px; }
+
+/*input{
+    background-color: $couleurprincipale ;
+    position : absolute;
+    left: 50%;
+    margin-bottom: 15px;  
+    padding-left: 15px; 
+}*/
+.wtfbutton {
+  font-size: 17px;
+  width: 10%;
+  color: #fff;
+  border: none; }
+
+.inscritext {
+  width: 60%;
+  padding: 12px; }
+
+.wtfimg {
+  font-size: 10px;
+  color: #185e99;
+  width: 10%; }
+
+.text-position {
+  text-align: center; }
+
+.colorbouttton {
+  background-color: #94c11e; }
+
+.position {
+  margin-bottom: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 50px; }
+
+/*# sourceMappingURL=inscription.css.map */

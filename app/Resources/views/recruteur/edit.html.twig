@@ -1,21 +1,35 @@
 {% extends 'template.html.twig' %}
-
+{% block stylesheets %}
+            <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.css')}}"/>
+            <link rel="stylesheet" type="text/css" href="{{ asset('./css/navbar.css')}}" />
+            <link rel="stylesheet" type="text/css" href="{{ asset('./css/gestionProfilRecruteur.css')}}" />
+        {% endblock %}
 {% block body %}
-    <h1>Recruteur edit</h1>
+    <div class="container-fluid inscritext">
+    <div class="row">
+    <div class="couleurfond col-md-12">
+    <h1 class=" formtitre police text-position">Recruteur edit</h1>
 
     {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+        <div class="col-md-6 policespecial">{{ form_row(edit_form.nom) }}
+        {{ form_row(edit_form.prenom) }} </div>
+        <div class="col-md-6 policespecial">{{ form_row(edit_form.entreprise ) }}
+        {{ form_row(edit_form.mdp) }} </div>
+        <div class="col-md-6 policespecial">{{ form_row(edit_form.codePostal ) }}
+        {{ form_row(edit_form.description ) }} </div>
+        <div class="col-md-6 policespecial">{{ form_row(edit_form.logo) }}</div>
+       
+        <input type="submit button" class="btn btn-info btn-sm text-position col-md-offset-0 col-md-1 colorbouttton pull-right" value="Edit" />
     {{ form_end(edit_form) }}
 
     <ul>
         <li>
-            <a href="{{ path('recruteur_index') }}">Back to the list</a>
+            <a class="policelien" href="{{ path('indexRecruteur') }}">retour index</a>
         </li>
-        <li>
+{#        <li>
             {{ form_start(delete_form) }}
                 <input type="submit" value="Delete">
             {{ form_end(delete_form) }}
-        </li>
+        </li>#}
     </ul>
 {% endblock %}
