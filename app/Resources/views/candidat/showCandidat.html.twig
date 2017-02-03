@@ -1,11 +1,17 @@
 {% extends 'template.html.twig' %}
-
+{% block stylesheets %}
+   {{ parent() }}
+            <link rel="stylesheet" type="text/css" href="{{ asset('./css/indexProfilCandidat.css')}}" />
+{% endblock %}
 {% block body %}
-
-    <h1>Candidat</h1>
-
-    <table>
-        <tbody>
+ <div class="container-fluid inscritext">
+    <div class="row">
+    <div class="couleurfond col-md-12">
+    <h1 class="police text-position">Candidat</h1>
+    
+     <div class="panel panel-default">
+    <table class="col-md-offset-4 col-md-2 policebot">
+        <tbody> 
             <tr>
                 <th>Id</th>
                 <td>{{ candidat.id }}</td>

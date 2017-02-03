@@ -1,8 +1,14 @@
 {% extends "template.html.twig" %}
 {% block title %}
     {{ parent ()}}
-    - index [recrutor]
+    - gestion profils
 {% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ asset('./css/gestionProfilRecruteur.css')}}" />
+{% endblock %}
+
 {% block body %}
 
     <h1>Offrzerteze edit</h1>

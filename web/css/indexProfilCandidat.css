@@ -6,11 +6,11 @@ body {
   margin-bottom: 50px; }
 
 .police {
-  font-size: 32px;
+  font-size: 27px;
   color: #ebffff; }
 
 .séparation {
-  border-bottom: solid 2px #94c11e; }
+  border-top: solid 2px #94c11e; }
 
 .policebot {
   font-size: 17px;
@@ -25,21 +25,10 @@ body {
 .couleurmid {
   background-color: #94c11e; }
 
-.policespecial {
-  font-size: 20px;
-  color: #94c11e; }
-
-.formtitre {
-  border-bottom: solid 2px #94c11e; }
-
 .text-position {
   text-align: center; }
 
 .colorbouttton {
   background-color: #94c11e; }
 
-.policelien {
-  font-size: 20px;
-  color: #ebffff; }
-
-/*# sourceMappingURL=gestionProfilRecruteur.css.map */
+/*# sourceMappingURL=indexProfilCandidat.css.map */
