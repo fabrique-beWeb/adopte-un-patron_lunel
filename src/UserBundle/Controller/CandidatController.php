@@ -28,6 +28,7 @@ class CandidatController extends Controller
         
         
         
+        
         if ($form->isSubmitted() && $form->isValid()) {
             $image = md5(uniqid()) . "." . $candidat->getImage()->guessExtension();
             $candidat->getImage()->move('../web/uploads', $image);
