@@ -30,6 +30,9 @@ body {
 
 .colorbouttton {
   background-color: #94c11e;
-  border-radius: 0px; }
+  border-radius: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  min-width: 170px; }
 
 /*# sourceMappingURL=accueil.css.map */

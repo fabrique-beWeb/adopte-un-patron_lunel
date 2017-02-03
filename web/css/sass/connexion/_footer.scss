@@ -2,8 +2,11 @@
     text-align: center; 
 }
 .colorbouttton {
-    background-color:  $couleursecondaire;
-    border-radius: 0px;
+   background-color:  $couleursecondaire;
+    border-radius: 0px; 
+    padding-left: 0px;
+    padding-right: 0px;
+    min-width: 170px;
 }
 
 .position {
