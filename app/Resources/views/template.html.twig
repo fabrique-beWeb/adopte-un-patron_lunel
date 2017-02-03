@@ -14,9 +14,12 @@
         {% block nav %}
             {% if is_granted('ROLE_RECRUTEUR') %}
                 {% include ':default:navbarRecruteur.html.twig' %}
+            {% elseif is_granted('ROLE_CANDIDAT') %}
+                {% include ':default:navbarCandidats.html.twig' %}                
             {% else %}
-                {% include ':default:navbar.html.twig' %}
+                 {% include ':default:navbar.html.twig' %}
             {% endif%}
+            
             
         {% endblock %}
         

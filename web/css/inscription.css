@@ -64,6 +64,10 @@ label {
   color: #185e99;
   width: 10%; }
 
+.notice {
+  font-size: 12px;
+  color: white; }
+
 .text-position {
   text-align: center; }
 
