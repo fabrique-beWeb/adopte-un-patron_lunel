@@ -69,11 +69,8 @@ class OffreController extends Controller {
      * @Method("GET")
      */
     public function showAction(Offre $offre) {
-//        $deleteForm = $this->createDeleteForm($offre);
-
         return $this->render('offre/show.html.twig', array(
                     'offre' => $offre,
-//                    'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -84,7 +81,6 @@ class OffreController extends Controller {
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Offre $offre) {
-//        $deleteForm = $this->createDeleteForm($offre);
         $editForm = $this->createForm('OffreBundle\Form\OffreType', $offre);
         $editForm->handleRequest($request);
 
@@ -97,42 +93,6 @@ class OffreController extends Controller {
         return $this->render('offre/edit.html.twig', array(
                     'offre' => $offre,
                     'edit_form' => $editForm->createView(),
-//                    'delete_form' => $deleteForm->createView(),
         ));
     }
-
-//    /**
-//     * Deletes a offre entity.
-//     *
-//     * @Route("/{id}", name="offre_delete")
-//     * @Method("DELETE")
-//     */
-//    public function deleteAction(Request $request, Offre $offre) {
-//        $form = $this->createDeleteForm($offre);
-//        $form->handleRequest($request);
-//
-//        if ($form->isSubmitted() && $form->isValid()) {
-//            $em = $this->getDoctrine()->getManager();
-//            $em->remove($offre);
-//            $em->flush($offre);
-//        }
-//
-//        return $this->redirectToRoute('offre_index');
-//    }
-//
-//    /**
-//     * Creates a form to delete a offre entity.
-//     *
-//     * @param Offre $offre The offre entity
-//     *
-//     * @return \Symfony\Component\Form\Form The form
-//     */
-//    private function createDeleteForm(Offre $offre) {
-//        return $this->createFormBuilder()
-//                        ->setAction($this->generateUrl('offre_delete', array('id' => $offre->getId())))
-//                        ->setMethod('DELETE')
-//                        ->getForm()
-//        ;
-//    }
-
 }

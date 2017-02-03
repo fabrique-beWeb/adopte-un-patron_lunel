@@ -1,21 +1,21 @@
 {% extends 'template.html.twig' %}
+
 {% block title %}
     {{ parent ()}}
-    - {id}
+    - index recruteur
 {% endblock %}
+
 {% block stylesheets %}
-    <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.css')}}"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset('./css/navbar.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('./css/indexProfilRecruteur.css')}}"
-    {% endblock %}
-    {% block body %}    
-        <div class="col-md-12"></div>
-        <h1>Votre Profil</h1>
-        
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ asset('./css/indexProfilRecruteur.css')}}" />
+{% endblock %}
+
+{% block body %}    
+    <h1>Votre Profil</h1>
+
     <table>
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Nom</th>
                 <th>Prenom</th>
                 <th>Entreprise</th>

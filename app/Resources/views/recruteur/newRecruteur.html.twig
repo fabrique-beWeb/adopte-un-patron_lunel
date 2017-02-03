@@ -1,10 +1,16 @@
 {% extends 'template.html.twig' %}
+
+{% block title %}
+    {{ parent() }}
+    - inscription recruteur
+{% endblock %}
+
 {% block stylesheets %}
-    <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.css')}}"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset('./css/navbar.css')}}" />
+    {{ parent() }}
     <link rel="stylesheet" type="text/css" href="{{ asset('./css/inscription.css')}}" />
 {% endblock %}
-{% form_theme form 'bootstrap_3_layout.html.twig' %}
+
+    {% form_theme form 'bootstrap_3_layout.html.twig' %}
 {% block body %}
     <div class="container-fluid inscritext">
         <div class="row">
