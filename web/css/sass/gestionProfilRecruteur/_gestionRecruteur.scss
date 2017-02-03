@@ -1,0 +1,20 @@
+h1{
+    text-align: center;
+    color: $couleurprincipale;
+}
+
+label{
+    color: $couleurprincipale;
+}
+
+.noRadius{
+    border-radius: 0;
+}
+
+.colorbouttton {
+    background-color:  $couleursecondaire;
+}
+
+.séparation{
+    border-bottom: 2px solid $couleursecondaire;
+}
