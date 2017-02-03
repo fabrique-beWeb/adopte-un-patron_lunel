@@ -1,6 +1,7 @@
 .navbar-default{
     background-color: $couleursecondaire;
-    
+    z-index:15;
+
     .navbar-header{
         .navbar-brand{
             color: $couleurcomplementaire;
@@ -15,6 +16,15 @@
         }
     }
 }
+
+  .affix {
+      top: 0;
+      width: 100%;
+  }
+
+  .affix + .container-fluid {
+      padding-top: 70px;
+  }
 /* 
     Created on : 26 janv. 2017, 14:26:05
     Author     : jeanchristian-petetin

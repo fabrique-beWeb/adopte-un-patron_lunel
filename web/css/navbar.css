@@ -16,11 +16,19 @@ ul {
     Author     : jeanchristian-petetin
 */
 .navbar-default {
-  background-color: #94c11e; }
+  background-color: #94c11e;
+  z-index: 15; }
   .navbar-default .navbar-header .navbar-brand {
     color: #185e99; }
   .navbar-default .navbar-nav li a {
     color: #ebffff; }
+
+.affix {
+  top: 0;
+  width: 100%; }
+
+.affix + .container-fluid {
+  padding-top: 70px; }
 
 /* 
     Created on : 26 janv. 2017, 14:26:05
