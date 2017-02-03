@@ -1,8 +1,14 @@
 {% extends 'template.html.twig' %}
 {% block title %}
     {{ parent ()}}
-    - {id}
+    - index recruteur
 {% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ asset('./css/indexProfilRecruteur.css')}}" />
+{% endblock %}
+
 {% block body %}    
     <h1>Votre Profil</h1>
 

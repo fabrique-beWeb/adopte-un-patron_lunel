@@ -1,7 +1,6 @@
 {% extends 'template.html.twig' %}
 {% block stylesheets %}
-   <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.css')}}"/>
-            <link rel="stylesheet" type="text/css" href="{{ asset('./css/navbar.css')}}" />
+   {{ parent() }}
             <link rel="stylesheet" type="text/css" href="{{ asset('./css/indexProfilCandidat.css')}}" />
 {% endblock %}
 {% block body %}
@@ -95,6 +94,8 @@
 </table>
 
 
+<ul>
+
     </div>      
       </div> 
  </div>
@@ -115,4 +116,16 @@
   </div>      
       </div> 
  </div>
+    <li>
+        <a href="{{ path('candidat_edit', { 'id': candidat.id }) }}">Edit</a>
+    </li>
+    {#        <li>
+                {{ form_start(delete_form) }}
+                    <input type="submit" value="Delete">
+                {{ form_end(delete_form) }}
+            </li>#}
+</ul>
+
+
+
 {% endblock %}

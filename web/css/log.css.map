@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,IAAI;EACA,gBAAgB,ECCI,OAAO;;ADE/B,OAAO;EACH,aAAa,EAAE,CAAC;EAChB,MAAM,EAAE,CAAC;EACT,aAAa,EAAE,CAAC;EAChB,aAAa,EAAE,iBAA4B;;AAG/C,EAAE;EACE,UAAU,EAAE,IAAI;EAChB,OAAO,EAAE,CAAC;;AAEd;;;EAGE;AElBF,OAAO;EACH,MAAM,EAAE,eAAe;;AAE3B;;;EAGE;ACHF;;;EAGE",
-"sources": ["sass/_reset.scss","sass/_variables.scss","sass/loginPage/_log.scss","sass/loginPage/loginMain.scss"],
-"names": [],
-"file": "log.css"
-}
