@@ -20,7 +20,7 @@ class OffreType extends AbstractType {
         
         $builder->add('titre')
                 ->add('nomEntreprise')
-                ->add('nomSkill')
+//                ->add('nomSkill')
                 ->add('poste')
                 ->add('typeContrat', ChoiceType::class, array(
                     'choices' => array(
@@ -42,7 +42,6 @@ class OffreType extends AbstractType {
                 ->add('responsabilites')
                 ->add('pourquoiNous')
                 ->add('nousTrouver')
-                ->add('userId', HiddenType::class)
         ;
     }
 
