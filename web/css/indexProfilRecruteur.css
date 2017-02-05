@@ -6,7 +6,7 @@ body {
   margin-bottom: 50px; }
 
 .police {
-  font-size: 27px;
+  font-size: 30px;
   color: #ebffff; }
 
 .séparation {
@@ -24,6 +24,19 @@ body {
 
 .couleurmid {
   background-color: #94c11e; }
+
+/* test */
+table, tr, th, td {
+  border: 1px solid black; }
+  table th, tr th, th th, td th {
+    display: flex;
+    background-color: #ebffff;
+    color: #185e99;
+    padding: 5px; }
+  table td, tr td, th td, td td {
+    display: flex;
+    color: #ebffff;
+    padding: 5px; }
 
 .text-position {
   text-align: center; }

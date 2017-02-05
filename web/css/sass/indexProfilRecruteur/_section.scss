@@ -2,7 +2,7 @@ body {
     margin-bottom: 50px;
 }
 .police {
-    font-size: 27px;
+    font-size: 30px;
     color: $couleurprincipale;
 }
 
@@ -28,3 +28,19 @@ body {
     background-color: $couleursecondaire;
 }
 
+/* test */
+table,tr, th, td {
+    border: 1px solid black;
+   th{
+       display: flex;
+       background-color: $couleurprincipale;
+       color: $couleurcomplementaire;
+       padding: 5px;
+   }
+   td{
+       
+       display: flex;
+       color: $couleurprincipale;
+       padding: 5px;
+   }
+}
