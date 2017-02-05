@@ -6,24 +6,39 @@ body {
   margin-bottom: 50px; }
 
 .police {
-  font-size: 27px;
+  font-size: 29px;
   color: #ebffff; }
 
 .séparation {
-  border-top: solid 2px #94c11e; }
+  border-top: solid 1px #94c11e;
+  border-bottom: solid 1px #94c11e; }
 
 .policebot {
-  font-size: 17px;
+  font-size: 20px;
   color: #ebffff; }
 
 .espacement {
-  margin-bottom: 40px; }
+  margin-bottom: 4%; }
 
 .couleurfond {
   background-color: #185e99; }
 
 .couleurmid {
   background-color: #94c11e; }
+
+.fad {
+  display: block; }
+
+.layerbg {
+  background-color: #185e99;
+  transition: 0.8s; }
+
+.layerbg:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: #94c11e 2px 0px 20px 2px; }
+
+p {
+  color: white; }
 
 .text-position {
   text-align: center; }
@@ -33,6 +48,7 @@ body {
   border-radius: 0px;
   padding-left: 0px;
   padding-right: 0px;
-  min-width: 170px; }
+  min-width: 170px;
+  transition: 0.5s; }
 
 /*# sourceMappingURL=accueil.css.map */

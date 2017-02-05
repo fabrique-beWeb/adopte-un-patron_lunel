@@ -15,25 +15,30 @@
 
         <header>
             <div class="container-fluid espacement">
-                <div class="row">
-                    <h3 class="police">Ce site est vraiment génial et developpé par des ingénieur de la nasa pour que tu trouves du taff !</h3>
+                <div class="row container">
+                    <h3 class="police">Facilitez les rencontres entre recruteurs et candidats !</h3>
                 </div>
             </div>
             <div class="container-fluid">
                 <div class="row">
-                    <a href="{{ path('candidat_new') }}" type="button" class="btn btn-info col-md-offset-1 col-md-2  col-xs-offset-5 col-xs-2 colorbouttton">je m'inscris</a>
+                    <a href="{{ path('candidat_new') }}" type="button" class="btn btn-info col-md-offset-1 col-md-2  col-xs-offset-5 col-xs-2 colorbouttton">Je m'inscris</a>
                 </div>
             </div>
 
         </header>
 
-        <h3 id="commentCaMarche" class="text-position police séparation">Comment ça marche ?</h3> 
-        <div class="container-fluid espacement">
+        <div class="layerbg séparation">
+        <h3 id="commentCaMarche" class="text-position police ">Comment ça marche ?</h3> 
+        <div class="container-fluid espacement ">
             <div class="row">
-                <div class="col-md-12 ">
-                    <div class="col-md-4 text-position policebot ">Un matching 100% IT</div>
-                    <div class="col-md-4 text-position policebot ">NO SPAM</div>
-                    <div class="col-md-4 text-position policebot ">Dites que vous êtes intéréssé</div>   
+                <div class="col-md-12">
+                    <div class="col-md-4 text-position policebot "><b>Un matching</b>
+                    <i class="fad fa fa-3x fa-handshake-o" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-md-4 text-position policebot "><b>NO SPAM</b>
+                    <i class="fad fa fa-3x fa-ban" aria-hidden="true"></i></div>
+                    <div class="col-md-4 text-position policebot "><b>Dites que vous êtes intéréssé</b>
+                    <i class="fad fa fa-3x fa-comments-o" aria-hidden="true"></i></div>   
                 </div>
             </div>
         </div>
@@ -46,13 +51,13 @@
                 </div>
             </div>
         </div>
-
+        </div>
         <footer>
             <div class="container-fluid espacement">
-                <div class="row séparation">
+                <div class="row">
                 </div>
             </div>
-            <p class="text-position" >Mentions légales | AdoptUnBoss 2017 ©  </p>
+            <p class="text-position " >Mentions légales | AdoptUnBoss 2017 ©  </p>
         </footer>
     </body>
 {% endblock %}

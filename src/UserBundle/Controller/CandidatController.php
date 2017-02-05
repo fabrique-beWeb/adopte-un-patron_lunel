@@ -39,7 +39,7 @@ class CandidatController extends Controller
             $em->persist($candidat);
             $em->flush($candidat);
 
-            return $this->redirectToRoute('candidat_show', array('id' => $candidat->getId()));
+            return $this->redirectToRoute('indexCandidat', array('id' => $candidat->getId()));
         }
 
         return $this->render('candidat/newCandidat.html.twig', array(

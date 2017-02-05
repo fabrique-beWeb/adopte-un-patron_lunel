@@ -2,22 +2,23 @@ body {
     margin-bottom: 50px;
 }
 .police {
-    font-size: 27px;
+    font-size: 29px;
     color: $couleurprincipale;
 }
 
 .séparation {
-    border-top: solid 2px $couleursecondaire ;
+    border-top: solid 1px $couleursecondaire ;
+    border-bottom: solid 1px $couleursecondaire ;
 }
 
 
 .policebot {
-     font-size: 17px;
+     font-size: 20px;
     color: $couleurprincipale;
 }
 .espacement{
  
-    margin-bottom: 40px;  
+    margin-bottom: 4%;  
 }
 
 .couleurfond {
@@ -28,3 +29,19 @@ body {
     background-color: $couleursecondaire;
 }
 
+.fad {
+    display:block;
+}
+
+.layerbg{
+    background-color: $couleurcomplementaire;
+    transition:0.8s;
+}
+.layerbg:hover{
+    background-color: rgba(255,255,255,0.15);
+    box-shadow: $couleursecondaire 2px 0px 20px 2px;
+}
+
+p{
+    color: white;
+}

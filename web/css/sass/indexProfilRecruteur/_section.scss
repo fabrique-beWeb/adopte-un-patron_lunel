@@ -29,7 +29,7 @@ body {
 }
 
 /* test */
-table,tr, th, td {
+/*table,tr, th, td {
     border: 1px solid black;
    th{
        display: flex;
@@ -43,4 +43,28 @@ table,tr, th, td {
        color: $couleurprincipale;
        padding: 5px;
    }
+}*/
+
+table,tr, th, td {
+    border: 1px solid black;
+   th{
+       background-color: $couleurprincipale;
+       color: $couleurcomplementaire;
+       padding: 5px;
+   }
+   td{
+       color: $couleurprincipale;
+       background-color: $couleursecondaire;
+       padding: 5px;
+   }
+
+}
+
+.disp{
+    display:block;
+}
+
+.btn{
+    border-radius: 0px;
+    background-color: $couleurprincipale;
 }
