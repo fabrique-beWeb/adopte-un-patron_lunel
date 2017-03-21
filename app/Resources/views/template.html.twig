@@ -4,8 +4,8 @@
         <meta charset="UTF-8" />
         <title>{% block title %}AUP {% endblock %}</title>
         {% block stylesheets %}
-            <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.css')}}"/>
-            <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/fortawesome/font-awesome/css/font-awesome.min.css')}}"/>
+            <link rel="stylesheet" type="text/css" href="{{ asset('./vendor/bootstrap.min.css')}}"/>
+            <link rel="stylesheet" type="text/css" href="{{ asset('./vendor/font-awesome/css/font-awesome.min.css')}}"/>
             <link rel="stylesheet" type="text/css" href="{{ asset('./css/navbar.css')}}" />
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
@@ -26,8 +26,8 @@
         {% block body %}
         {% endblock %}
         {% block javascripts %}
-            <script src="{{ asset('../vendor/twbs/bootstrap/js/tests/vendor/jquery.min.js') }}"></script>
-            <script src="{{ asset('../vendor/twbs/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('./vendor/jquery.min.js') }}"></script>
+            <script src="{{ asset('./vendor/bootstrap.min.js') }}"></script>
         {% endblock %}
     </body>
 </html>
