@@ -57,14 +57,24 @@ h1, h2, a {
 .textRight {
   text-align: right; }
 
-table, tr, th, td {
-  border: 1px solid black; }
+
+  
   table th, tr th, th th, td th {
-    background-color: #ebffff;
+    background-color:#94c11e;
     color: #185e99;
     padding: 5px; }
   table td, tr td, th td, td td {
     color: #ebffff;
     padding: 5px; }
-
+  
+  .info{
+      margin-bottom:25px;
+  }
+  
+  .info{
+      margin-bottom: 25px;
+  }
+  .table-info{
+      border: 0px;
+  }
 /*# sourceMappingURL=mainOffres.css.map */
