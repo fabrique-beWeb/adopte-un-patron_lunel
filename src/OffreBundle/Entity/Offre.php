@@ -3,6 +3,7 @@
 namespace OffreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JsonSerializable;
 
 /**
  * Offre
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="adopteUnPatron_offre")
  * @ORM\Entity(repositoryClass="OffreBundle\Repository\OffreRepository")
  */
-class Offre {
+class Offre implements JsonSerializable{
 
     /**
      * @var int
@@ -406,6 +407,13 @@ class Offre {
      */
     public function getUserId() {
         return $this->userId;
+    }
+
+    public function jsonSerialize() {
+        return array(
+            "skills"=> $this->nomSkill,
+            );
+        
     }
 
 }

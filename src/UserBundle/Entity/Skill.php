@@ -2,8 +2,8 @@
 
 namespace UserBundle\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use JsonSerializable;
 
 /**
  * Skill
@@ -11,8 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="skill")
  * @ORM\Entity(repositoryClass="UserBundle\Repository\SkillRepository")
  */
-class Skill
-{
+class Skill implements JsonSerializable {
 
     /**
      * @var int
@@ -30,14 +29,12 @@ class Skill
      */
     private $name;
 
-
-        /**
+    /**
      * Get id
      *
      * @return int
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -48,8 +45,7 @@ class Skill
      *
      * @return Skill
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
 
         return $this;
@@ -60,14 +56,20 @@ class Skill
      *
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
-    
+
     public function __toString() {
         return $this->name;
     }
 
-}
+    public function jsonSerialize() {
+        return array(
+            "id" => $this->id,
+            "name" => $this->name,
+        );
+    }
 
+    
+}

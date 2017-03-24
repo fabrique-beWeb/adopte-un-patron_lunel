@@ -3,10 +3,13 @@
 namespace OffreBundle\Controller;
 
 use OffreBundle\Entity\Offre;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\Session;
+use UserBundle\Entity\Skill;
 
 /**
  * Offre controller.
@@ -57,9 +60,24 @@ class OffreController extends Controller {
 
 
         return $this->render('offre/newOffres.html.twig', array(
-            'offre' => $offre,
-            'form' => $form->createView(),
+                    'offre' => $offre,
+                    'form' => $form->createView(),
         ));
+    }
+
+    /**
+     * @Route("/get/skills")
+     * 
+     */
+    public function getSkills(Request $request) {
+         $session = $request->getSession();
+         $session->set('foo', 'bar');
+        $data = $this->getDoctrine()->getRepository(Skill::class)->findAll();
+        $status = 200;
+
+        $headers = array(
+            'Access-Control-Allow-Origin' => 'http://www.adopte-un-patron.fr');
+        return new JsonResponse($data, $status, $headers, $session);
     }
 
     /**
@@ -94,4 +112,5 @@ class OffreController extends Controller {
                     'edit_form' => $editForm->createView(),
         ));
     }
+
 }

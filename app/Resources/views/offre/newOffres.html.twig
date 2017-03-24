@@ -11,26 +11,45 @@
 {% endblock %}
 
 {% block body %}
+
     <h1>Offre creation</h1>
 
     {{ form_start(form) }}
-        <div class="col-md-6">
-                    {{ form_row(form.titre) }}
-                    {{ form_row(form.nomEntreprise) }}
-                    {{ form_row(form.poste ) }}
-                    {{ form_row(form.typeContrat ) }}
-                    {{ form_row(form.salaire) }}
+    <div class="col-md-6">
+        {{ form_row(form.titre) }}
+        {{ form_row(form.nomEntreprise) }}
+        {{ form_row(form.poste ) }}
+        {{ form_row(form.typeContrat ) }}
+        {{ form_row(form.salaire) }}
+    </div>
+
+    <div class="col-md-6">
+        {{ form_row(form.duree ) }}
+        {{ form_row(form.experienceRequis ) }}
+        {{ form_row(form.lieu) }}
+        {{ form_row(form.responsabilites) }}
+        {{ form_row(form.pourquoiNous) }}
+        {{ form_row(form.nousTrouver) }}
+        <div ng-app="appTest"  ng-controller ="skillCtrl" >
+            <button ng-click="getSkills(skill.id)">Skill</button>
+            {% verbatim %}
+                <div>
+                    <p ng-repeat="skill in skills">
+                        <label >{{skill.name}}</label>
+                        <input type="checkbox"
+                               ng-value="name"
+                               id="{{skill.name}}"
+                               name="mesSkills"
+                               ng-click="skillsToken()">
+                    </p>
+                    
                 </div>
 
-                <div class="col-md-6">
-                    {{ form_row(form.duree ) }}
-                    {{ form_row(form.experienceRequis ) }}
-                    {{ form_row(form.lieu) }}
-                    {{ form_row(form.responsabilites) }}
-                    {{ form_row(form.pourquoiNous) }}
-                    {{ form_row(form.nousTrouver) }}
-                </div>
-        <input type="submit" class="btn btn-info btn-sm col-md-1 noRadius colorbouttton pull-right" value="Creer" />
+
+            {% endverbatim %}
+        </div>
+    </div>
+    <input type="submit" class="btn btn-info btn-sm col-md-1 noRadius colorbouttton pull-right" value="Creer" />
     {{ form_end(form) }}
 
     <ul>
@@ -38,4 +57,13 @@
             <a class="btn btn-default btn-sm col-md-1 noRadius colorbouttton" href="{{ path('offre_index') }}">Back to the list</a>
         </li>
     </ul>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('./vendor/angular.min.js')}}"></script>
+
+    {{ parent() }}
+
+    <script src="{{ asset('./js/selectSkill.js')}}"></script>
 {% endblock %}
