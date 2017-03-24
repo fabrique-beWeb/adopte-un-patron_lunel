@@ -169,6 +169,14 @@ class Candidat implements UserInterface, Serializable {
      *      inverseJoinColumns={@ORM\JoinColumn(name="skill_id",referencedColumnName="id")})
      */
     private $nomSkill;
+    
+    /**
+     * @var array
+     * 
+     * @ManyToMany(targetEntity="Recruteur", inversedBy="candidats")
+     * @ORM\joinTable(name="recruteurs_candidats")
+     */
+    private $recruteurs;
 
 
     /**
@@ -604,7 +612,7 @@ class Candidat implements UserInterface, Serializable {
         
     }
 
-    public function getPassword(): string {
+    public function getPassword() {
         return $this->mdp;
     }
 
@@ -616,11 +624,11 @@ class Candidat implements UserInterface, Serializable {
         
     }
 
-    public function getUsername(): string {
+    public function getUsername() {
         return $this->email;
     }
 
-    public function serialize(): string {
+    public function serialize() {
         return serialize(array(
             $this->id,
             $this->email,
