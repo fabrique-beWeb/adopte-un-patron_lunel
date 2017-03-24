@@ -8,17 +8,21 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use UserBundle\Entity\Recruteur;
 
-
+/**
+ * Offre controller.
+ *
+ * @Route("recruteur")
+ */
 class RecruteurController extends Controller {
 
     //Page d'inscription des recruteurs
     /**
      * Creates a new recruteur entity.
      *
-     * @Route("inscription/recruteur/new", name="recruteur_new")
+     * @Route("/inscription", name="recruteur_new")
      * @Method({"GET", "POST"})
      */
-    public function newAction(Request $request) {
+    public function newRecruteur(Request $request) {
         $recruteur = new Recruteur();
         $form = $this->createForm('UserBundle\Form\RecruteurType', $recruteur);
         $form->handleRequest($request);
@@ -46,7 +50,7 @@ class RecruteurController extends Controller {
     
     //Index Recruteur
     /**
-     * @Route("recruteur/index", name="indexRecruteur")
+     * @Route("/profil", name="indexRecruteur")
      */
     public function indexRecruteur() {
         $em = $this->getDoctrine()->getManager();
@@ -64,10 +68,10 @@ class RecruteurController extends Controller {
     /**
      * Displays a form to edit an existing recruteur entity.
      *
-     * @Route("recruteur/gestion/{id}", name="recruteur_edit")
+     * @Route("/modifier/{id}", name="recruteur_edit")
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, Recruteur $recruteur) {
+    public function editProfilRecruteur(Request $request, Recruteur $recruteur) {
         $editForm = $this->createForm('UserBundle\Form\RecruteurType', $recruteur);
         $editForm->handleRequest($request);
 

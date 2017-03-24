@@ -21,7 +21,7 @@ class OffreController extends Controller {
      * @Route("/", name="offre_index")
      * @Method("GET")
      */
-    public function indexAction() {
+    public function getOffres() {
         $em = $this->getDoctrine()->getManager();
 
         $offres = $em->getRepository('OffreBundle:Offre')->findAll();
@@ -34,11 +34,11 @@ class OffreController extends Controller {
     /**
      * Creates a new offre entity.
      *
-     * @Route("/new", name="offre_new")
+     * @Route("/nouveau", name="offre_new")
      * @Method({"GET", "POST"})
      * 
      */
-    public function newAction(Request $request) {
+    public function createOffre(Request $request) {
         $offre = new Offre();
         $form = $this->createForm('OffreBundle\Form\OffreType', $offre);
         $form->handleRequest($request);
@@ -68,7 +68,7 @@ class OffreController extends Controller {
      * @Route("/{id}", name="offre_show")
      * @Method("GET")
      */
-    public function showAction(Offre $offre) {
+    public function getOffre(Offre $offre) {
         return $this->render('offre/show.html.twig', array(
                     'offre' => $offre,
         ));
@@ -77,10 +77,10 @@ class OffreController extends Controller {
     /**
      * Displays a form to edit an existing offre entity.
      *
-     * @Route("/edit/{id}", name="offre_edit")
+     * @Route("/modifier/{id}", name="offre_edit")
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, Offre $offre) {
+    public function editOffre(Request $request, Offre $offre) {
         $editForm = $this->createForm('OffreBundle\Form\OffreType', $offre);
         $editForm->handleRequest($request);
         if ($editForm->isSubmitted() && $editForm->isValid()) {

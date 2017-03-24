@@ -49,9 +49,13 @@ security:
                 target: /                
                 
     access_control:
-        - { path: ^/recruteur , roles: ROLE_RECRUTEUR }
-        - { path: ^/candidat , roles: ROLE_CANDIDAT }
-
+        - { path: ^/recruteur/profil, roles: ROLE_RECRUTEUR }
+        
+        - { path: ^/offre/nouveau , roles: ROLE_RECRUTEUR }
+        - { path: ^/offre/modifier, roles: ROLE_RECRUTEUR }
+        - { path: ^/candidat/modifier, roles: ROLE_CANDIDAT}
+        
+        
                 
             # activate different ways to authenticate
 

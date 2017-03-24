@@ -7,18 +7,23 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use UserBundle\Entity\Candidat;
-
+/**
+ * Offre controller.
+ *
+ * @Route("candidat")
+ */
 class CandidatController extends Controller
 {
 
     /**
      * Page d'inscription des candidats.
      *
-     * @Route("inscription/candidat/new", name="candidat_new")
+     * @Route("/inscription", name="candidat_new")
      * @Method({"GET", "POST"})
      */
-    public function newAction(Request $request)
-    {
+    public function newCandidat(Request $request)
+    { 
+        
         $candidat = new Candidat();
         $form = $this->createForm('UserBundle\Form\CandidatType', $candidat);
         $form->handleRequest($request);
@@ -63,9 +68,9 @@ class CandidatController extends Controller
     
     //Index Candidat
     /**
-     * @Route("candidat/index", name="indexCandidat")
+     * @Route("/profil", name="indexCandidat")
      */
-    public function indexRecruteur() {
+    public function IndexCandidat  () {
         $em = $this->getDoctrine()->getManager();
 
         $candidat = $em->getRepository('UserBundle:Candidat')->find($this->getUser()->getId());
@@ -78,10 +83,10 @@ class CandidatController extends Controller
     /**
      * Displays a form to edit an existing candidat entity.
      *
-     * @Route("candidat/gestion/{id}", name="candidat_edit")
+     * @Route("/modifier/{id}", name="candidat_edit")
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, Candidat $candidat)
+    public function editProfilCandidat(Request $request, Candidat $candidat)
     {
 //        $deleteForm = $this->createDeleteForm($candidat);
         $editForm = $this->createForm('UserBundle\Form\CandidatType', $candidat);
