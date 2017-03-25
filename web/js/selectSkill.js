@@ -11,10 +11,9 @@ skill.controller('skillCtrl', [
                     });
         };
         
-//        $scope.skillsToken = function () {
-// event.preventDefault();
-//        $http.get("http://www.adopte-un-patron.fr/offre/skills/set/tokenSkills");
-//        };
+        $scope.skillsToken = function ($id) {
+        $http.get("http://www.adopte-un-patron.fr/offre/skills/update/tokenSkills/"+$id);
+        };
     }
     
     

@@ -8,7 +8,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Session\Session;
 use UserBundle\Entity\Skill;
 
 /**
@@ -42,6 +41,7 @@ class OffreController extends Controller {
      * 
      */
     public function newAction(Request $request) {
+//        $this->get('session')->clear('listeSkills');
         $offre = new Offre();
         $form = $this->createForm('OffreBundle\Form\OffreType', $offre);
         $form->handleRequest($request);
@@ -54,7 +54,8 @@ class OffreController extends Controller {
             $offre->setUserId($this->getUser());
             $em->persist($offre);
             $em->flush($offre);
-
+            
+            $this->addSkills($offre->getId());
             return $this->redirectToRoute('offre_show', array('id' => $offre->getId()));
         }
 
@@ -65,19 +66,59 @@ class OffreController extends Controller {
         ));
     }
 
+    public function addSkills($id) {
+       $offre = $this->getDoctrine()->getRepository(Offre::class)->find($id);
+        $em = $this->getDoctrine()->getManager();
+            //on set luserid de la session courante
+            $offre->setNomSkill($this->get('session')->get('listeSkills'));
+            $em->merge($offre);
+            $em->flush($offre);
+            return $offre;
+    }
+
     /**
      * @Route("/get/skills")
      * 
      */
     public function getSkills(Request $request) {
-         $session = $request->getSession();
-         $session->set('foo', 'bar');
+
+        // Creation de la variable sous session
+        $listeSkills = array();
+        $this->get('session')->set('listeSkills', $listeSkills);
+        // Je vais chercher la liste de skills 
         $data = $this->getDoctrine()->getRepository(Skill::class)->findAll();
         $status = 200;
 
         $headers = array(
             'Access-Control-Allow-Origin' => 'http://www.adopte-un-patron.fr');
-        return new JsonResponse($data, $status, $headers, $session);
+        return new JsonResponse($data, $status, $headers);
+    }
+
+    /**
+     * @Route("/skills/update/tokenSkills/{id}")
+     */
+    public function updateSkills(Request $request, $id) {
+
+
+
+        // Je vais chercher le skills selectioné
+
+
+        $listeSkills = $this->get('session')->get('listeSkills');
+
+
+
+//        for($i=0;$i<count($listeSkills);$i++){
+//          echo $listeSkills[$i];
+//        }
+
+        array_push($listeSkills, $id);
+        $this->get('session')->set('listeSkills', $listeSkills);
+
+        $status = 200;
+        $headers = array(
+            'Access-Control-Allow-Origin' => 'http://www.adopte-un-patron.fr');
+        return new JsonResponse($listeSkills, $status, $headers);
     }
 
     /**

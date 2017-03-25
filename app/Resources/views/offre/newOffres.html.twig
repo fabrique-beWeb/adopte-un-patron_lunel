@@ -31,7 +31,7 @@
         {{ form_row(form.pourquoiNous) }}
         {{ form_row(form.nousTrouver) }}
         <div ng-app="appTest"  ng-controller ="skillCtrl" >
-            <button ng-click="getSkills(skill.id)">Skill</button>
+            <button ng-click="getSkills(skill.name)">Skill</button>
             {% verbatim %}
                 <div>
                     <p ng-repeat="skill in skills">
@@ -40,7 +40,7 @@
                                ng-value="name"
                                id="{{skill.name}}"
                                name="mesSkills"
-                               ng-click="skillsToken()">
+                               ng-click="skillsToken(skill.id)">
                     </p>
                     
                 </div>
