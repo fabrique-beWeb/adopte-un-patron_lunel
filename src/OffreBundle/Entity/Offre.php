@@ -3,7 +3,11 @@
 namespace OffreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\ManyToMany;
 use JsonSerializable;
+use UserBundle\Entity\Recruteur;
+use UserBundle\Entity\Skill;
+
 
 /**
  * Offre
@@ -11,7 +15,7 @@ use JsonSerializable;
  * @ORM\Table(name="adopteUnPatron_offre")
  * @ORM\Entity(repositoryClass="OffreBundle\Repository\OffreRepository")
  */
-class Offre implements JsonSerializable{
+class Offre implements JsonSerializable {
 
     /**
      * @var int
@@ -39,7 +43,10 @@ class Offre implements JsonSerializable{
     /**
      * @var array
      *
-     * @ORM\Column(name="nomSkill", type="array")
+     * @ManyToMany(targetEntity="UserBundle\Entity\Skill",cascade={"persist"})
+     * @ORM\JoinTable(name="SkillOffre",
+     *      joinColumns={@ORM\JoinColumn(name="offre_id",referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="skill_id",referencedColumnName="id")})
      */
     private $nomSkill;
 
@@ -112,7 +119,6 @@ class Offre implements JsonSerializable{
      * @ORM\JoinColumn(name="fk_user", referencedColumnName="id")
      */
     private $userId;
-
 
     /**
      * Get id
@@ -411,9 +417,8 @@ class Offre implements JsonSerializable{
 
     public function jsonSerialize() {
         return array(
-            "skills"=> $this->nomSkill,
-            );
-        
+            "skills" => $this->nomSkill,
+        );
     }
 
 }

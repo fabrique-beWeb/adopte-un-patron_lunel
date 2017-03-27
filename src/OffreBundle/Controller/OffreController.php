@@ -70,7 +70,8 @@ class OffreController extends Controller {
        $offre = $this->getDoctrine()->getRepository(Offre::class)->find($id);
         $em = $this->getDoctrine()->getManager();
             //on set luserid de la session courante
-            $offre->setNomSkill($this->get('session')->get('listeSkills'));
+        $l = $this->get('session')->get('listeSkills');
+            $offre->setNomSkill($l);
             $em->merge($offre);
             $em->flush($offre);
             return $offre;
@@ -97,7 +98,7 @@ class OffreController extends Controller {
     /**
      * @Route("/skills/update/tokenSkills/{id}")
      */
-    public function updateSkills(Request $request, $id) {
+    public function updateSkills(Request $request, Skill $id) {
 
 
 
@@ -106,11 +107,6 @@ class OffreController extends Controller {
 
         $listeSkills = $this->get('session')->get('listeSkills');
 
-
-
-//        for($i=0;$i<count($listeSkills);$i++){
-//          echo $listeSkills[$i];
-//        }
 
         array_push($listeSkills, $id);
         $this->get('session')->set('listeSkills', $listeSkills);
