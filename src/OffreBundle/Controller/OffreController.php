@@ -70,8 +70,7 @@ class OffreController extends Controller {
        $offre = $this->getDoctrine()->getRepository(Offre::class)->find($id);
         $em = $this->getDoctrine()->getManager();
             //on set luserid de la session courante
-        $l = $this->get('session')->get('listeSkills');
-            $offre->setNomSkill($l);
+            $offre->setNomSkill($this->get('session')->get('listeSkills'));
             $em->merge($offre);
             $em->flush($offre);
             return $offre;

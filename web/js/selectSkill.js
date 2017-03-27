@@ -14,6 +14,12 @@ skill.controller('skillCtrl', [
         $scope.skillsToken = function ($id) {
         $http.get("http://www.adopte-un-patron.fr/offre/skills/update/tokenSkills/"+$id);
         };
+        
+//        $scope.skillsTokenSupr = function () {
+//            alert("caca")
+//        };
+        
+        
     }
     
     
