@@ -15,7 +15,7 @@ ul {
     Created on : 13 janv. 2017, 11:54:48
     Author     : jeanchristian-petetin
 */
-h1, h2, a {
+h1, h2, h3, h4, a {
   color: #ebffff; }
 
 .noPadding {
@@ -66,15 +66,33 @@ h1, h2, a {
   table td, tr td, th td, td td {
     color: #ebffff;
     padding: 5px; }
-  
-  .info{
-      margin-bottom:25px;
-  }
-  
-  .info{
-      margin-bottom: 25px;
-  }
+    
+ 
   .table-info{
       border: 0px;
+      
   }
-/*# sourceMappingURL=mainOffres.css.map */
+  #infodebut{
+      margin-bottom:25px;
+      
+      padding:10px;
+     
+  }
+  #OffreInfo{
+     box-shadow: 2px 2px 2px black inset;
+     background-color: #8A898A;
+     padding:10px;
+     margin:35px;
+  }
+  .info{
+     box-shadow: 2px 2px 2px black inset;
+/*     margin:35px;
+     padding:25px;*/
+     background-color: #8A898A;
+      }
+  .offreindex{
+/*       padding:15px;*/
+          margin-top:10px;
+          box-shadow: 2px 2px 2px black inset;
+          background-color: #8A898A;
+      }
