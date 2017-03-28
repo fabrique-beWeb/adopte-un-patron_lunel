@@ -1,0 +1,41 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}
+    {{ parent() }}
+    - creation offre
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ asset('./css/gestionProfilRecruteur.css')}}" />
+{% endblock %}
+
+{% block body %}
+    <h1>Offre creation</h1>
+
+    {{ form_start(form) }}
+        <div class="col-md-6">
+                    {{ form_row(form.titre) }}
+                    {{ form_row(form.nomEntreprise) }}
+                    {{ form_row(form.poste ) }}
+                    {{ form_row(form.typeContrat ) }}
+                    {{ form_row(form.salaire) }}
+                </div>
+
+                <div class="col-md-6">
+                    {{ form_row(form.duree ) }}
+                    {{ form_row(form.experienceRequis ) }}
+                    {{ form_row(form.lieu) }}
+                    {{ form_row(form.responsabilites) }}
+                    {{ form_row(form.pourquoiNous) }}
+                    {{ form_row(form.nousTrouver) }}
+                </div>
+        <input type="submit" class="btn btn-info btn-sm col-md-1 noRadius colorbouttton pull-right" value="Creer" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a class="btn btn-default btn-sm col-md-1 noRadius colorbouttton" href="{{ path('offre_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}
+    {{ parent() }}
+    - gestion recruteur
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ asset('./css/gestionProfilRecruteur.css')}}" />
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="couleurfond col-md-12">
+                <h1 class="séparation text-position">modification profil</h1>
+
+                {{ form_start(edit_form) }}
+                <div class="col-md-6">
+                    {{ form_row(edit_form.nom) }}
+                    {{ form_row(edit_form.prenom) }}
+                    {{ form_row(edit_form.email ) }}
+                    {{ form_row(edit_form.entreprise ) }}
+                </div>
+
+                <div class="col-md-6">
+                    {{ form_row(edit_form.mdp) }}
+                    {{ form_row(edit_form.codePostal ) }}
+                    {{ form_row(edit_form.description ) }}
+                    {{ form_row(edit_form.logo) }}
+                </div>
+
+                <input type="submit" class="btn btn-info btn-sm col-md-1 noRadius colorbouttton pull-right" value="Editer" />
+                {{ form_end(edit_form) }}
+
+                <ul>
+                    <li>
+                        <a class="btn btn-default btn-sm col-md-1 noRadius colorbouttton" href="{{ path('indexRecruteur') }}">retour index</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

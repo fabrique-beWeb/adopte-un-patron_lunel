@@ -1,0 +1,70 @@
+body {
+    margin-bottom: 50px;
+}
+.police {
+    font-size: 30px;
+    color: $couleurprincipale;
+}
+
+.séparation {
+    border-top: solid 2px $couleursecondaire ;
+}
+
+
+.policebot {
+     font-size: 17px;
+    color: $couleurprincipale;
+}
+.espacement{
+ 
+    margin-bottom: 40px;  
+}
+
+.couleurfond {
+    background-color: $couleurcomplementaire;
+}
+
+.couleurmid {
+    background-color: $couleursecondaire;
+}
+
+/* test */
+/*table,tr, th, td {
+    border: 1px solid black;
+   th{
+       display: flex;
+       background-color: $couleurprincipale;
+       color: $couleurcomplementaire;
+       padding: 5px;
+   }
+   td{
+       
+       display: flex;
+       color: $couleurprincipale;
+       padding: 5px;
+   }
+}*/
+
+table,tr, th, td {
+    border: 1px solid black;
+   th{
+       background-color: $couleurprincipale;
+       color: $couleurcomplementaire;
+       padding: 5px;
+   }
+   td{
+       color: $couleurprincipale;
+       background-color: $couleursecondaire;
+       padding: 5px;
+   }
+
+}
+
+.disp{
+    display:block;
+}
+
+.btn{
+    border-radius: 0px;
+    background-color: $couleurprincipale;
+}

@@ -1,0 +1,105 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}
+    {{ parent() }}
+    -  Profilcandidat
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ asset('./css/indexProfilCandidat.css')}}" />
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid inscritext">
+        <div class="row">
+            <div class="couleurfond col-md-12">
+                <h1 class="police text-position séparation">{{ candidat.nom }} {{ candidat.prenom }}</h1>
+
+
+                <table class="col-md-offset-4 col-md-2 policebot">
+                    <tbody> 
+                        <tr>
+                            <th>Nom</th>
+                            <td>{{ candidat.nom }}</td>
+                        </tr>
+                        <tr>
+                            <th>Prenom</th>
+                            <td>{{ candidat.prenom }}</td>
+                        </tr>
+                        <tr>
+                            <th>Naissance</th>
+                            <td>{% if candidat.dateNaissance %}{{ candidat.dateNaissance|date('d/m/Y') }}{% endif %}</td>
+                        </tr>
+                        <tr>
+                            <th>Age</th>
+                            <td>{{ candidat.age }}</td>
+                        </tr>
+                        <tr>
+                            <th>Skills</th>
+                            <td>{% for skill in candidat.nomSkill %}
+                                <ul><li>{{ skill.name }}</ul></li>
+                                {% endfor %}</td>
+                            </tr>
+                            <tr>
+                                <th>Telephone</th>
+                                <td>{{ candidat.telephone }}</td>
+                            </tr>
+                            <tr>
+                                <th>Adresse</th>
+                                <td>{{ candidat.adress }}</td>
+                            </tr>
+                            <tr>
+                                <th>Code postal</th>
+                                <td>{{ candidat.codePostal }}</td>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
+                                <td>{{ candidat.email }}</td>
+                            </tr>
+                            <tr>
+                                <th>Description</th>
+                                <td>{{ candidat.description }}</td>
+                            </tr>
+                            <tr>
+                                <th>Date inscription</th>
+                                <td>{{ candidat.dateInscription }}</td>
+                            </tr>
+                            <tr>
+                                <th>Image</th>
+                                <td>{{ candidat.image }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                    <ul>
+
+                </div>      
+            </div> 
+        </div>
+        <div class="container-fluid inscritext">
+            <div class="row">
+                <div class="couleurfond col-md-12">
+                    <ul>
+
+                        <li>
+                            <a type="button" class="btn btn-info col-md-offset-8 col-md-1 colorbouttton " href="{{ path('candidat_edit', { 'id': candidat.id }) }}">Editer</a>
+                        </li>
+                    </ul>
+                </div>      
+            </div> 
+        </div>
+        <li>
+            <a href="{{ path('candidat_edit', { 'id': candidat.id }) }}">Editer</a>
+        </li>
+        {#        <li>
+                    {{ form_start(delete_form) }}
+                        <input type="submit" value="Delete">
+                    {{ form_end(delete_form) }}
+                </li>#}
+    </ul>
+
+
+
+    {% endblock %}

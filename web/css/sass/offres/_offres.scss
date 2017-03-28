@@ -1,0 +1,66 @@
+h1, h2, a{
+    color: $couleurprincipale;
+}
+
+.noPadding{
+    padding: 0;
+}
+
+.fond{
+    background-color: $couleurcomplementaire;
+    padding: 0;
+    h1{
+        background-color: $couleursecondaire;
+        text-align: center;
+        margin:0 0 50px 0;
+    }   
+}
+
+.offre{
+    border-bottom: 2px solid $couleurprincipale;
+    background-color: $couleursecondaire;
+    margin-bottom: 2%;
+    @media screen and (max-width: 768px) {
+        border-top: 2px solid $couleurprincipale;
+        margin-bottom: 5%;
+    }
+}
+
+.hideResponsive{
+    @media screen and(max-width: 768px) {
+        display: none;
+    }
+}
+
+/* mise en forme des offres */
+.head{
+    display: flex;
+    justify-content: space-between;
+}
+
+.decal{
+    margin-right: 10px;
+}
+
+
+/* partie Offre details */
+.contour{
+    padding: 10px;
+}
+
+.textRight{
+    text-align: right;
+}
+
+table,tr, th, td {
+    border: 1px solid black;
+   th{
+       background-color: $couleurprincipale;
+       color: $couleurcomplementaire;
+       padding: 5px;
+   }
+   td{
+       color: $couleurprincipale;
+       padding: 5px;
+   }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}AUP {% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" type="text/css" href="{{ asset('./vendor/bootstrap.min.css')}}"/>
+            <link rel="stylesheet" type="text/css" href="{{ asset('./vendor/font-awesome/css/font-awesome.min.css')}}"/>
+            <link rel="stylesheet" type="text/css" href="{{ asset('./css/navbar.css')}}" />
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block nav %}
+            {% if is_granted('ROLE_RECRUTEUR') %}
+                {% include ':default:navbarRecruteur.html.twig' %}
+            {% elseif is_granted('ROLE_CANDIDAT') %}
+                {% include ':default:navbarCandidats.html.twig' %}                
+            {% else %}
+                 {% include ':default:navbar.html.twig' %}
+            {% endif%}
+            
+            
+        {% endblock %}
+        
+        {% block body %}
+        {% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('./vendor/jquery.min.js') }}"></script>
+            <script src="{{ asset('./vendor/bootstrap.min.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>

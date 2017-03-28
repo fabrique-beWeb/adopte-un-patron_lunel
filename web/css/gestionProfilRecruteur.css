@@ -1,0 +1,18 @@
+@charset "UTF-8";
+h1 {
+  text-align: center;
+  color: #ebffff; }
+
+label {
+  color: #ebffff; }
+
+.noRadius {
+  border-radius: 0; }
+
+.colorbouttton {
+  background-color: #94c11e; }
+
+.séparation {
+  border-bottom: 2px solid #94c11e; }
+
+/*# sourceMappingURL=gestionProfilRecruteur.css.map */

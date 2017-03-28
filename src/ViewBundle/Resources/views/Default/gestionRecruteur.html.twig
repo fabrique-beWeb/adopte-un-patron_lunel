@@ -1,0 +1,58 @@
+{% extends "template.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/gestionProfilRecruteur.css')}}"/>
+{% endblock %}
+
+
+{% block body %}
+    <body class="couleurfond">
+ <header>
+     <div class="container-fluid espacement">
+            <div class="row">
+    <h2 class="police">[username]</h2>
+    <p>Depuis le [date]</p>
+    <ul>
+        <li>[visit_count]</li>
+        <li>[favorite]</li>
+        <li>[matchs]</li>
+    </ul>
+    </div>
+            </div>
+  </header>
+  <div class="container-fluid espacement">
+                <div class="row">
+                <div class="col-md-12 ">
+    <h3>Informations de l'entreprise</h3>
+        <ul>
+        <li>[nom]</li>
+        <li>[phone]</li>
+        <li>[adress]</li>
+        <li>[postal_code]</li>
+        <li>[description]</li>
+    </ul>
+      <a href="#">Valider</a>
+       </div>
+                </div>
+           </div>
+ <div class="container-fluid espacement">
+                <div class="row">
+                <div class="col-md-12 ">
+    <h3>Creer votre annonce</h3>
+
+    <p>[intitulé_poste] [choose_type_contrat] [choose_poste] [choose_lieux] [min_money_max_money]</p>
+    <p>Compétences</p>
+  
+    <a href="#">Valider</a>
+
+    
+
+    <h3>Détail du poste</h3>
+    <a href="#">Valider</a>
+
+<footer>
+    <p>[chat_box]</p>
+    </footer>
+</body>
+{% endblock %}

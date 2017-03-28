@@ -1,0 +1,76 @@
+
+.police {
+    font-size: 50px;
+    color: $couleurprincipale;
+}
+
+
+.séparation {
+    border-top: solid 2px $couleursecondaire ;
+}
+
+.policebot {
+    font-size: 17px;
+    color: $couleurcomplementaire;
+}
+
+
+.couleurmid {
+    background-color: $couleursecondaire;
+}
+.colorcreate{
+    font-size: 23px;
+    color: $couleursecondaire;
+}
+
+.inscritext
+{
+    text-align: left; 
+}
+
+.séparation2 {
+    border-bottom: solid 2px $couleursecondaire ;
+}
+
+label {
+    display:block;
+    font-size: 20px;
+    color: $couleursecondaire; 
+    margin-bottom: 15px;
+
+}
+
+/*input{
+    background-color: $couleurprincipale ;
+    position : absolute;
+    left: 50%;
+    margin-bottom: 15px;  
+    padding-left: 15px; 
+}*/
+
+input{
+ 
+}
+
+.wtfbutton{
+    font-size: 17px;
+    width: 10%;
+    color: #fff;
+    border: none;
+}
+
+.inscritext{
+    width : 60%;
+    padding: 12px;
+}
+
+.wtfimg{
+     font-size: 10px;
+    color: $couleurcomplementaire;
+    width: 10%;
+}
+
+.notice{
+    font-size: 12px;
+    color: white;
+}

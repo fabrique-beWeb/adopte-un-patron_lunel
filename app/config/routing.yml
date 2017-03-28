@@ -1,0 +1,24 @@
+offre_offre:
+    resource: "@OffreBundle/Controller/OffreController.php"
+    type:     annotation
+
+user_candidat:
+    resource: "@UserBundle/Controller/CandidatController.php"
+    type:     annotation
+
+offre:
+    resource: "@OffreBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+user:
+    resource: "@UserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+view:
+    resource: "@ViewBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+

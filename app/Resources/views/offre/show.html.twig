@@ -1,0 +1,98 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}
+    {{ parent() }}
+    - offre detail
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+        <link rel="stylesheet" type="text/css" href="{{ asset('./css/mainOffres.css')}}" />
+{% endblock%}
+
+{% block body %}
+<div class=" fond col-md-12 "> 
+    <div class="noPadding col-md-12">
+        <h1 >Offre Details</h1>
+    </div>
+    
+    <div class=" contour offre col-md-offset-4 col-md-4 col-xs-offset-1 col-xs-10">
+        <table class="col-md-12">
+            <tbody>
+{#                <tr>
+                    <th>Id</th>
+                    <td>{{ offre.id }}</td>
+                </tr>#}
+                <tr>
+                    <th>Titre</th>
+                    <td>{{ offre.titre }}</td>
+                </tr>
+                <tr>
+                    <th>Nomentreprise</th>
+                    <td>{{ offre.nomEntreprise }}</td>
+                </tr>
+                <tr>
+                    <th>Nomskill</th>
+                    <td>{% if offre.nomSkill %}{{ offre.nomSkill|join(', ') }}{% endif %}</td>
+                </tr>
+                <tr>
+                    <th>Poste</th>
+                    <td>{{ offre.poste }}</td>
+                </tr>
+                <tr>
+                    <th>Typecontrat</th>
+                    <td>{{ offre.typeContrat }}</td>
+                </tr>
+                <tr>
+                    <th>Salaire</th>
+                    <td>{{ offre.salaire }}</td>
+                </tr>
+                <tr>
+                    <th>Duree</th>
+                    <td>{{ offre.duree }}</td>
+                </tr>
+                <tr>
+                    <th>Experiencerequis</th>
+                    <td>{{ offre.experienceRequis }}</td>
+                </tr>
+                <tr>
+                    <th>Lieu</th>
+                    <td>{{ offre.lieu }}</td>
+                </tr>
+                <tr>
+                    <th>Responsabilites</th>
+                    <td>{{ offre.responsabilites }}</td>
+                </tr>
+                <tr>
+                    <th>Pourquoinous</th>
+                    <td>{{ offre.pourquoiNous }}</td>
+                </tr>
+                <tr>
+                    <th>Noustrouver</th>
+                    <td>{{ offre.nousTrouver }}</td>
+                </tr>
+                <tr>
+                    <th>Userid</th>
+                    <td>{{ offre.userId }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <ul>
+            {% if is_granted('ROLE_RECRUTEUR') %}
+                <li>
+                    <a href="{{ path('indexRecruteur') }}">Mes Offres</a>                
+                </li>
+            {% endif %}
+            <li class="textRight">
+                <a href="{{ path('offre_index') }}">Nos offres</a>
+            </li>
+    {#        <li>
+                {{ form_start(delete_form) }}
+                    <input type="submit" value="Delete">
+                {{ form_end(delete_form) }}
+            </li>#}
+        </ul>
+    </div>
+</div>
+{% endblock %}

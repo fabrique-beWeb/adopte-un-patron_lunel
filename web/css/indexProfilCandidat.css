@@ -1,0 +1,47 @@
+@charset "UTF-8";
+.colornav {
+  background-color: #94c11e; }
+
+body {
+  background-color: #185e99; }
+
+.police {
+  font-size: 30px;
+  color: #ebffff; }
+
+.séparation {
+  border-bottom: solid 2px #94c11e; }
+
+.policebot {
+  font-size: 17px;
+  color: #ebffff; }
+
+.espacement {
+  margin-bottom: 40px; }
+
+.couleurfond {
+  background-color: #185e99; }
+
+.couleurmid {
+  background-color: #94c11e; }
+
+.bordure {
+  border-style: solid 1px #94c11e; }
+
+.encadrement {
+  border-style: solid 1px #94c11e; }
+
+tr {
+  border-bottom: solid 1px #94c11e; }
+
+th {
+  padding-right: 15%; }
+
+.text-position {
+  text-align: center; }
+
+.colorbouttton {
+  border-radius: 0px;
+  background-color: #94c11e; }
+
+/*# sourceMappingURL=indexProfilCandidat.css.map */

@@ -1,0 +1,49 @@
+{% extends 'template.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+        <link rel="stylesheet" type="text/css" href="{{ asset('./css/gestionProfilCandidat.css')}}" />
+{% endblock %}
+ 
+{% block body %}
+        <div class="container-fluid inscritext">
+    <div class="row">
+    <div class="couleurfond col-md-12">
+    <h1 class=" formtitre police text-position">Modifier votre profil</h1>
+
+    {{ form_start(edit_form) }}
+        <div class="col-md-6 policespecial">{{ form_row(edit_form.nom) }}
+        {{ form_row(edit_form.prenom) }} </div>
+        <div class="col-md-6 policespecial">{{ form_row(edit_form.dateNaissance) }}
+        {{ form_row(edit_form.age) }} </div>
+        <div class="col-md-6 policespecial">{{ form_row(edit_form.telephone ) }}
+        {{ form_row(edit_form.adress) }} </div>
+        <div class="col-md-6 policespecial">{{ form_row(edit_form.codePostal) }}
+        {{ form_row(edit_form.email) }} </div>
+        <div class="col-md-6 policespecial">{{ form_row(edit_form.mdp) }}
+        </div>
+{#        {{ form_widget(edit_form.visite) }}#}
+{#        {{ form_widget(edit_form.favori) }}#}
+{#        {{ form_widget(edit_form.matchs) }}#}
+
+        <div class="col-md-6 policespecial">{{ form_row(edit_form.description) }} </div>
+{#        {{ form_widget(edit_form.dateInscription) }}#}
+       <div type=" button" class="col-md-6 policespecial">{{ form_row(edit_form.nomSkill) }} {{ form_row(edit_form.image ) }} </div>
+        <input type="submit" class="btn btn-info btn-sm text-position col-md-offset-0 col-md-1 colorbouttton pull-right"value="Edit" /> 
+    {{ form_end(edit_form) }}
+
+     </div>
+     </div>
+     </div>
+    
+    <ul>
+        <li>
+            <a class="policelien" href="{{ path('indexCandidat', { 'id': candidat.id }) }}">Back to the list</a>
+        </li>
+{#        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>#}
+    </ul>
+{% endblock %}

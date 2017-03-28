@@ -1,0 +1,55 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}
+    {{ parent() }}
+    - nos offre
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+        <link rel="stylesheet" type="text/css" href="{{ asset('./css/mainOffres.css')}}" />
+{% endblock%}
+
+{% block body %}
+    <div class=" fond col-md-12 "> 
+        <div class="noPadding col-md-12">
+            <h1 >Nos offres</h1>
+        </div>
+        {% for offre in offres %}
+            <div class="offre col-xs-12 col-md-offset-1 col-md-10">
+                <div class="head">
+                    <h2>{{ offre.titre }}</h2>
+                    <h3>{{ offre.nomEntreprise }}</h3>
+                </div>
+                <div class="hideResponsive">
+                    <span>{% if offre.nomSkill %}{{ offre.nomSkill|join(', ') }}{% endif %}</span>
+                    <span class="decal"><span class="fa fa-tag" aria-hidden="true"></span>{{ offre.poste }}</span>
+                    <span class="decal"><span class="fa fa-handshake-o" aria-hidden="true"></span>{{ offre.typeContrat }}</span>
+                    <span class="decal"><span class="fa fa-money" aria-hidden="true"></span>{{ offre.salaire }}€</span>
+                    <span class="decal"><span class="fa fa-calendar-o" aria-hidden="true"></span>{{ offre.duree }}</span>
+                    <span class="decal"><span class="fa fa-wrench" aria-hidden="true"></span>{{ offre.experienceRequis }}</span>
+                    <span class="decal"><span class="fa fa-map-marker" aria-hidden="true"></span>{{ offre.lieu }}</span>
+                    <span class="decal"><span class="fa fa-key" aria-hidden="true"></span>{{ offre.responsabilites }}</span>
+                    <span class="decal"><span class="fa fa-question" aria-hidden="true"></span>{{ offre.pourquoiNous }}</span>
+                    <span class="decal"><span class="fa fa-map-pin" aria-hidden="true"></span>{{ offre.nousTrouver }}</span>
+                </div>
+                <span>
+                    <ul>
+                        <li>
+                            <a href="{{ path('offre_show', { 'id': offre.id }) }}">Details</a>
+                        </li>
+                        {#<li>
+                            <a href="{{ path('offre_edit', { 'id': offre.id }) }}">edit</a>
+                        </li>#}
+                    </ul>
+                </span>
+            </div>
+        {% endfor %}
+    </div>
+
+{#    <ul>
+        <li>
+            <a href="{{ path('offre_new') }}">Create a new offre</a>
+        </li>
+    </ul>#}
+{% endblock %}

@@ -1,0 +1,22 @@
+.navbar-default{
+    background-color: $couleursecondaire;
+
+    .navbar-header{
+        .navbar-brand{
+            color: $couleurcomplementaire;
+        }
+    }
+    
+    .navbar-nav{
+        li{
+            a{
+                color: $couleurprincipale;
+            }
+        }
+    }
+}
+/* 
+    Created on : 26 janv. 2017, 14:26:05
+    Author     : jeanchristian-petetin
+*/
+
