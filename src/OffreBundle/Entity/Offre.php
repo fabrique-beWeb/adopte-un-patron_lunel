@@ -43,7 +43,7 @@ class Offre implements JsonSerializable {
     /**
      * @var array
      *
-     * @ManyToMany(targetEntity="UserBundle\Entity\Skill",cascade={"persist"})
+     * @ManyToMany(targetEntity="UserBundle\Entity\Skill")
      * @ORM\JoinTable(name="SkillOffre",
      *      joinColumns={@ORM\JoinColumn(name="offre_id",referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="skill_id",referencedColumnName="id")})
