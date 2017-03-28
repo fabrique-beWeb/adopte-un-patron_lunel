@@ -67,14 +67,12 @@ class OffreController extends Controller {
     }
 
     public function addSkills($id) {
-        $listeSkillsUp = array();
+        $listeSkills = $this->get('session')->get('listeSkills');
         $em = $this->getDoctrine()->getManager();
         $offre = $this->getDoctrine()->getRepository(Offre::class)->find($id);
-            //on set luserid de la session courante
-           $listeSkills = $this->get('session')->get('listeSkills');
-           for($i=0;$i <= sizeof($listeSkills)-1;$i++){
-                array_push($listeSkillsUp, $this->getDoctrine()->getRepository(Skill::class)->find($listeSkills[$i]));
-           }
+        // On utilise notre Repository pour recup une liste de skills
+        $listeSkillsUp = $this->getDoctrine()->getRepository('UserBundle:Skill')->listSkills($listeSkills);
+            //on set nos skills de la session courante
           $offre->setNomSkill($listeSkillsUp);
             $em->merge($offre);
             $em->flush($offre);
@@ -103,15 +101,9 @@ class OffreController extends Controller {
      * @Route("/skills/update/tokenSkills/{id}")
      */
     public function updateSkills(Request $request, $id) {
-
-
-
-        // Je vais chercher le skills selectioné
-
-
+        // Je vais chercherma
         $listeSkills = $this->get('session')->get('listeSkills');
-
-
+        
         array_push($listeSkills, $id);
         $this->get('session')->set('listeSkills', $listeSkills);
 
