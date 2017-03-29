@@ -60,18 +60,17 @@ h1, h2, h3, h4, a {
 
   
   table th, tr th, th th, td th {
-    background-color:#94c11e;
-    color: #185e99;
-    padding: 5px; }
+    background-color:#ebffff;
+;
+    color:  #185e99;;    
+
+     
+  }
   table td, tr td, th td, td td {
     color: #ebffff;
-    padding: 5px; }
-    
- 
-  .table-info{
-      border: 0px;
-      
+    padding-left: 10px;
   }
+
   #infodebut{
       margin-bottom:25px;
       
@@ -79,20 +78,25 @@ h1, h2, h3, h4, a {
      
   }
   #OffreInfo{
-     box-shadow: 2px 2px 2px black inset;
-     background-color: #8A898A;
-     padding:10px;
-     margin:35px;
+    box-shadow: 2px 2px 2px black inset;
+    background-color: #94c11e;
+    padding:10px;
+    margin:35px;
+
   }
   .info{
      box-shadow: 2px 2px 2px black inset;
-/*     margin:35px;
-     padding:25px;*/
-     background-color: #8A898A;
+     padding:20px;
+     margin:35px;
+     background-color: #94c11e;
+     margin-left: 100px;
       }
   .offreindex{
-/*       padding:15px;*/
-          margin-top:10px;
-          box-shadow: 2px 2px 2px black inset;
-          background-color: #8A898A;
-      }
+      
+      margin-top:10px;
+      box-shadow: 2px 2px 2px black inset;
+      background-color: #94c11e;;
+      padding:20px;
+      margin:35px;
+      margin-left: 100px;
+    }

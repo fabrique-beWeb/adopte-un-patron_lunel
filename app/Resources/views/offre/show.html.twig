@@ -17,13 +17,12 @@
     </div>
     
     
-<div class="container col-xs-12">
+<div class="container">
 
-    <div class="  col-xs-6 OffreInfo "style="background-color:#8D9489;">
+    <div class="  col-xs-6  ">
+        <div id="OffreInfo">
    
-                    <h2>Titre de l'Offre</h2>
-		
-                    <h3>{{ offre.titre }}</h3>
+                   <h3>{{ offre.titre }}</h3>
                
                 
                     <h4>Chez</h4>
@@ -37,7 +36,7 @@
 <thead>
       <tr>
         <th>Poste</th>
-        <th>Type de Contrat</th>
+        <th>Contrat</th>
         <th>Salaire</th>
         <th>Durée</th>
         <th>Experience</th>
@@ -53,7 +52,10 @@
         <td>{{ offre.experienceRequis }}</td>
         <td>{{ offre.lieu }}</td>
       </tr>
-</table>
+      </table>
+    
+        <input class="pull-right wtfbutton colorbouttton" type="button" value="Je suis intéressé"/> 
+         <br>
 
                     <h4>Les Responsabilites</h4>
 
@@ -87,12 +89,13 @@
 
                     {{ offre.userId }}
   #} 
-
 </div>
-<div class="  col-xs-3 col-xs-offset-1 info "style="background-color:#8D9489;">
+</div>
+
+<div class="  col-xs-3 col-xs-offset-2 info ">
       
-                    <h2>Nom de L'Entreprise </h2>
-		Google
+                    <h2>{{ offre.nomEntreprise }}</h2>
+	
 
                
                 
@@ -130,13 +133,13 @@
                     {{ offre.pourquoiNous }}
                 
                     <h4>Nous Trouver</h4>
-
+                 
                     {{ offre.nousTrouver }}       
      
 </div>
-<div class="col-xs-3 col-xs-offset-7 offreindex" style="background-color:#8D9489;" style="margin-bottom:15px;">
+<div class="col-xs-3 col-xs-offset-9 offreindex" >
                 
-    <h4>Les offre qui pourront vous intéressé</h4>
+    <h4>Les offres qui pourront vous intéressé</h4>
                      Ceci est un exemple de texte codé en dur 
                      Procedente igitur mox tempore cum adventicium nihil inveniretur, 
                      relicta ora maritima in Lycaoniam adnexam Isauriae se contulerunt 
@@ -145,11 +148,9 @@
                      Procedente igitur mox tempore cum adventicium nihil inveniretur, 
                      relicta ora maritima in Lycaoniam adnexam Isauriae se contulerunt 
                      ibique densis intersaepientes itinera praetenturis provincialium et viatorum opibus pascebantur.
-                     Ceci est un exemple de texte codé en dur 
-                     Procedente igitur mox tempore cum adventicium nihil inveniretur, 
-                     relicta ora maritima in Lycaoniam adnexam Isauriae se contulerunt 
-                     ibique densis intersaepientes itinera praetenturis provincialium et viatorum opibus pascebantur.
-                    {{ offre.poste }}
+                  
+                     <br>
+                     <input class="pull-right wtfbutton colorbouttton" type="button" value="Voir d'autre offre"/> 
 
            
                    {# <h4>Userid</h4>
