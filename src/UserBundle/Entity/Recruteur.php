@@ -127,6 +127,7 @@ class Recruteur implements UserInterface, Serializable
      * 
      * @ORM\ManyToMany(targetEntity="Candidat", mappedBy="candidats")
      */
+    private $candidats;
 
     /**
      * Get id
@@ -471,6 +472,30 @@ class Recruteur implements UserInterface, Serializable
     public function getSouhaitCandidat()
     {
         return $this->souhaitCandidat;
+    }
+    
+    /**
+     * Set candidats
+     *
+     * @param array $candidats
+     *
+     * @return Recruteur
+     */
+    public function setCandidats($candidats)
+    {
+        $this->candidats = $candidats;
+
+        return $this;
+    }
+
+    /**
+     * Get candidats
+     *
+     * @return array
+     */
+    public function getCandidats()
+    {
+        return $this->candidats;
     }
 
     public function eraseCredentials() {

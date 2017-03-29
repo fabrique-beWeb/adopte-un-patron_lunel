@@ -178,6 +178,14 @@ class Candidat implements UserInterface, Serializable {
      */
     private $recruteurs;
 
+    /**
+     * @var array
+     * 
+     * @ManyToMany(targetEntity="OffreBundle\Entity\Offre", inversedBy="candidats")
+     * @ORM\joinTable(name="candidats_offres")
+     */
+    private $offres;
+    
 
     /**
      * Get id
@@ -560,6 +568,50 @@ class Candidat implements UserInterface, Serializable {
      */
     public function getRencontreRecruteur() {
         return $this->rencontreRecruteur;
+    }
+    
+    /**
+     * Set recruteurs
+     *
+     * @param array $recruteurs
+     *
+     * @return Candidat
+     */
+    public function setRecruteurs($recruteurs) {
+        $this->recruteurs = $recruteurs;
+
+        return $this;
+    }
+
+    /**
+     * Get recruteurs
+     *
+     * @return array
+     */
+    public function getRecruteurs() {
+        return $this->recruteurs;
+    }
+    
+    /**
+     * Set offres
+     *
+     * @param array $offres
+     *
+     * @return Candidat
+     */
+    public function setOffres($offres) {
+        $this->offres = $offres;
+
+        return $this;
+    }
+
+    /**
+     * Get offres
+     *
+     * @return array
+     */
+    public function getOffres() {
+        return $this->offres;
     }
     
     /**

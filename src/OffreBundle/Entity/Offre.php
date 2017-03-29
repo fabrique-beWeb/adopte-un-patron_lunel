@@ -111,6 +111,12 @@ class Offre {
      * @ORM\JoinColumn(name="fk_user", referencedColumnName="id")
      */
     private $userId;
+    
+    /**
+     * @var array
+     * @ORM\ManyToMany(targetEntity="UserBundle\Entity\Candidat", mappedBy="offres")
+     */
+    private $candidats;
 
 
     /**
@@ -406,6 +412,28 @@ class Offre {
      */
     public function getUserId() {
         return $this->userId;
+    }
+    
+    /**
+     * Set cadidats
+     *
+     * @param array $candidats
+     *
+     * @return Candidats
+     */
+    public function setCandidats($candidats) {
+        $this->candidats = $candidats;
+
+        return $this;
+    }
+
+    /**
+     * Get candidats
+     *
+     * @return array
+     */
+    public function getCandidats() {
+        return $this->candidats;
     }
 
 }
