@@ -54,6 +54,7 @@ security:
         - { path: ^/offre/nouveau , roles: ROLE_RECRUTEUR }
         - { path: ^/offre/modifier, roles: ROLE_RECRUTEUR }
         - { path: ^/candidat/modifier, roles: ROLE_CANDIDAT}
+        - { path: ^/candidat/profil, roles: ROLE_CANDIDAT}
         
         
                 
