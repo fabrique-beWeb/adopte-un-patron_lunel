@@ -16,7 +16,6 @@
             <div class="couleurfond col-md-12">
                 <h1 class="police text-position séparation">{{ candidat.nom }} {{ candidat.prenom }}</h1>
 
-
                 <table class="col-md-offset-4 col-md-2 policebot">
                     <tbody> 
                         <tr>
@@ -64,15 +63,19 @@
                             <tr>
                                 <th>Date inscription</th>
                                 <td>{{ candidat.dateInscription }}</td>
-             s               </tr>
+                            </tr>
+                            <tr>
+                                <th> Like </th>
+                                <td id="countLike" class="btn-info col-xs-3"></td>
+                            </tr>
                             <tr>
                                 <th>Image</th>
-<td> <img width="100" height="100" src="{{asset('uploads/')~candidat.image }}"> </td>                                
+                                <td> <img width="100" height="100" src="{{asset('uploads/')~candidat.image }}"> </td>                                
                             </tr>
                         </tbody>
                     </table>
 
-
+                    
                     <ul>
 
                 </div>      
@@ -103,3 +106,8 @@
 
 
     {% endblock %}
+
+        {% block javascripts %}
+            {{ parent()}}
+            <script src="{{ asset('./js/likeAjax.js') }}"></script>
+        {% endblock %}

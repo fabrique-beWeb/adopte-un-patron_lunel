@@ -2,11 +2,10 @@
 
 namespace UserBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
-use Doctrine\ORM\Mapping as ORM;
-use Doctrine\ORM\Mapping\ManyToMany;
+use JsonSerializable;
 use Serializable;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -19,7 +18,7 @@ use Symfony\Component\Validator\Constraints\File;
  * @ORM\Table(name="adopteUnPatron_candidat")
  * @ORM\Entity(repositoryClass="UserBundle\Repository\CandidatRepository")
  */
-class Candidat implements UserInterface, Serializable {
+class Candidat implements UserInterface, Serializable , JsonSerializable{
     function __construct() {
         $this->nomSkill = new ArrayCollection();
         }
@@ -163,7 +162,7 @@ class Candidat implements UserInterface, Serializable {
     /**
      * @var array
      *
-     * @ManyToMany(targetEntity="Skill")
+     * @ORM\ManyToMany(targetEntity="Skill")
      * @ORM\JoinTable(name="SkillCandidat",
      *      joinColumns={@ORM\JoinColumn(name="candidat_id",referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="skill_id",referencedColumnName="id")})
@@ -173,7 +172,7 @@ class Candidat implements UserInterface, Serializable {
     /**
      * @var array
      * 
-     * @ManyToMany(targetEntity="Recruteur", inversedBy="candidats")
+     * @ORM\ManyToMany(targetEntity="Recruteur", inversedBy="candidats")
      * @ORM\joinTable(name="recruteurs_candidats")
      */
     private $recruteurs;
@@ -181,7 +180,7 @@ class Candidat implements UserInterface, Serializable {
     /**
      * @var array
      * 
-     * @ManyToMany(targetEntity="OffreBundle\Entity\Offre", inversedBy="candidats")
+     * @ORM\ManyToMany(targetEntity="OffreBundle\Entity\Offre", inversedBy="candidats")
      * @ORM\joinTable(name="candidats_offres")
      */
     private $offres;
@@ -694,6 +693,12 @@ class Candidat implements UserInterface, Serializable {
         $this->email,
         $this->mdp
         ) = unserialize($serialized);
+    }
+
+    public function jsonSerialize() {
+        return array(
+            "recruteurs" => $this->recruteurs
+        );
     }
 
 }

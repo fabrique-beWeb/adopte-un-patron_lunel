@@ -3,9 +3,9 @@
 namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JsonSerializable;
 use Serializable;
 use Symfony\Component\Security\Core\User\UserInterface;
-use UserBundle\Repository\RecruteurRepository;
 
 /**
  * Recruteur
@@ -13,7 +13,7 @@ use UserBundle\Repository\RecruteurRepository;
  * @ORM\Table(name="adopteUnPatron_recruteur")
  * @ORM\Entity(repositoryClass="UserBundle\Repository\RecruteurRepository")
  */
-class Recruteur implements UserInterface, Serializable
+class Recruteur implements UserInterface, Serializable, JsonSerializable
 {
     /**
      * @var int
@@ -125,7 +125,7 @@ class Recruteur implements UserInterface, Serializable
     /**
      * @var array
      * 
-     * @ORM\ManyToMany(targetEntity="Candidat", mappedBy="candidats")
+     * @ORM\ManyToMany(targetEntity="Candidat", mappedBy="recruteurs")
      */
     private $candidats;
 
@@ -535,6 +535,12 @@ class Recruteur implements UserInterface, Serializable
     }
     public function __toString() {
         return $this->entreprise;
+    }
+
+    public function jsonSerialize() {
+        return array(
+            "id" => $this->id
+        );
     }
 
 }

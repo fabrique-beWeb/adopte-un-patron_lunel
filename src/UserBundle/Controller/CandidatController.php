@@ -5,6 +5,7 @@ namespace UserBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use UserBundle\Entity\Candidat;
 /**
@@ -113,8 +114,16 @@ class CandidatController extends Controller
         
         
     }
-    
-    
+    /**
+     * @Route("/profil/like")
+     */
+    public function tartempion(){
+        $em = $this->getDoctrine()->getManager();
+        $candidat = $em->getRepository('UserBundle:Candidat')->find($this->getUser()->getId());
+//        $candidat = $em->getRepository('UserBundle:Candidat')->find(1);
+        $r = $candidat->getRecruteurs();
+        return new JsonResponse(count($r));
+    }
 
     
 }
