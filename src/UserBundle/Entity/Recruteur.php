@@ -125,7 +125,7 @@ class Recruteur implements UserInterface, Serializable
     /**
      * @var array
      * 
-     * @ORM\ManyToMany(targetEntity="Candidat", mappedBy="candidats")
+     * @ORM\ManyToMany(targetEntity="Candidat", mappedBy="recruteurs")
      */
     private $candidats;
 
