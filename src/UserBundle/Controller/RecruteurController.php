@@ -30,7 +30,7 @@ class RecruteurController extends Controller {
 
         if ($form->isSubmitted() && $form->isValid()) {
             $logo = md5(uniqid()) . "." . $recruteur->getLogo()->guessExtension();
-            $recruteur->getLogo()->move('../web/uploads', $logo);
+            $recruteur->getLogo()->move('/web/uploads', $logo);
             $recruteur->setLogo($logo);
             $em = $this->getDoctrine()->getManager();
             $recruteur->setDateInscription(date("d/m/Y"));            

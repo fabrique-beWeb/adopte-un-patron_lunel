@@ -75,7 +75,7 @@ class CandidatController extends Controller
 
         $candidat = $em->getRepository('UserBundle:Candidat')->find($this->getUser()->getId());
         return $this->render('candidat/showCandidat.html.twig', array(
-                    'candidat' => $candidat
+                    'candidat' => $candidat 
         ));
     }
 
