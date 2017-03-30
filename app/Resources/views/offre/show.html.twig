@@ -87,14 +87,17 @@
            
                    {# <h4>Userid</h4>
 
-                    {{ offre.userId }}
+                    {{ <img width="100" height="100" src="{{asset('uploads/')~recruteur.logo }}">
+offre.userId }}
   #} 
 </div>
 </div>
 
-<div class="  col-xs-3 col-xs-offset-2 info ">
+<div class=" col-xs-4 col-xs-offset-2 info ">
       
-                    <h2>{{ offre.nomEntreprise }}</h2>
+                    
+    
+            <h2>{{ offre.nomEntreprise }}</h2>
 	
 
                
@@ -137,7 +140,7 @@
                     {{ offre.nousTrouver }}       
      
 </div>
-<div class="col-xs-3 col-xs-offset-9 offreindex" >
+<div class="col-xs-4 col-xs-offset-5 offreindex" >
                 
     <h4>Les offres qui pourront vous intéressé</h4>
                      Ceci est un exemple de texte codé en dur 
