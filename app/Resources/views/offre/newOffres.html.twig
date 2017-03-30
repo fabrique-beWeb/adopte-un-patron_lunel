@@ -30,23 +30,14 @@
         {{ form_row(form.responsabilites) }}
         {{ form_row(form.pourquoiNous) }}
         {{ form_row(form.nousTrouver) }}
-        <div ng-app="appTest"  ng-controller ="skillCtrl" >
-            <button ng-click="getSkills(skill.name)">Skill</button>
-            {% verbatim %}
-                <div>
-                    <p ng-repeat="skill in skills">
-                        <label >{{skill.name}}</label>
-                        <input type="checkbox"
-                               ng-value="name"
-                               id="{{skill.name}}"
-                               name="mesSkills"
-                               ng-click="skillsToken(skill.id)">
-                    </p>
+        <div>
+            <button id="btnContSkill">Skill</button>
+                <div id="contSkill" >
                     
                 </div>
 
 
-            {% endverbatim %}
+        
         </div>
     </div>
     <input type="submit" class="btn btn-info btn-sm col-md-1 noRadius colorbouttton pull-right" value="Creer" />
@@ -61,7 +52,6 @@
 {% endblock %}
 
 {% block javascripts %}
-    <script src="{{ asset('./vendor/angular.min.js')}}"></script>
 
     {{ parent() }}
 

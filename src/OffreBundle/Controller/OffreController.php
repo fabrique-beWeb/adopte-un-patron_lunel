@@ -54,7 +54,7 @@ class OffreController extends Controller {
             $offre->setUserId($this->getUser());
             $em->persist($offre);
             $em->flush($offre);
-            
+
             $this->addSkills($offre->getId());
             return $this->redirectToRoute('offre_show', array('id' => $offre->getId()));
         }
@@ -72,11 +72,11 @@ class OffreController extends Controller {
         $offre = $this->getDoctrine()->getRepository(Offre::class)->find($id);
         // On utilise notre Repository pour recup une liste de skills
         $listeSkillsUp = $this->getDoctrine()->getRepository('UserBundle:Skill')->listSkills($listeSkills);
-            //on set nos skills de la session courante
-          $offre->setNomSkill($listeSkillsUp);
-            $em->merge($offre);
-            $em->flush($offre);
-            return $offre;
+        //on set nos skills de la session courante
+        $offre->setNomSkill($listeSkillsUp);
+        $em->merge($offre);
+        $em->flush($offre);
+        return $offre;
     }
 
     /**
@@ -100,17 +100,29 @@ class OffreController extends Controller {
     /**
      * @Route("/skills/update/tokenSkills/{id}")
      */
-    public function updateSkills(Request $request, $id) {
-        // Je vais chercherma
+    public function addIdSkills(Request $request, $id) {
+        // Je vais chercher ma Variable sous session
         $listeSkills = $this->get('session')->get('listeSkills');
-        
         array_push($listeSkills, $id);
-        $this->get('session')->set('listeSkills', $listeSkills);
+       
+        return new JsonResponse($listeSkills);
+    }
 
-        $status = 200;
-        $headers = array(
-            'Access-Control-Allow-Origin' => 'http://www.adopte-un-patron.fr');
-        return new JsonResponse($listeSkills, $status, $headers);
+    /**
+     * @Route("/skills/delete/tokenSkills/{id}")
+     */
+    public function DeleteIdSkills(Request $request, $id) {
+        // Je vais chercher ma Variable sous session
+        $listeSkills = $this->get('session')->get('listeSkills');
+
+        for ($i = 0; $i < count($listeSkills) - 1; $i++) {
+            if ($listeSkills[$i] == $id) {
+                unset($listeSkills[$i]);
+            }
+        }
+
+        $this->get('session')->set('listeSkills', $listeSkills);
+        return new JsonResponse($listeSkills);
     }
 
     /**
