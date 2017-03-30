@@ -12,71 +12,160 @@
 
 {% block body %}
 <div class=" fond col-md-12 "> 
-    <div class="noPadding col-md-12">
+   
         <h1 >Offre Details</h1>
     </div>
     
-    <div class=" contour offre col-md-offset-4 col-md-4 col-xs-offset-1 col-xs-10">
-        <table class="col-md-12">
-            <tbody>
-{#                <tr>
-                    <th>Id</th>
-                    <td>{{ offre.id }}</td>
-                </tr>#}
-                <tr>
-                    <th>Titre</th>
-                    <td>{{ offre.titre }}</td>
-                </tr>
-                <tr>
-                    <th>Nomentreprise</th>
-                    <td>{{ offre.nomEntreprise }}</td>
-                </tr>
-                <tr>
-                    <th>Nomskill</th>
-                    <td>{% if offre.nomSkill %}{{ offre.nomSkill|join(', ') }}{% endif %}</td>
-                </tr>
-                <tr>
-                    <th>Poste</th>
-                    <td>{{ offre.poste }}</td>
-                </tr>
-                <tr>
-                    <th>Typecontrat</th>
-                    <td>{{ offre.typeContrat }}</td>
-                </tr>
-                <tr>
-                    <th>Salaire</th>
-                    <td>{{ offre.salaire }}</td>
-                </tr>
-                <tr>
-                    <th>Duree</th>
-                    <td>{{ offre.duree }}</td>
-                </tr>
-                <tr>
-                    <th>Experiencerequis</th>
-                    <td>{{ offre.experienceRequis }}</td>
-                </tr>
-                <tr>
-                    <th>Lieu</th>
-                    <td>{{ offre.lieu }}</td>
-                </tr>
-                <tr>
-                    <th>Responsabilites</th>
-                    <td>{{ offre.responsabilites }}</td>
-                </tr>
-                <tr>
-                    <th>Pourquoinous</th>
-                    <td>{{ offre.pourquoiNous }}</td>
-                </tr>
-                <tr>
-                    <th>Noustrouver</th>
-                    <td>{{ offre.nousTrouver }}</td>
-                </tr>
-                <tr>
-                    <th>Userid</th>
-                    <td>{{ offre.userId }}</td>
-                </tr>
-            </tbody>
-        </table>
+    
+<div class="container">
+
+    <div class="  col-xs-6  ">
+        <div id="OffreInfo">
+   
+                   <h3>{{ offre.titre }}</h3>
+               
+                
+                    <h4>Chez</h4>
+	
+                    {{ offre.nomEntreprise }}
+                    
+                    <h4>Skills Rechercher</h4>
+                    PHP JAVA PYTHON (codé en dur)
+                    {% if offre.nomSkill %}{{ offre.nomSkill|join(', ') }}{% endif %}</td>
+  <table class="table table-info">             
+<thead>
+      <tr>
+        <th>Poste</th>
+        <th>Contrat</th>
+        <th>Salaire</th>
+        <th>Durée</th>
+        <th>Experience</th>
+        <th>Lieu</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+          <td>{{ offre.poste }}</td>
+        <td>{{ offre.typeContrat }}</td>
+        <td>{{ offre.salaire }}</td>
+        <td>{{ offre.duree }}</td>
+        <td>{{ offre.experienceRequis }}</td>
+        <td>{{ offre.lieu }}</td>
+      </tr>
+      </table>
+    
+        <input class="pull-right wtfbutton colorbouttton" type="button" value="Je suis intéressé"/> 
+         <br>
+
+                    <h4>Les Responsabilites</h4>
+
+                    {{ offre.responsabilites }}
+                 
+                
+                    <h4> Le Poste</h4>
+                     Ceci est un exemple de texte codé en dur 
+                     Procedente igitur mox tempore cum adventicium nihil inveniretur, 
+                     relicta ora maritima in Lycaoniam adnexam Isauriae se contulerunt 
+                     ibique densis intersaepientes itinera praetenturis provincialium et viatorum opibus pascebantur.
+                     Ceci est un exemple de texte codé en dur 
+                     Procedente igitur mox tempore cum adventicium nihil inveniretur, 
+                     relicta ora maritima in Lycaoniam adnexam Isauriae se contulerunt 
+                     ibique densis intersaepientes itinera praetenturis provincialium et viatorum opibus pascebantur.
+                     Ceci est un exemple de texte codé en dur 
+                     Procedente igitur mox tempore cum adventicium nihil inveniretur, 
+                     relicta ora maritima in Lycaoniam adnexam Isauriae se contulerunt 
+                     ibique densis intersaepientes itinera praetenturis provincialium et viatorum opibus pascebantur.
+                    {{ offre.poste }}
+                
+                   <h4>Pourquoi Nous ?</h4>
+
+                    {{ offre.pourquoiNous }}
+               
+                    <h4> Ou Nous Trouver</h4>
+
+                    {{ offre.nousTrouver }}
+           
+                   {# <h4>Userid</h4>
+
+                    {{ <img width="100" height="100" src="{{asset('uploads/')~recruteur.logo }}">
+offre.userId }}
+  #} 
+</div>
+</div>
+
+<div class=" col-xs-4 col-xs-offset-2 info ">
+      
+                    
+    
+            <h2>{{ offre.nomEntreprise }}</h2>
+	
+
+               
+                
+                    <h4>Historique et Description</h4>
+        Google est une entreprise américaine de services technologiques fondée en 1998 dans la Silicon Valley, en Californie, par Larry Page et Sergueï Brin, 
+        créateurs du moteur de recherche Google. C'est une filiale de la société Alphabet depuis août 2015.
+        <br>
+        <input class="pull-right wtfbutton colorbouttton" type="button" value="Découvrir l'entreprise"/> 
+                 <h4>Type de Contrat</h4>
+
+                    {{ offre.typeContrat }}
+                
+                    <h4>Salaire</h4>
+
+                    {{ offre.salaire }}
+                
+                    <h4>Durée</h4>
+
+                    {{ offre.duree }}
+              
+                    <h4>Experience Requise</h4>
+
+                    {{ offre.experienceRequis }}
+               
+                    <h4>Lieu</h4>
+
+                    {{ offre.lieu }}
+               
+                    <h4>Les Responsabilites</h4>
+
+                    {{ offre.responsabilites }}
+               
+                   <h4>Pourquoi Nous ?</h4>
+
+                    {{ offre.pourquoiNous }}
+                
+                    <h4>Nous Trouver</h4>
+                 
+                    {{ offre.nousTrouver }}       
+     
+</div>
+<div class="col-xs-4 col-xs-offset-5 offreindex" >
+                
+    <h4>Les offres qui pourront vous intéressé</h4>
+                     Ceci est un exemple de texte codé en dur 
+                     Procedente igitur mox tempore cum adventicium nihil inveniretur, 
+                     relicta ora maritima in Lycaoniam adnexam Isauriae se contulerunt 
+                     ibique densis intersaepientes itinera praetenturis provincialium et viatorum opibus pascebantur.
+                     Ceci est un exemple de texte codé en dur 
+                     Procedente igitur mox tempore cum adventicium nihil inveniretur, 
+                     relicta ora maritima in Lycaoniam adnexam Isauriae se contulerunt 
+                     ibique densis intersaepientes itinera praetenturis provincialium et viatorum opibus pascebantur.
+                  
+                     <br>
+                     <input class="pull-right wtfbutton colorbouttton" type="button" value="Voir d'autre offre"/> 
+
+           
+                   {# <h4>Userid</h4>
+
+                    {{ offre.userId }}
+  #} 
+</div>
+
+
+
+ </div>        
+
 
         <ul>
             {% if is_granted('ROLE_RECRUTEUR') %}

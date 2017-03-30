@@ -70,12 +70,12 @@ class CandidatController extends Controller
     /**
      * @Route("/profil", name="indexCandidat")
      */
-    public function IndexCandidat  () {
+    public function Candidat  () {
         $em = $this->getDoctrine()->getManager();
 
         $candidat = $em->getRepository('UserBundle:Candidat')->find($this->getUser()->getId());
         return $this->render('candidat/showCandidat.html.twig', array(
-                    'candidat' => $candidat
+                    'candidat' => $candidat 
         ));
     }
 
@@ -103,4 +103,19 @@ class CandidatController extends Controller
             'edit_form' => $editForm->createView(),
         ));
     }
+
+    /**
+     * @Route("/listeprofilcandidat", name="ListeCandidats")
+     */
+    public function viewAllCandidat (){
+        
+         return $this->render('candidat/listeAllCandidat.html.twig');
+        
+        
+    }
+    
+    
+
+    
 }
+
